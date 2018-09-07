@@ -1,0 +1,15 @@
+setup raspberry pi
+
+- betriebssystem auf SD karte mittels pc mit sd-reader machen
+- OS downlaod: https://www.raspberrypi.org/downloads/
+- entscheiden zwischen NOOBS - Raspbian - viele kleine andere
+- wegen official support für raspbian
+- USB tastatur und maus anschließen
+- monitor
+- microusb ladekabel anschließen
+- starten
+- first time setup durchführen
+
+Leseresourcen für GPIO pins programmierung
+- https://www.raspberrypi.org/documentation/usage/gpio/
+- https://www.raspberrypi.org/documentation/usage/gpio/python/README.md
