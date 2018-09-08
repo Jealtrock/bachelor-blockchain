@@ -1,0 +1,3 @@
+- titel umbennenung von "Zukunftstauglichkeit von Blockchains" in "Zukunftstauglichkeit von Distributed Ledger technologien"
+
+- recherche wie iota funktioniert - https://iota.readme.io/docs

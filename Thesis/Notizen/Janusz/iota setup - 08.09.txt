@@ -1,0 +1,2 @@
+- installieren von python iota librarys um auf die api zugreifen zu können
+- gute resource ist die iota documentation reference
