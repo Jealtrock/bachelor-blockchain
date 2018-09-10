@@ -18,4 +18,9 @@ logger = logging.getLogger(__name__)
 logger.setLevel(10)
 api.adapter.set_logger(logger)
 
+gna_result = api.get_new_addresses(count = 4)
+addresses = gna_result['addresses']
+print(addresses)
 
+print("Check Balance...")
+gb_result = api.get_balances(addresses)
