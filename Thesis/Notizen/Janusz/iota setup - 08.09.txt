@@ -1,2 +1,12 @@
 - installieren von python iota librarys um auf die api zugreifen zu können
-- gute resource ist die iota documentation reference
+
+bei raspberry pi rasbian muss man einige schritte beachten:
+	- pip install pyota
+		- davor cryptography installieren
+			- dafür muss mann einige python bibliotheken downloaden: https://cryptography.io/en/latest/installation/
+		- wenn man idle IDE verwendet, muss man im klaren sein, dass dieser einen anderen interpreter nutzt, der nicht in dem verzeichnis nach neuen modulen sucht, in die pip installiert, deshalb muss man den path manuell hinzufügen oder das script von der konsole aus starten, die den besseren interpreter nutzt.
+
+- gute resource ist die iota documentation reference: 
+	https://pyota.readthedocs.io/en/latest/types.html
+
+
