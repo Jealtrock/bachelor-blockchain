@@ -14,7 +14,7 @@ var authorizeUser = function(username, password, cb){
 
 	let db_call = new Promise((resolve, reject) => {
 
-		db.getUserPassword(username, (err, rows) => {
+		db.get_user_password(username, (err, rows) => {
 			db.end();
 			if (!arr_is_empty(rows) && passwordHash.verify(password, rows[0].password)) resolve(true);
 			else resolve(false);
@@ -76,9 +76,9 @@ router.post('/addNewAddress', async (req, resp, next) => {
 			if(err) return reject(err);
 			
 			let response = req.responseObject;
-			response.previous = [];
+			response.saved_addresses = [];
 			for (var row of rows){
-				response.previous.push(row.address);
+				response.saved_addresses.push(row.address);
 			}
 			resolve(response);
 		});
