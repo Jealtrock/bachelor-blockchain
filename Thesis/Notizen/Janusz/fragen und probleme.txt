@@ -1,0 +1,5 @@
+Warum auf rasbpi?
+- Auf raspberry pi, um hindernisse von schwacher hardware zu emulieren
+
+bis das bundel nach dem bezahlbvorgang verifiziert wird kann einige zeit vergehen, wie kann IOTA in einer tankstellen app nützlich sein trotz dessen?
+- nicht zu warten bis es verifiziertm wird, sondern dass smart car müsste das bundle generieren und zudem es ins tangle gebroadcastet wurde, muss die tankstelle selber diese transaktion virifizieren. wenn das gescehen ist, ist der bezahlvorgang abgeschlossen, auch wenn iotas noch nicht verifiziert wurden sind
