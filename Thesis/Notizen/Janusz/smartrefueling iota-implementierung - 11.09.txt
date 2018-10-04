@@ -1,0 +1,9 @@
+- Zapfsäule attached pro tag eine neue addresse an der alle ankommenden autos einzahlen
+- am ende des tages leert die zapfsäule die addresse und zahlt auf das wallet der tankstelle ein
+- danach generiert die zapfsäule die nächste addresse und attached sie zu der tangle
+- diese neue addresse wird am nächsten tag von den nächsten autofahrern genutzt
+
+
+Notizen:
+- erklären warum wir nihct für jede trx eine neue addresse von der zapfsäule erstellen lassen
+- im grunde genommen kann jeder tankstellenbetrieber nach eigenem ermessen handeln
