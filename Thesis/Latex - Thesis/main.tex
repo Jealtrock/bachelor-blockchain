@@ -1,0 +1,71 @@
+\input{main-preamble}
+\begin{document}
+
+\pagestyle{fancy}
+\input{chapters/deckblatt}
+\pagenumbering{gobble}
+\cleardoublepage
+\pagenumbering{roman}
+
+\chapter*{Abstract}
+äöüß Lorem ipsum dolor sit amit, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+\begin{lstlisting}[language=bash]
+const express = require('express');
+const address_route_getAddress = require('./api/routes/getAddress.js');
+const address_route_user = require('./api/routes/user.js');
+const address_route_fueling = require('./api/routes/fueling.js');
+const bodyParser = require('body-parser');
+const api = express();
+
+api.use(bodyParser.urlencoded({extended: true}));
+api.use(bodyParser.json());
+
+api.use('/getAddress', address_route_getAddress);
+api.use('/fueling', address_route_fueling);
+api.use('/user', address_route_user);
+
+module.exports = api;
+\end{lstlisting}
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+\begin{figure}[h]
+\centering
+\includegraphics{hsblogo.png}
+\caption{Das Logo der Hochschule Bremen}
+\label{fig:hsblogo}
+\end{figure}\\
+dolor sit amet, consetetur sadipscing siehe Abbildung \ref{fig:hsblogo} auf seite \pageref{fig:hsblogo} elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\\
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{0.2\textwidth}|P{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}}
+Distributed Ledger Technologie & Skalierbarkeit & Programmierbarkeit & Funktion & Sicherheit\\
+\hline\hline
+Bitcoin & nicht sehr gut & viele apis & durchdacht & sicher, jedoch nicht sehr anonym\\
+\hline
+IOTA & je mehr desto besser & gut, aber ich muss testen was passsiereren wuerde wenn hier viel text stehen tut & funktioniert anders als blockchain & sicher aber fehleranfaellig
+\end{tabular}
+\caption{Vergleich der Distributed Ledger Technologien}
+\label{tab:comparison}
+\end{table}
+
+\chapter*{Danksagung}
+Lorem ipsum dolor~\cite{artikelbeispiel} sit amet, consetetur sadipscing~\cite{buchbeispiel} elitr, sed diam nonumy~\cite{onlinebeispiel} eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\input{chapters/einleitung}
+\input{chapters/grundlagen}
+\input{chapters/theoretischerteil}
+\input{chapters/praktischerteil}
+\input{chapters/evaluierung}
+
+\bibliographystyle{geralpha}
+\bibliography{quellen}
+\end{document}
