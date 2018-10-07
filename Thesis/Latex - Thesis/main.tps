@@ -72,7 +72,7 @@ Document=chapters\janusz\sicherheit.tex
 
 [Frame3_View0,0]
 TopLine=0
-Cursor=844
+Cursor=648
 
 [Frame4]
 Flags=0
