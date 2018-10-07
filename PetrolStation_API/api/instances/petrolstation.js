@@ -1,28 +1,15 @@
 const db = require('../../database/db.js');
 
-var intersect_key = function(o1, o2){
-
-	keys_o1 = o1.keys();
-	Keys_o2 = o2.keys();
-
-	const [first, next] = keys_o1.length > keys_o2.length ? [keys_o1, o2] : [keys_o2, o1];
- 	
- 	first.filter(k => {
-
-
-
- 	});
-};
-
 var Petrolstation = function(){};
 
 Petrolstation.blockedStations = {};
 Petrolstation.costumerFuelingAt = {};
 Petrolstation.stationInfoObject = {
 
-	Super: '22',
-	SuperE10: '15',
-	Diesel: '10'
+	'Super': {cost: '22', unit: 'liter'},
+	'SuperE10': {cost: '15', unit: 'liter'},
+	'Diesel': {cost: '10', unit: 'liter'},
+	'ENERGY-SB': {cost: '2', unit: 'kwH'}
 
 }
 
@@ -51,7 +38,7 @@ Petrolstation.prototype.initialize_fueling = async function(fuel_type, station, 
 						blocked: true, 
 						fuel_type: fuel_type, 
 						cost: 0, 
-						liter: 0, 
+						amount: 0, 
 						timestamp: Date.now(), 
 						id: id
 					};
@@ -83,7 +70,7 @@ Petrolstation.prototype.initialize_fueling = async function(fuel_type, station, 
 
 Petrolstation.prototype.start_fueling = function(id){
 
-	cost_per_liter = parseInt(Petrolstation.stationInfoObject[Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fuel_type]);
+	cost_per_unit = parseInt(Petrolstation.stationInfoObject[Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fuel_type].cost);
 
 
 	Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].start_fueling_at = Date.now();
@@ -91,8 +78,8 @@ Petrolstation.prototype.start_fueling = function(id){
 
 		let fueling = setInterval(() => {
 
-			Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].cost += cost_per_liter;
-			Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].liter++;
+			Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].cost += cost_per_unit;
+			Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].amount++;
 
 		}, 1000);
 
@@ -105,7 +92,10 @@ Petrolstation.prototype.start_fueling = function(id){
 }
 
 Petrolstation.prototype.get_fueling = function(id) {
-	return {cost: Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].cost, liter: Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].liter};
+	return {
+		cost: Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].cost, 
+		amount: Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].amount, 
+		unit: Petrolstation.stationInfoObject[Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fuel_type].unit};
 
 };
 
@@ -118,6 +108,7 @@ Petrolstation.prototype.end_fueling = async function(id, callback) {
 
 		let response = Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]];
 		response.end_fueling_at = Date.now();
+		response.unit = Petrolstation.stationInfoObject[Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fuel_type].unit;
 		delete response.blocked;
 		delete Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]];
 

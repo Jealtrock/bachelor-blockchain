@@ -6,7 +6,7 @@ const router = express.Router();
 
 var check_for_initialisation = (req, resp, next) => {
 
-	if(! (req.query.id && Petrolstation.costumerFuelingAt[req.query.id] && Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[req.query.id]].id == req.query.id)) 
+	if(! (req.query && req.query.id && Petrolstation.costumerFuelingAt[req.query.id] && Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[req.query.id]].id == req.query.id)) 
 		return resp.status(200).json({message: 'Please initialize the fueling firstly.'});
 
 	next();
@@ -20,6 +20,8 @@ router.get('/getStationInfo', (req, resp, next) => {
 });
 
 router.get('/initializeFueling', (req, resp, next) => {
+
+	if(! (req.query.fuel_type && req.query.station)) return next('You missed the required parameter.');
 
 	petrolstation.initialize_fueling(req.query.fuel_type, req.query.station, (err, result) => {
 
