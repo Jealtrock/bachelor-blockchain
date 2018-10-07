@@ -5,6 +5,10 @@ const address_route_fueling = require('./api/routes/fueling.js');
 const bodyParser = require('body-parser');
 const api = express();
 
+api.use((req, resp, next) => {
+	console.log(req.get('host') + req.originalUrl);
+	next();
+});
 api.use(bodyParser.urlencoded({extended: true}));
 api.use(bodyParser.json());
 

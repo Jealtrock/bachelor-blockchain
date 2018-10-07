@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  6 OCT 2018 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  7 OCT 2018 15:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -242,7 +242,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1.
  [1
 
-{C:/Users/Janusz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+{C:/Users/JayPi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
 ])
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
@@ -398,49 +398,67 @@ Underfull \vbox (badness 7203) has occurred while \output is active []
  [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
+ [7]) (chapters/theoretischerteil.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-Overfull \hbox (26.48856pt too wide) in paragraph at lines 40--44
-\T1/cmr/m/n/12 ele-men-ta-re Tech-ni-ken not-wen-dig. Zum Einen ist das die Public-Key-Kryptographie
- []
+ [8] [9] [10
 
-[9] [10] [11]) (chapters/theoretischerteil.tex [12] [13
-
-] [14]
+] [11] [12]
 Kapitel 3.
-(chapters/jens/funktion.tex [15
+(chapters/jens/funktion.tex [13
 
-] [16
+] [14
 
 ]
 Kapitel 4.
-) (chapters/janusz/sicherheit.tex [17] [18
 
-]
+Overfull \hbox (26.48856pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/12 ele-men-ta-re Tech-ni-ken not-wen-dig. Zum Einen ist das die Public-Key-Kryptographie
+ []
+
+[15] [16] [17] [18] [19]
+Overfull \hbox (3.46918pt too wide) in paragraph at lines 44--45
+\T1/cmr/m/n/12 Die IOTA-Tangle ist auf-ge-baut in Form ei-nes Di-rec-ted Acy-clic Graph (DAG)
+ []
+
+[20]
+Overfull \hbox (1.14192pt too wide) in paragraph at lines 50--51
+ \T1/cmr/bx/n/12 si-gna-tu-re-Mes-sa-ge-Frag-ment[] \T1/cmr/m/n/12 Soll-te die Trans-ak-ti-on ei-ne aus-ge-hen-de Zah-
+ []
+
+[21] [22]
+Overfull \hbox (8.6497pt too wide) in paragraph at lines 102--103
+ \T1/cmr/bx/n/12 at-tach-ment-Ti-me-stam-pLo-wer-Bound & at-tach-ment-Ti-me-stam-pUp-per-
+ []
+
+[23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24] [25]) (chapters/janusz/sicherheit.tex [26]
 Kapitel 5.
 
 Underfull \vbox (badness 1303) has occurred while \output is active []
 
- [19]) (chapters/janusz/programmierbarkeit.tex
-[20]
-Kapitel 6.
-) (chapters/jens/nutzen.tex [21
+ [27
 
-] [22
+]) (chapters/janusz/programmierbarkeit.tex
+[28]
+Kapitel 6.
+) (chapters/jens/nutzen.tex [29
+
+] [30
 
 ]
 Kapitel 7.
-) [23] [24
+[31]) [32] [33] [34
 
 ]
 Kapitel 8.
-) (chapters/praktischerteil.tex [25] [26
+) (chapters/praktischerteil.tex [35] [36
 
-] [27] [28]
+] [37] [38]
 Kapitel 9.
-(chapters/janusz/dokumentation.tex [29
+(chapters/janusz/dokumentation.tex [39
 
 ]
 
@@ -449,11 +467,11 @@ Package Fancyhdr Warning: \headheight is too small (14.49998pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30]
+[40]
 Kapitel 10.
-[31
+[41
 
-] [32] [33] [34] [35] [36]) (chapters/jens/dokumentation.tex [37] [38
+] [42] [43] [44] [45] [46]) (chapters/jens/dokumentation.tex [47] [48
 
 ]
 Kapitel 11.
@@ -463,7 +481,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
- [39] [40]
+ [49] [50]
 Overfull \hbox (0.81001pt too wide) in paragraph at lines 32--33
 \T1/cmr/m/n/12 voll-wer-ti-ge Midd-le-wa-res zu er-stel-len. Die In-stal-la-ti-on ge-stal-tet sich sehr leicht.
  []
@@ -473,22 +491,22 @@ Overfull \hbox (4.49954pt too wide) in paragraph at lines 32--33
 \T1/cmr/m/n/12 Vor-aus-set-zung sind ei-ne funk-tio-nie-ren-de Bash, so-wie der Pa-ket-ma-na-ger npm.
  []
 
-[41] [42]
+[51] [52]
 Overfull \hbox (42.89693pt too wide) in paragraph at lines 62--63
 []\T1/cmr/m/n/12 IP-Adresse des Ser-ver-s/-fue-ling/i-ni-tia-li-ze-Fue-ling?ID der Zapf-säu-le&Kraftstoffart 
  []
 
-[43] [44])) (chapters/evaluierung.tex [45] [46
+[53] [54])) (chapters/evaluierung.tex [55] [56
 
-] [47] [48]
+] [57] [58]
 Kapitel 12.
-[49
+[59
 
-] [50
+] [60
 
 ]
 Kapitel 13.
-) (main.bbl [51] [52
+) (main.bbl [61] [62
 
 ]
 Underfull \hbox (badness 1360) in paragraph at lines 4--6
@@ -508,32 +526,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--24
 
 
 Underfull \hbox (badness 1442) in paragraph at lines 21--24
-\T1/cmr/m/n/12 www.whitepaper.de/bitcoin/sn, 2008.  Ab-ge-ru-fen am 6. Ok-
+\T1/cmr/m/n/12 www.whitepaper.de/bitcoin/sn, 2008.  Ab-ge-ru-fen am 7. Ok-
  []
 
-) [53] (main.aux) ) 
+) [63] (main.aux) ) 
 Here is how much of TeX's memory you used:
  4881 strings out of 492970
- 66895 string characters out of 3135852
+ 66439 string characters out of 3135855
  337322 words of memory out of 3000000
  8605 multiletter control sequences out of 15000+200000
  18972 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,48p,1222b,1228s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\
-Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecrm0700.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\
-Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecbx1200.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\
-Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecrm1440.pk> <C:\Users\Janusz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (67 pages, 305130 bytes).
+ 39i,12n,48p,1783b,1228s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\J
+ayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
+00\ecrm0700.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\JayPi
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+cbx1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\JayPi\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1
+440.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (77 pages, 331249 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
+ 799 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

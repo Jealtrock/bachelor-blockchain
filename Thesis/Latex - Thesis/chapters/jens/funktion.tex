@@ -1,1 +1,131 @@
 \chapter{Funktion}
+
+\section{Bitcoin}
+Bitcoin ist ein Distributed Ledger Protokoll das erstmalig Geldtransfer über eine dezentrale, anonyme Übereinstimmung der Richtigkeit verfügt. Diesen Konsens erreicht es über die implementierte Blockchain, die wie ein global einsichtiges Kassenbuch funktioniert. Die Blockchain kann auf verschiedene Art und Weise genutzt und entwickelt werden. Sie ermöglicht es über das Internet Werte auszutauschen ohne von einem Mittelsmann abhängig zu sein.[23] Durch kryptographische Techniken sind Daten die in die Blockchain gelangen nur durch sehr großen Aufwand manipulierbar, was sie für das Speichern von sensiblen Daten attraktiv macht. [10] Im Folgenden wird die grundlegende Funktion der Blockchain sowie dessen Einsatz bei Bitcoin sachlich untersucht.
+
+\subsection{Allgemeine Funktion}
+Für die gegenwärtige Funktion von Bitcoin und dessen Blockchain sind zwei elementare Techniken notwendig. Zum Einen ist das die Public-Key-Kryptographie zum anderen die kryptographischen Hashfunktionen.
+
+Bei der Public-Key-Kryptographie resp. digitalen Signatur erstellt der Sender einer Nachricht ein Schlüsselpaar bestehend aus einem privaten sowie einem öffentlichen Schlüssel. Die beiden Schlüssel haben zwei ergänzende Funktionen. Der Autor der Nachricht verwendet den privaten Schlüssel um diesen mit seinen Informationen zu verbinden und dadurch zu signieren. Die signierten Daten werden gemeinsam mit dem öffentlichen Schlüssel an den Empfänger weitergegeben. Dank des öffentlichen Schlüssel ist es dem Empfänger möglich die Daten zu authentifizieren. Des Weiteren ist durch die Verknüpfung der Daten mit dem privaten Schlüssel die inhaltliche Integrität vor Manipulation geschützt.
+
+Durch kryptographischen Hashfunktionen entstehen aus Zeichenketten mit variabler Länge Zeichenketten fester Länge. Diese Zeichenketten sind “deterministisch”. Die gleichen Eingangsdaten werden nach der Hash-Berechnung immer den gleichen Hash verursachen. Veränderte Eingangsdaten führen zu einem stark abweichenden Hash.
+
+Außerdem gibt es drei weitere nennenswerte Eigenschaften von Hashfunktionen. Zum Einen ist es nahezu unmöglich durch den Hash die anfänglichen Daten wiederherzustellen. Des Weiteren ist es nahezu unmöglich mit abweichenden Eingangsdaten denselben Hash zu generieren. Zuletzt ist es nahezu unmöglich zwei verschiedene Eingangsdaten zu finden aus denen sich derselbe Hashwert ergibt.
+
+\subsection{Transaktionen}
+Um eine Transaktion im Bitcoin Netzwerk zu veranschaulichen wird ein fiktives Beispiel herangezogen. Alice möchte an Bob zwei Bitcoins (BTC) versenden. Es existieren jedoch keine Konten oder Kontostände, sondern ausschließlich die öffentliche Liste aller jemals getätigten Transaktionen, also die Bitcoin - Blockchain selbst, sowie die Hashwerte der einzelnen öffentlichen Schlüssel denen die existierenden Transaktionen zugeordnet werden. Aufgrund der vergangenen Transaktionen kann der Wertbestand an BTCs des zugehörigen privaten Schlüssels ermittelt werden. Mithilfe einer digitalen Software (Wallet) kann dieser Wertbestand des privaten Schlüssels eingesehen und neue Transaktionen eingereicht werden. Um eine Transaktion zu veranlassen werden mithilfe des privaten Schlüssels die zurückliegenden eingegangenen Transaktionen signiert und zusammen mit der ausgehenden Transaktion an das Bitcoin Netzwerk versandt. Dies entspricht in dem anfänglichen Beispiel einer Auflistung aller Transaktionen in denen Alice involviert war, sowie Alice’ Intention zwei BTCs an den öffentlichen Schlüssel von Bob zu senden. 
+
+Diese Nachricht gelangt an einen Netzknoten der über verschiedene Ressourcen verfügt. Neben einer aktuellen und vollständigen Kopie der Blockchain, einen Cachespeicher (UTXO), der Transaktionswerte der Blockchain enthält die noch nicht für neue Transaktionen verwendet wurden, existiert noch eine Datenbank mit unbestätigten Transaktionen. In diesem Netzknoten wird die Legitimität von Alice’ Transaktion überprüft, indem zum einen ihre Liquidität aufgrund ihrer bisherigen Transaktionen, sowie gleichzeitig ihre Signatur anhand des öffentlichen Schlüssels, bestätigt wird. Mithilfe der UTXO wird außerdem geprüft, ob die genutzten BTCs nicht bereits anderweitig reserviert wurden. Wenn dies fehlerfrei geschieht, wird die unbestätigte Transaktion in die dafür eingerichtete Datenbank aufgenommen. Der Netzknoten meldet diese eingereichte Transaktion an möglichst viele weitere Netzknoten weiter, die wiederum die Daten nach dem erklärten Schema überprüfen und anschließend in die Datenbank der unbestätigten Transaktionen aufnehmen.
+
+\subsection{Privater \& öffentlicher Schlüssel}
+
+
+\subsection{Signatur}
+Das Signieren in Bitcoin funktioniert mit dem sogenannten "`Elliptical Curve Digital Signature Algorithm"'. Eine elliptische Kurve bietet in der Mathematik einige besondere Eigenschaften.
+
+\subsection{Mining}
+Das Bitcoin-Netzwerk verfügt über zwei Arten von Netzwerkknoten. Einer ist ausschließlich für das zuvor genannte Verifizieren und Speichern der eingehenden Transaktionen sowie dessen Weiterleitung an weitere Netzknoten zuständig. Der zweite ist darüber hinaus befähigt neue Blöcke in der Blockchain zu speichern. Dieser sogenannte “Mining-Netzknoten” speichert zunächst unbestätigte Transaktionen in einem Block zusammen. Dieser Block besitzt zusätzlich einen Blockheader, der für die kommende Abspeicherung in der Blockchain essentiell ist.
+
+Es ergeben sich ab diesem Zeitpunkt einige Problematiken. Aufgrund von Verzögerungen im Netzwerk oder möglichen Ausfällen sind einige Netzknoten aktueller. Dies führt dazu, dass verschiedene Transaktionen, welche sich voneinander unterscheiden, in den einzelnen Netzknoten existieren. Außerdem können bösartige Absender gefälschte Transaktionen weiterleiten, welche dieselben Wert-Ressourcen aufweisen. Bitcoin verwendet für diese Problematiken die Proof-Of-Work (PoW) Technologie. In der Regel wird diese Technik für das Verhindern von missbräuchlicher Benutzung von Diensten eingesetzt. Damit ein Dienst genutzt werden kann muss bei dieser Technik ein gewisser Aufwand erbracht werden. Im Falle der Bitcoin-Blockchain muss gemäß dieses Schemas eine rechenintensive Aufgabe gelöst werden. Der Block-Header ergibt einen gewissen Hashwert. Dieser muss solange manipuliert werden bis das Ergebnis unterhalb eines gewissen Zielwertes liegt. Diese partielle Hashinversion beruht auf dem Hashcash-Prinzip von Adam Back (s. Geschichte). Der Hash entspringt dem Block-Header und wird aus einer Referenz zum vorherigen Block, einem Zeitstempel, dem Zielwert des Hash-Rätsels, dem Top Hash eines Merkle-Trees, welcher alle Transaktionen durch aufeinander aufbauende Hashes zusammenfasst, sowie einer variablen Zeichenfolge (Nonce) errechnet. Die Nonce wird so oft geändert bis der Hashwert unterhalb des Zielwertes liegt. In anderen Worten muss dieser mit einer gewissen Anzahl von Nullen beginnen. Der erste Mining-Netzknoten der dieses Rätsel löst versendet seinen Block an das Netzwerk. Dort wird der Block ebenfalls auf Validität geprüft und bei Erfolg in die eigene Blockchain integriert.
+
+In 1,69\% der Fälle, finden zwei Netzknoten zu nahezu der gleichen Zeit eine Lösung des Hash-Rätsels und versenden ihre jeweiligen Blöcke. In diesem Fall erhalten unabhängige Netzknoten verschieden Versionen der Blockchain. Infolgedessen teilen sich die Netzknoten auf. Dieses Phänomen ist als Gabelung bekannt. Die jeweiligen Netzknoten arbeiten weiter auf Grundlage ihrer bekannten Blockchain bis zu dem Moment bei dem sie über eine längere Blockchain Version informiert werden. Tritt dieser Fall ein, wird die bekannte Blockchain durch die längere ausgetauscht. Sollte die längere Version einige Transaktionen der zuvor bekannten Blockchain nicht enthalten, werden diese wieder in die Datenbank der nicht bestätigten Transaktionen aufgenommen. Momentan werden ca. alle zehn Minuten ein neuer Block in die Blockchain aufgenommen. Damit sich diese Zeitspanne weiter in einem angemessenen Rahmen befindet, wird stetig die Komplexität des Hash-Rätsels angepasst. Für das Finden der Lösung eines Hash-Rätsels und das erfolgreiche Integrieren eines neuen Blockes in der Blockchain, erhält der Mining-Netzknoten eine gewisse Menge an BTCs, wodurch neue BTCs erzeugt werden.[24]
+
+\section{IOTA}
+IOTA ist ein Distributed Ledger Protokoll, welches eine grenzenlose Skalierbarkeit des eigenen Netzwerkes zulässt. Dies wird durch die Eigenschaft ermöglicht, das der Benutzer und der Miner nicht länger voneinander getrennt sind. In IOTA wird das Prinzip der durch Bitcoin bekannten Blockchain umgedacht. Transaktionen werden nicht länger in einem Block gespeichert, sondern über ein Netz aus Transaktionen verteilt. In diesem Netz bestätigen sich die jeweiligen Transaktionen gegenseitig ihre Richtigkeit. Dieses Netz wird Tangle genannt und kann sich wie ein "`Directed Acyclic Graph"' vorgestellt werden. Die folgende Untersuchung liefert einen sachlichen Einblick in die Funktion IOTAs und der implementierten Tangle.
+
+\subsection{IOTA Seed}
+Der IOTA Seed ist essentiell wichtig für die Funktion von IOTA. Er fungiert als "`Kontonummer"' und verweist auf die Menge an IOTAs die dem Konto zugeordnet werden (das IOTA-Wallet). Wenn der Besitzer des Seeds eine Transaktion durch die IOTA-Tangle veranlassen möchte, wird mit Hilfe von kryptographischen Hashfunktionen eine Adresse aus dem Seed erstellt [s. Sicherheit]. Diese Adresse kann nun genutzt werden um IOTAs zu empfangen oder, sollte sie bereits einen Wert besitzen, zu versenden. Adressen können nur durch den Seed generiert werden und es ist (technisch) unmöglich von der Adresse den Seed wiederherzustellen. [31] Ein Seed besteht aus 81 Trytes die dank des von IOTA zur Verfügung gestellten "`Tryte-Alphabet"' durch die 26 Großbuchstaben A-Z des Alphabets und der Zahl 9 dargestellt werden.
+
+\subsection{Tangle}
+Bei Tangle handelt es sich um ein Distributed Ledger Software Protokoll, welches sich grundlegend von Blockchain unterscheidet. Die Tangle-Technologie wird von den Entwicklern als nächste evolutionäre Weiterentwicklung der Blockchain beschrieben. [21] Die Technologie nimmt sich den Schwächen der Blockchain an und integriert Lösungen für diese. Konzeptionell bedeutet dies, dass die heterogene Unterscheidung von Minern und Usern in Blockchains homogenisiert werden soll, indem Transaktionen von Nutzern verifiziert werden sollen, die selber eine Transaktion veranlassen möchten. So löst sich das Problem der Skalierung und zugleich fallen die Transaktionsgebühren weg. Letzteres ist möglich, da es zwingend notwendig ist, andere Transaktionen zu verifizieren, falls eine eigene Transaktion aufgegeben werden soll. So "`zahlt"' der Nutzer die Gebühren mit Rechenleistung.
+
+Tangle wurde von der IOTA-Foundation entwickelt und kommt in der gleichnamigen Kryptowährung IOTA zum Einsatz.
+
+Anders als bei Blockchain ist es nicht möglich, neue Tokens zu "`minen"' (bedeutet: herzustellen). Es besteht seit der Entwicklung ein fester Betrag an verfügbaren Tokens von genau 2.779.530.283 MIOTA (1 MIOTA = 1.000.000 IOTA). [22] Die Tangle richtet sich nach einem Mathematischen Konzept, dem Directed Acyclic Graph. Mit diesem Konzept speichert IOTA die Transaktionen.
+Eine Transaktion muss von einem Node aufgegeben werden. Sobald eine Transaktion nicht verifiziert werden kann, kann die ursprüngliche Transaktion nicht ausgehen. [21]
+
+\subsection{Directed Acyclic Graph}
+Die IOTA-Tangle ist aufgebaut in Form eines "`Directed Acyclic Graph"' (DAG) was in diesem Kontext bedeutet, dass sie sich in eine Richtung bewegt und niemals kreisförmig ist.[32] Damit eine neue nicht verifizierte Transaktion in die Tangle aufgenommen werden kann, ist neben dem Proof-of-Work eine Verifikation von zwei ebenfalls nicht verifizierten Transaktionen notwendig. Diese beiden Transaktionen werden in dem Transaktions-Bundle abgespeichert und sind dementsprechend referenziert. Da nur nicht verifizierte Transaktionen in diesem Prinzip verwendet werden, entspricht der entstehende Graph eines DAG.
+
+\subsection{Transaktion}
+Eine Transaktion in IOTA besteht aus mehreren Hashes und Werten, die jeweils untereinander eine verschiedene Aufgabe erfüllen. In den folgenden Abschnitten werden diese detailliert aufgeführt.
+
+\paragraph{signatureMessageFragment}
+Sollte die Transaktion eine ausgehende Zahlung sein, wird dieses Feld benötigt um die Signatur des privaten Schlüssels zu enthalten. Die Länge der Signatur ist davon abhängig, mit welcher Sicherheitsstufe diese Transaktion gehasht wird. Sollte die Sicherheitsstufe 2 oder 3 sein, wird eine weiter wertlose Transaktion benötigt. Diese speichert in dem noch freien Signature Message Fragment den Rest der Signatur der vorangehenden ausgehenden Zahlung.
+
+Sollte jedoch die Signatur des privaten Schlüssels nicht erforderlich sein, verbleibt dieses Feld leer und kann für das Übertragen einer Nachricht genutzt werden.
+Diesem Feld werden 2187 Trytes reserviert.
+
+\paragraph{hash}
+In diesem Feld wird der "`transaction Hash"' nach dem Finden der "`nonce"' und dem Proof-of-Work abgespeichert.
+
+\paragraph{address}
+Die Adresse der Transaktion wird erneut für verschiedene Aufgaben verwendet, die sich aus der Art der Transaktionen definieren. Sollte eine Zahlung durchgeführt werden, wird in diesem Feld die Adresse des Empfängers angegeben. Handelt es sich jedoch um einen Geldeingang so ist hier eine Adresse aufgeführt die aus einem private Key des Besitzers Seed erstellt wurde.
+Der Adresse sind 81 Trytes reserviert.
+
+\paragraph{value}
+Der Wert einer Transaktion definiert dessen Art. Sollte dieser Wert positiv sein, handelt es sich um eine zahlende Transaktion (Output). In dem Feld "`Address"' wird sich in diesem Fall die Adresse des Empfängers befinden und das Feld "`Signature Message Fragment"' ist entweder leer oder beinhaltet eine benutzerspezifische Nachricht.
+
+Sollte der Wert negativ sein handelt es sich bei der Transaktion um eine empfangene Transaktion (Input). Das Feld "`Address"' enthält entsprechend eine Adresse die dank des Seeds und einem daraus entstandenen private Key generiert wurde. Eine eingehende Transaktion enthält einen negativen Wert, um den positiven Wert einer ausgehende Zahlung im Bundle zu rechtfertigen. Zwangsläufig wurde diese Adresse zuvor von einer fremden IOTA-Transaktion als Empfänger Adresse genutzt.
+
+Um den Besitz des entsprechenden privaten Schlüssels zu beweisen, wird in dem "`Signature Message Fragment"' die Signatur durch den privaten Schlüssel abgespeichert. Sollte die Sicherheitsstufe größer als 1 sein, werden weitere Transaktionen benötigt, um die gesamte Signatur zu speichern.
+
+Trägt dieses Feld keinen Wert und entspricht 0, handelt es sich bei der Transaktion entweder um das Versenden einer einfachen Nachricht an eine Empfängeradresse oder wird genutzt um die Signatur einer vorangehenden Transaktion zu speichern.
+
+Für dieses Feld wurden 27 Trytes reserviert.
+
+\paragraph{obsoleteTag}
+Der obsolete Tag enthält einen von Benutzer definierten Tag. Dieser könnte in zukünftigen IOTA - Iterationen entfernt werden.
+Die reservierte Länge dieses Feldes beträgt 27 Trytes.
+
+\paragraph{timestamp}
+Der Zeitpunkt ist nicht verpflichtend und kann ausgelassen werden.
+Ihm werden 9 Trytes reserviert.
+
+\paragraph{currentIndex}
+Dieses Feld zeigt die momentane Position im Bundle.
+Ihm werden ebenfalls 9 Trytes reserviert.
+
+\paragraph{lastIndex}
+Dieses Feld führt den Index der letzten Transaktion des umfassenden Bundles auf und liefert dementsprechend die Länge dessen.
+Reserviert werden erneut 9 Trytes.
+
+\paragraph{bundle}
+Dieses Feld enthält den Hash des umfassenden Bundles. Er wird genutzt um alle Transaktionen dieses Bundles zu gruppieren. Jede Transaktion in einem Bundle enthält in diesem Feld denselben entsprechenden Bundle Hash.
+
+\paragraph{branch- \& trunkTransaction}
+Diese beiden Felder sind jeweils 81 Trytes lang und enthalten zwei zufällig gewählte, nicht verifizierte Transaktionen aus der Tangle. Nicht verifizierte Transaktionen im Tangle werden "'Tips"' genannt. Jede Transaktion ist verpflichtet, zwei zufällig gewählte Tips in der Tangle zu verifizieren, um selbst als Tip aufgenommen zu werden.
+
+\paragraph{tag}
+Dieser Tag wird vom Benutzer gewählt und kann frei vergeben werden. Er kann die Suche einer Transaktion im Tangle unterstützen. Seine Länge in der Transaktion beträgt 27 Trytes.
+
+\paragraph{attachmentTimestamp}
+Dieses neun Trytes große Feld beinhaltet den Zeitpunkt direkt nachdem der Proof-of-Work durchgeführt wurde. 
+
+\paragraph{attachmentTimestampLowerBound \& attachmentTimestampUpperBound}
+Diese beiden Felder zeigen ein Intervall auf in der die Aufnahme in die Tangle geschah. Sie sind jeweils 9 Trytes groß.
+
+\paragraph{nonce}
+Die nonce ist ein besonders wichtiger Teil einer Transaktion, denn sie wird benötigt um den Proof-of-Work durchzuführen. Die Länge dieses Feldes beträgt 27 Trytes.
+
+\subsection{Zusammenfassung}
+Rechnet man die Längen aller Felder zusammen, so erhält man die gesamte Länge von 2673 Trytes. Dies ist die von der IOTA-Foundation vorgegebene Länge die eine Transaktion haben soll. Die Art einer Transaktion bestimmt sich durch den Wert. Sollte eine Transaktion einen negativen Wert haben, so handelt es sich dabei um eine "`Input"' Transaktion. Bei einem positiven Wert, wird Balance an eine "`Output"' Adresse geschickt. Viele Felder tragen eine wichtige Aufgabe für die Aufnahme in der Tangle. So wird das Feld "`signatureMessageFragment"` entweder für benutzerspezifische Nachrichten genutzt oder, falls benötigt, für die Signatur.[33]
+
+\subsection{Proof-of-Work}
+Um Transaktionen in die Tangle zu platzieren, sind keine Gebühren notwendig. Das ist aufgrund zwei essentieller Eigenschaften möglich. Zum Einen muss jede Transaktion zwei weitere nicht verifizierte Transaktionen bestätigen, des Weiteren wird mit Rechenleistung in Form eines Proof-of-Work die Transaktion beglaubigt. Im Detail läuft dieses Verfahren wie folgt ab:
+Nachdem alle Felder der Transaktion, bis auf die "`nonce"' und den Hash für  "`bundle"', einen Wert erhalten haben, wird mit Hilfe eines Algorithmus die nonce gesucht. Diese ist 27 Trytes lang. Sobald die nonce gefunden wurde, wird sie für die letzten 27 Trytes der insgesamt 2673 Trytes der Transaktion verwendet. Diese Trytes werden durch den Curl Hash Algorithmus zu einem 81 Trytes langen Hash umgewandelt. Der Hash wird im Anschluss in Trits umgerechnet. Am Ende der resultierenden 243 Trits soll eine Folge aus Nullen stehen. Die länge der Folge wird von der IOTA-Foundation vorgegeben. So müssen die letzten Trits der Trytes, eines Transaktions Hashes, momentan mindestens 14 mal Null in Folge für die Aufnahme in der Tangle und Neun mal Null in Folge für die Aufnahme in dem Testnetzwerk betragen. Diese Vorgabe wird "`Minimum Weight Magnitude (MWM)"' genannt. Der Vorgang wird sooft wiederholt bis das vorgegebene MWM erreicht ist. Grundsätzlich kann die Aussage getroffen werden, dass mit einer steigenden MWM auch die Zeit, die für das Finden der passenden nonce benötigt wird, exponentiell ansteigt.
+
+\subsection{Bundle}
+IOTA ist nach einem Account - Schema aufgebaut, was genauer bedeutet, dass Adressen benötigt werden auf die Balance (der Fachausdruck des Geldwertes) eingegangen ist, um Balance weiter zu senden. Ein Bundle in IOTA umfasst in der Regel vier Transaktionen. Die erste Transaktion enthält die Adresse des Empfängers. Diese Transaktion wird mit einer positiven Balance versehen. In dem Bundle ist dies eine sogenannte "`Output"' - Transaktion. Daraufhin folgen in der Regel, abhängig von der gewählten Sicherheitsstufe, zwei Transaktionen. Jede dieser Transaktionen basiert auf der gleichen Adresse, auf der zuvor Balance eingegangen ist. In anderen Worten muss diese Adresse zuvor Teil einer "`Output"' - Transaktion gewesen sein. Es werden mehrere Transaktionen benötigt, da die Signatur des privaten Schlüssels mit versandt wird. Diese Signatur vergrößert sich, abhängig von der gewählten Sicherheitsstufe. Eine Transaktion, die sich einer Adresse bedient, die zuvor Balance empfing, nennt sich "`Input"' - Transaktion. Sollte die Balance der Input Transaktion nicht ausreichen um den Betrag der Output Transaktion zu decken, müssen weitere "`Input"' - Transaktionen angefügt werden, die jeweils durch ihren privaten Schlüssel signiert werden. Sollte die Balance der "`Input"' - Adressen den Wert der 2Output"' - Transaktion überschreiten, wird der Restwert an eine 2Output"' - Adresse des Besitzers übertragen. Solange der summierte Wert der "`Input"'-Adressen nicht überschritten wird, können beliebig viele "`Output"'-Adressen einem Bundle an gehangen werden.
+
+Da Bundles atomar sind, werden entweder alle oder keine Transaktion verifiziert.
+
+\subsection{Signatur}
+Bei IOTA werden ausgehende Zahlungen (Output) mit zuvor eingegangenen Zahlungen (Input) durchgeführt. Um den Besitz des notwendigen Inputs nachzuweisen, verwendet IOTA die "`Winternitz One Time Signature"'. Diese Art der Signatur veröffentlicht einen Teil des privaten Schlüssels und wird aus diesem Grund für den einmaligen Gebrauch von Signaturen verwendet. Um die Funktionsweise einer "`One Time Signature"' (kurz OTS) zu verdeutlichen, wird die ähnliche Lamport OTS in einem fiktiven Beispiel herangezogen.
+
+Ein privater Schlüssel besteht aus zwei gleichlangen Zahlenfolgen "`k1"' \& "`k2"'. Die Länge des jeweiligen Schlüssel Teils stimmt mit der Länge der zu signierenden Nachricht überein. In diesem Beispiel beträgt die Schlüssellänge 512 (2x 256). Die Nachricht kann eine beliebige Zeichenkette sein, die bspw. durch den SHA-256 Hash Algorithmus zu einem Hash "`H"' mit der Länge von insgesamt 256 Bits umgewandelt wurde. Der Wert eines Bits kann ausschließlich Null oder Eins betragen. In einer Schleife wird jeder Wert des Hashes durchlaufen. Beträgt der Wert H(n) des Hashes an der Stelle n => H(n) = 0, so wird der Wert des ersten Schlüssel Teils an selbiger Stelle für die Signatur Sig(n) = k1(n)  verwendet. Sollte jedoch der Wert H(n) des Hashes an der Stelle n => H(n) = 1 betragen, wird der Wert des zweiten Schlüssel Teils in der Signatur Sig(n) = k2(n) verwendet. Nach dem erfolgreichen Durchlaufen des Hashes "`H"' wurde eine Signatur "`Sig"' mit einer Länge von 256 angefertigt. Die Signatur enthält 50\% der Werte des privaten Schlüssels.
+
+Damit der Empfänger die Signatur überprüfen kann, benötigt er den öffentlichen Schlüssel. Dieser ist bspw. ein, durch den SHA-256 Hash Algorithmus angefertigter, Hash "`pub"' des privaten Schlüssels.
+Der Empfänger erhält die Nachricht, die Signatur “Sig” und den öffentlichen Schlüssel "`pub"'. Er wiederholt den Vorgang, den der Versender der Nachricht für die Signatur angewandt hat, mit dem öffentlichen, mitgelieferten Schlüsselpaar "`pub1"' \& "`pub2"' anstatt des privaten Schlüsselpaars "`k1"' \& "`k2"'. Als Resultat erhält er eine gehashte Variante "`HSig"'. Sollte jeder Wert der "`HSig(n)"' identisch mit jedem Hash-Wert der Signatur "`SHA-256( Sig(n) )"' sein, ist die Integrität der Nachricht gewährleistet.
+%http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.924.4691&rep=rep1&type=pdf
+%https://www.youtube.com/watch?v=EohFxzWLh1U&t=394s&index=9&list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza
