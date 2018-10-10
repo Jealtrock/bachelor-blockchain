@@ -1,13 +1,45 @@
-\begin{thebibliography}{DBT10}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{EGSvR16}
 
 \bibitem[bal08]{artikelbeispiel}
 {\sc bala, Bla}: {\em Dies ist ein Article Test}.
 \newblock Welt der Wunder, 323(10):192--200, 2008.
 
+\bibitem[Bro09]{je:ellipticCurve}
+{\sc Brown, Daniel R.~L.}: {\em Elliptic Curve Cryptography}.
+\newblock http://www.secg.org/sec1-v2.pdf, 2009.
+\newblock Abgerufen am 08.10.2018.
+
+\bibitem[CNP{\etalchar{+}}16]{je:useBitcoin}
+{\sc Crosby, Michael~(Google)}, {\sc (Yahoo) Nachiappan}, {\sc (Yahoo)~Pradan
+  Pattanayak}, {\sc (Samsung Research America)~Sanjeev Verma} \btxandlong{}\
+  {\sc (Fairchild Semiconductor)~Vignesh Kalyanaraman}: {\em BlockChain
+  Technology: Beyond Bitcoin}.
+\newblock
+  https://j2-capital.com/wp-content/uploads/2017/11/AIR-2016-Blockchain.pdf,
+  2016.
+\newblock Abgerufen am 09.10.2018.
+
+\bibitem[CY04]{je:lamportSignature}
+{\sc Chang, Ming-Hsin} \btxandlong{}\ {\sc Yi-Shiung Yeh}: {\em Improving
+  Lamport one-time signature scheme}.
+\newblock
+  http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.924.4691\\\&rep=rep1\&type=pdf,
+  2004.
+\newblock Abgerufen am 07.10.2018.
+
 \bibitem[DBT10]{buchbeispiel}
 {\sc Doe, John}, {\sc Bertold Brecht} \btxandlong{}\ {\sc Testi Tester}: {\em
   Example Title}.
 \newblock Examplisher, 2010.
+
+\bibitem[EGSvR16]{je:whatIsBitcoin}
+{\sc Eyal, Ittay}, {\sc Adem~Efe Gencer}, {\sc Emin~G\"un Sirer} \btxandlong{}\
+  {\sc Robbert van Renesse}: {\em Bitcoin-NG: A Scalable Blockchain Protocol}.
+\newblock
+  https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-eyal.pdf,
+  2016.
+\newblock Abgerufen am 07.10.2018.
 
 \bibitem[Hig17]{bitcoin20000}
 {\sc Higgins, Stan}: {\em From \$900 to \$20,000: Bitcoin's Historic 2017 Price
@@ -21,5 +53,27 @@
 {\sc Nakamoto, Satoshi}: {\em Bitcoin Whitepaper}.
 \newblock www.whitepaper.de/bitcoin/sn, 2008.
 \newblock Abgerufen am \today.
+
+\bibitem[Pop17]{je:theTangle}
+{\sc Popov, Serguei}: {\em The Tangle}.
+\newblock http://iotatoken.com/IOTA\_Whitepaper.pdf, 2017.
+\newblock Abgerufen am 07.10.2018.
+
+\bibitem[RS]{je:whatIsHash}
+{\sc Rogaway, Phillip} \btxandlong{}\ {\sc Thomas Shrimpton}: {\em
+  Cryptographic Hash-Function Basics: Definitions, Implications, and
+  Separations for Preimage Resistance, Second-Preimage Resistance, and
+  Collision Resistance}.
+\newblock
+  https://link.springer.com/content/pdf/10.1007%2F978-3-540-25937-4_24.pdf.
+\newblock Abgerufen am 07.10.2018.
+
+\bibitem[SSUF16]{je:blockchainBasics}
+{\sc Schlatt, Vincent}, {\sc Andr\'e Schweizer}, {\sc Nils Urbach}
+  \btxandlong{}\ {\sc Gilbert Fridgen}: {\em Blockchain: Grundlagen,
+  Anwendungen und Potenziale}.
+\newblock https://www.fim-rc.de/Paperbibliothek/Veroeffentlicht/642/wi-642.pdf,
+  2016.
+\newblock Abgerufen am 07.10.2018.
 
 \end{thebibliography}
