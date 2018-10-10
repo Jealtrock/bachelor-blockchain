@@ -1,9 +1,17 @@
 \chapter{Sicherheit}
-Für die Beantwortung der zugrundeliegenden Thesis müssen die Sicherheitsmechanismen untersucht werden, durch die die Distributed Ledger Technologien vor Angriffen geschützt sind. Die auserwählten Technologien werden darüber hinaus auch darauf geprüft, wie gut die Zahlungsmittel in einer Wallet vor Diebstahl geschützt sind. Dies beinhaltet auch zu prüfen, mit welchen Verschlüsselungsalgorythmen gearbeitet wird und wie hoch die Warscheinlichkeit ist, diesen Algorythmus lösen zu können. Weiterhin wird geprüft, welche Ausmaße fehlerhafte Nutzung der Kryptowährung auf die Sicherheit hat.
+Für die Beantwortung der zugrundeliegenden Fragestellung, ob die ausgewählten Distributed Ledger Technologien Zukunftsfähig sind, müssen die Sicherheitsmechanismen untersucht werden, durch die diese Technologien vor Angriffen geschützt sind. Die gewählten Technologien werden darüber hinaus auch darauf geprüft, wie gut die Zahlungsmittel in der jeweiligen virtuellen Geldbörse (Wallet) vor Diebstahl geschützt sind. Dies beinhaltet auch zum einen, mit welchen Verschlüsselungsalgorithmen gearbeitet wird und zum anderen wie hoch die Wahrscheinlichkeit ist, diesen Algorithmus lösen zu können. Weiterhin soll ergründet werden, welche Ausmaße fehlerhafte Nutzung der Technologie auf die Sicherheit hat.
 
 \section{Bitcoin}
+Bitcoin setzt bei seiner Implementierung auf die Blockchain-Technologie, diese enthält intrinsische Sicherheitsrisiken, die bei der Umsetzung dieser Kryptowährung adressiert werden mussten. Im folgenden werden diese Risiken und das entsprechende Sicherheitsmerkmal auf Zukunftssicherheit geprüft.
 
-\subsection{Wallet Schutz}
+\subsection{Konto Sicherheit}
+Bitcoins befinden sich in einer digitalen Geldbörse. Diese Geldbörse ist vereinfacht betrachtet ein digitaler Schlüssel zu dem nur der Eigentümer Zugang haben sollte. Es ist nur mit diesem Schlüssel möglich, zu beweisen welche und wie viele Bitcoins einer bestimmten Person zugeordnet sind.
+Aus diesem privatem Schlüssel kann der öffentliche Schlüssel nachvollzogen werden, die eine Adresse darstellt, an die Bitcoins gesendet oder, von ihr ausgehend, Bitcoins versendet werden. Dieser Vorgang ist nicht invertierbar.
+
+Ein privater Schlüssel bei Bitcoin basiert auf das ECC256 Verschlüsselungsverfahren (referenz zu jens hinzufügen) und besteht damit aus 256 Bits, die zur besseren Lesbarkeit oft mit Buchstaben von 'a-z', 'A-Z' und den Zahlen '0-9' bestehen.
+
+
+Um Bitcoins an einer Adresse Speichern zu können
 - wallet anlegen, wie viele verschiedene wallets könnte es geben – wie hoch warscheinlichkeit, dass 2 dieselben keys bekommen
 
 \subsection{Anonymität}
@@ -23,12 +31,61 @@ Für die Beantwortung der zugrundeliegenden Thesis müssen die Sicherheitsmechanis
 - falls bugs gefunden werden, kann man sie fixen?\\
 
 \section{IOTA}
-- IOTA White paper, possible attack scenarios
-- quantenresistenz durch one time hash
-- wie wird eine einzelne transaktion verifiziert
-- wann ist eine transaktion verifiziert
+IOTA nutzt im Gegensatz zu Bitcoin keine Blockchain-Technologie, sondern setzt auf ein sogenanntes Tangle, welches wiederum auf einem mathematischem Konzept basiert, welches sich Directed-Acyclic-Graph (DAG) nennt (siehe zu Tangle Grundlagen \ref{grundlagen:tangle} auf Seite \pageref{grundlagen:tangle}). Dieses Konzept unterscheidet sich grundsätzlich von Blockchain und weist unter diesem Aspekt andere Sicherheitsrisiken auf. Im folgenden sollen diese beschrieben werden.
+
+\subsection{Konto Sicherheit}
+Auch bei IOTA besteht das Konto aus einem digitalen Schlüssel, dem Seed. Dieser Seed sollte nur dem Eigentümer verfügbar gemacht werden, da jede Person mit diesem Seed, über die zugeordneten IOTAs verfügen kann. Für einen optimalen Schutz vor digitalem Diebstahl nur lokal (ohne Internetzugang) erstellt und gespeichert werden. Wenn diese allgemeinen Sicherheitsvorschläge eingehalten werden, besteht hier noch kein nennenswertes Risiko.
+
+Ein Seed besteht aus 81 Trytes (siehe zu Trytes Grundlagen \ref{grundlagen:tritsundtrytes} auf Seite \pageref{grundlagen:tritsundtrytes}). Ein Tryte enthält drei Trits und kann folglich 27 ganze Zahlen darstellen. Daraus ergeben sich $ 27^{81} \approx 8,72 \times 10^{115} $ verschiedene Kombinationsmöglichkeiten. Das heißt, die Wahrscheinlichkeit, dass eine andere Instanz denselben Seed generiert wie der Eigentümer ist $ 1 : 8,72 \times 10^{115} $, damit ist die Anzahl der Kombinationsmöglichkeiten deutlich höher als die Anzahl der Atome im bekannten Universum.\\
+
+Durch das One-Time-Winternitz hashing (hier referenz einfügen zu entweder Grundlagen oder Funktion) ist eine Adresse für ausgehende Zahlungen nur einmal zu benutzen, da ein Teil des privaten Schlüssels bekannt wird, sollte die Adresse mehr als einmal genutzt werden, so wird zu viel des privaten Schlüssels öffentlich gemacht und eine Entschlüsselung wird zunehmend einfacher. Ist der private Schlüssel vollständig enthüllt, kann der Angreifer auf die IOTAs zugreifen die auf der Adresse hinterlegt sind.
+
+Hierdurch eröffnet sich ein Risiko, welches der Nutzer von IOTA selbst entgegnen muss, wenn er nicht das offizielle IOTA-Wallet Programm nutzt um Transaktionen zu erstellen. Hierzu muss angemerkt werden, dass durch die Kompromittierung des privaten Schlüssels nicht der Seed oder alle anderen Adressen gefährdet sind.
+
+\subsection{Anonymität}
+Es ist wichtig zu betrachten, wie Anonym die Identität im Tangle-Netzwerk ist. Zum einen was einige Nutzer über andere Nutzer wissen können und zum anderen was in einer Transaktion über die Identität preisgegeben wird.
+
+Vorerst muss notiert werden, dass Anonymität keine Priorität in der Entwicklung von IOTA gewesen ist und auch nicht primär für diesen Zweck entwickelt worden ist. (Quelle bitte angeben)
+- bezahlen mit bitcoin, was wird über die identität revealed\\
+
+Um eine Transaktion zu veranlassen wird ein Paar aus privatem und öffentlichem Schlüssel benötigt, welche aus dem Seed und einem Adressindex generiert werden. Der öffentliche Schlüssel dient hierbei als Adresse die man an seinen Transaktionspartner senden kann. Der private Schlüssel sollte verborgen bleiben, denn jener Schlüssel wird genutzt um die Inputs eines Bundles zu signieren. Damit wird bewiesen, dass der Ersteller der Transaktion den privaten Schlüssel zu der Adresse besitzt und folglich der Eigentümer ist.
+
+\subsection{Validität einer Transaktion}
+- wie wird eine einzelne transaktion verifiziert, wie wird bestimmt dass sie gültig ist\\
+- wann ist eine transaktion verifiziert\\
+
+\subsection{Angriffsszenarios}
+Die Tangle ermöglicht durch ihre DAG spezifische Arten von Attacken die im weiteren Fortgang erläutert werden sollen. Durch die Darstellung der möglichen Angriffe, werden weitere Sicherheitsmechanismen veranschaulicht.
+
+\subsubsection{34\%-Attacke}
+Ein böswilliger Nutzer könnte mit mehr als 34\% der Gesamtrechenleistung im Tangle-Netzwerk einen Angriff starten indem er falsche Transaktionen mit vielen anderen selbst initiierten Transaktionen verifiziert und damit im DAG einen Strang erzeugt der falsche Informationen über die verfügbaren IOTAs enthält.
+
+Dem entgegenwirken soll der, von der IOTA-Foundation bereitgestellte, Coordinator. Dieser ist ein Node, der eigenständig Transaktionen erstellt, die als Meilenstein (Milestone) gelten. Der Milestone dient als Beweis, dass die vorherigen Transaktionen korrekt sind. Jede Transaktion muss diese Coordinators indirekt oder direkt referenzieren.
+
+Diese Coordinators bieten jedoch eine neue Angriffsfläche. Dabei geht es um das derzeit nicht vollkommen dezentrale System der Tangle bei IOTA. IOTA löst also noch nicht das Problem, ohne dritte Instanz Transaktionen vermitteln zu können. Laut IOTA-Foundation sollen die Coordinators ihren Dienst einstellen, sobald das Tangle Netzwerk ausreichend groß ist, um 34\%-Attacken durch eine zu hohe Anforderung an Rechenleistung abwehren zu können.
+
+\subsubsection{reorg}
+
+\subsubsection{Parasiten-Kette}
+
+- wie schützt sich das Bitcoin netzwerk vor Angriffen\\
+- welche angriffsszenarios sind denkbar\\
+- was kann dagegen getan werden\\
+
+\subsection{Zukunftssicherheit}
+In diesem Abschnitt soll erfasst werden, wie sich IOTA in einer voranschreitenden Entwicklung von Technologien behaupten kann.
+
+\subsubsection{Quantenprozessorresistenz}
+Bei der Frage nach Zukunftssicherheit bei IOTA geht es auch um die Resistenz vor Quantenprozessoren. Genauer soll betrachtet werden, ob sich die Fertigstellung von diesen leistungsstarken Prozessoren auf die Sicherheit und Beständigkeit von IOTAs auswirkt.
+
+Hierbei ist es nötig, auf den Winternitz onetime hashing algorithmus zurückzugreifen um zu verstehen wie sich der Algorithmus auf Quantenresistenz auswirkt.
+
+\subsubsection{Bugfixing}
+Der Source-Code von IOTA ist öffentlich zugänglich, das macht flexible Anpassungen an das IOTA-Netzwerk von verschiedenen Individuen möglich. Falls eine große Sicherheitslücke aufkommt, die auf einen Fehler im Code zurückzuführen ist, kann diese behoben werden und eine aktualisierte Version kann veröffentlicht werden. Jedoch muss diese Anpassung von allen Nodes übernommen werden, da sonst neue Transaktionen möglicherweise nicht mehr akzeptiert werden würden.
 
 \section{Gegenüberstellung}
+- Iota nennt sich nachfolger von blockchain, welche Sicherheits risiken wurden dort gelöst und welche sind neu aufgekommen
+
 [Tabelle mit kriterien und vergleichen]
 
 \section{Ergebnis}
