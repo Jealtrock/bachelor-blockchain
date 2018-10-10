@@ -4,6 +4,7 @@
 *.dvi
 *.lof
 *.log
+*.pdf
 *.lot
 *.toc
 *.tps
