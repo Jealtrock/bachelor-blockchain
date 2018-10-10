@@ -71,8 +71,8 @@ Class=LaTeXView
 Document=chapters\jens\funktion.tex
 
 [Frame3_View0,0]
-TopLine=103
-Cursor=7208
+TopLine=135
+Cursor=10074
 
 [Frame4]
 Flags=0
@@ -108,7 +108,7 @@ Document=quellen.bib
 
 [Frame5_View0,0]
 TopLine=76
-Cursor=2868
+Cursor=2865
 
 [Frame6]
 Flags=0
@@ -130,5 +130,5 @@ Cursor=125
 
 [SessionInfo]
 FrameCount=7
-ActiveFrame=5
+ActiveFrame=3
 

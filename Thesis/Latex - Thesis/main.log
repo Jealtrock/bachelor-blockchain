@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  9 OCT 2018 20:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  10 OCT 2018 18:20
 entering extended mode
 **./main.tex
 (main.tex
@@ -457,6 +457,12 @@ Package etexcmds Info: Could not find \expanded.
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count111
 ))
+("C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty"
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip57
+\thanksmargin=\skip58
+\droptitle=\skip59
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )) (main.aux)
@@ -524,17 +530,15 @@ bibgerm.sty: babel.sty detected
 
 \c@lstlisting=\count118
 (chapters/deckblatt.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+<images/hsblogo.png, id=1, 339.76938pt x 157.92334pt>
+File: images/hsblogo.png Graphic file (type png)
+<use images/hsblogo.png>
+Package pdftex.def Info: images/hsblogo.png  used on input line 6.
+(pdftex.def)             Requested size: 339.76854pt x 157.92294pt.
+ [1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{C:/Users/JayPi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+{C:/Users/JayPi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>]
+[2
 
 ]) ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
@@ -546,7 +550,6 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 12.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<images/hsblogo.png, id=10, 339.76938pt x 157.92334pt>
 File: images/hsblogo.png Graphic file (type png)
 <use images/hsblogo.png>
 Package pdftex.def Info: images/hsblogo.png  used on input line 32.
@@ -566,6 +569,15 @@ Underfull \vbox (badness 1147) has occurred while \output is active []
 
 
 ]
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|\T1/cmr/m/n/12 Distributed
  []
@@ -631,11 +643,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./images/hsblogo.png>] [3
+[2] [3
 
 ] [4
 
-] (main.toc [5] [6])
+] (main.toc [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -651,10 +666,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
- [11] [12
 
-]
-(chapters/einleitung.tex
+[11] [12
+
+] (chapters/einleitung.tex
 Kapitel 1.
 
 Underfull \vbox (badness 5563) has occurred while \output is active []
@@ -759,10 +774,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--160
 ]
 Kapitel 5.
 
-Underfull \vbox (badness 1303) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
- [29]) (chapters/janusz/programmierbarkeit.tex
-[30]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
+
+ []
+
+) (chapters/janusz/programmierbarkeit.tex [30]
 Kapitel 6.
 ) (chapters/jens/nutzen.tex [31
 
@@ -936,13 +967,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--78
 
 ) [66] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 7515 strings out of 492970
- 99902 string characters out of 3135855
- 352551 words of memory out of 3000000
- 11160 multiletter control sequences out of 15000+200000
- 34146 words of font info for 95 fonts, out of 3000000 for 9000
+ 7565 strings out of 492970
+ 100565 string characters out of 3135855
+ 353244 words of memory out of 3000000
+ 11207 multiletter control sequences out of 15000+200000
+ 30456 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,48p,1771b,1226s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,47p,1771b,1226s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\J
 ayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\f
 onts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\
@@ -953,16 +984,15 @@ ljfour\public\mnsymbol\dpi600\MnSymbolE12.pk> <C:\Users\JayPi\AppData\Local\MiKT
 0\ecrm1000.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\JayPi\
 AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\
 pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-bx1440.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\JayPi\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\l
-jfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx24
-88.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\JayPi\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (80 pages, 399197 bytes).
+bx1440.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\JayPi\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx12
+00.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (80 pages, 382916 bytes).
 PDF statistics:
- 936 PDF objects out of 1000 (max. 8388607)
+ 886 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
