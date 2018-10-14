@@ -1,34 +1,78 @@
 \chapter{Sicherheit}
-Für die Beantwortung der zugrundeliegenden Fragestellung, ob die ausgewählten Distributed Ledger Technologien Zukunftsfähig sind, müssen die Sicherheitsmechanismen untersucht werden, durch die diese Technologien vor Angriffen geschützt sind. Die gewählten Technologien werden darüber hinaus auch darauf geprüft, wie gut die Zahlungsmittel in der jeweiligen virtuellen Geldbörse (Wallet) vor Diebstahl geschützt sind. Dies beinhaltet auch zum einen, mit welchen Verschlüsselungsalgorithmen gearbeitet wird und zum anderen wie hoch die Wahrscheinlichkeit ist, diesen Algorithmus lösen zu können. Weiterhin soll ergründet werden, welche Ausmaße fehlerhafte Nutzung der Technologie auf die Sicherheit hat.
+Für die Beantwortung der zugrundeliegenden Fragestellung, ob die ausgewählten Distributed Ledger Technologien Zukunftsfähig sind, müssen die Sicherheitsmechanismen untersucht werden, durch die diese Technologien vor Angriffen geschützt sind. Die gewählten Technologien werden darüber hinaus auch darauf geprüft, wie gut die Zahlungsmittel in der jeweiligen virtuellen Geldbörse (Wallet) vor Diebstahl geschützt sind. Dies beinhaltet auch zum einen, mit welchen Verschlüsselungsalgorithmen gearbeitet wird und zum anderen wie sicher sie sind. Weiterhin soll ergründet werden, welche Ausmaße fehlerhafte Nutzung der Technologie auf die Sicherheit hat.
 
 \section{Bitcoin}
 Bitcoin setzt bei seiner Implementierung auf die Blockchain-Technologie, diese enthält intrinsische Sicherheitsrisiken, die bei der Umsetzung dieser Kryptowährung adressiert werden mussten. Im folgenden werden diese Risiken und das entsprechende Sicherheitsmerkmal auf Zukunftssicherheit geprüft.
 
 \subsection{Konto Sicherheit}
-Bitcoins befinden sich in einer digitalen Geldbörse. Diese Geldbörse ist vereinfacht betrachtet ein digitaler Schlüssel zu dem nur der Eigentümer Zugang haben sollte. Es ist nur mit diesem Schlüssel möglich, zu beweisen welche und wie viele Bitcoins einer bestimmten Person zugeordnet sind.
-Aus diesem privatem Schlüssel kann der öffentliche Schlüssel nachvollzogen werden, die eine Adresse darstellt, an die Bitcoins gesendet oder, von ihr ausgehend, Bitcoins versendet werden. Dieser Vorgang ist nicht invertierbar.
+Bitcoins gehören zu einer digitalen Geldbörse. Diese Geldbörse ist vereinfacht betrachtet ein digitaler Schlüssel zu dem nur der Eigentümer Zugang haben sollte. Es ist nur mit diesem Schlüssel möglich, zu beweisen welche und wie viele Bitcoins einer bestimmten Person zugeordnet sind. Die Generierung der Schlüssel basiert auf das ECDSA Verschlüsselungsverfahren (referenz zu jens hinzufügen). 
 
-Ein privater Schlüssel bei Bitcoin basiert auf das ECC256 Verschlüsselungsverfahren (referenz zu jens hinzufügen) und besteht damit aus 256 Bits, die zur besseren Lesbarkeit oft mit Buchstaben von 'a-z', 'A-Z' und den Zahlen '0-9' bestehen.
+Aus diesem privatem Schlüssel kann der öffentliche Schlüssel nachvollzogen werden, die eine Adresse darstellt, an die Bitcoins gesendet oder, von ihr ausgehend, Bitcoins versendet werden. Der öffentliche Schlüssel wird nochmals mit SHA256 und dann mit RIPEMD-160 gehasht. Die resultierende Zeichenfolge nennt sich eine P2PKH-Adresse (Pay To Public Key Hash). Sie besteht aus 27-34 alphanumerischer Zeichen mit Ausnahme von einigen Buchstaben/Zahlen für eine bessere Lesbarkeit. Dies geschieht als Absicherung für den Fall, dass es durch einen neuentdeckten Algorithmus  möglich sein sollte, das ECDSA-Verschlüsselungsverfahren zu invertieren und den privaten Schlüssel aus dem öffentlichen Schlüssel zu generieren.
 
-
-Um Bitcoins an einer Adresse Speichern zu können
-- wallet anlegen, wie viele verschiedene wallets könnte es geben – wie hoch warscheinlichkeit, dass 2 dieselben keys bekommen
+Ein privater Schlüssel bei Bitcoin besteht aus 256 Bits. Daraus erschließen sich $ 2^{256} \approx 1,16 \times 10^{77} $ Kombinationsmöglichkeiten für einen privaten Schlüssel. Die Wahrscheinlichkeit, dass eine andere Instanz denselben Schlüssel generiert, stellt somit kein Sicherheitsrisiko dar.
 
 \subsection{Anonymität}
-- bezahlen mit bitcoin, was wird über die identität revealed\\
+Durch die vollständige, öffentlich zugängliche Historie \emph{aller} Bitcointransaktionen ist das Netzwerk transparent. Es ist möglich Bitcoins zurückzuverfolgen, um nachvollziehen zu können, durch welche Adressen diese gelaufen sind. 
+
+Aufgrund dessen liegt der Aspekt der Anonymität nicht in der Verhüllung der Transaktionen, sondern in der Verschleierung der Identität. Private und Öffentliche Schlüssel-Paare sind von der Identität des Nutzers entkoppelt, was wiederum bedeutet, dass der Schutz der Identität bei der Verantwortung des Nutzers liegt. Der Nutzer kann durch neue Schlüsselpaare versuchen seine Person weiter zu verschleiern und eine Zurückverfolgung zu erschweren. Aber auch ein sparsamen herausgeben von Informationen sollte angeführt werden als "`Best-Practise"' Umgang mit Kryptowährungen allgemein.
 
 \subsection{Validität einer Transaktion}
-- wie wird eine einzelne transaktion verifiziert, wie wird bestimmt dass sie gültig ist\\
-- wann ist eine transaktion verifiziert\\
+Eine Transaktion wird von allen Nodes verifiziert an die die Transaktion geschickt wird. Diese überprüfen die Transaktion auf diverse Kriterien wie unter anderem auf Syntax und ob die Inputs mit den Outputs übereinstimmen. Nachdem die Transaktion als valide eingestuft wurde, wird sie in die Liste hinzugefügt, die sich in dem - zu minenden - Block befindet.
 
-\subsection{Angriffsszenarios}
-- wie schützt sich das Bitcoin netzwerk vor Angriffen\\
-- welche angriffsszenarios sind denkbar\\
-- was kann dagegen getan werden\\
+Wenn der passende Hash zu dem Block gefunden wurde, wird dieser Block von der Node in das Netzwerk ausgesendet. Andere Nodes verifizieren diesen Block auf Korrektheit der Syntax und der enthaltenen Transaktionen. Nur wenn diese korrekt sind, dann wird an der Erzeugung des nächsten Blocks auf Basis des vorherigen Blocks gearbeitet.
 
-\subsection{Zukunftssicherheit}
-- ist die kryptowährung quantenprozessor resistent\\
-- falls bugs gefunden werden, kann man sie fixen?\\
+Es ist also für einen Angreifer nicht möglich ungültige Transaktionen in das Netzwerk zu veröffentlichen, da sie nicht von ehrlichen Nodes angenommen werden würden. Dasselbe gilt auch für ungültige Blöcke. Das wird garantiert durch die vollständige Historie aller Bitcoins seit dem ersten Block, die jede Full-Node gespeichert hat. Es wäre realistisch nicht Wahrscheinlich, dass ein Angreifer langfristig eine längere Kette als die Hauptblockchain erzeugen kann (mehr hierzu bei \ref{bitcoin:angriffsszenarios} auf Seite \pageref{bitcoin:angriffsszenarios}). Das ist nämlich nötig um als korrekte Kette angesehen zu werden, es gilt: Die Kette, die am meisten Rechenleistung bürgt (längste Kette) ist die Hauptkette.
+
+Jedoch sollte angemerkt werden, dass durch die Wahrscheinlichkeit, dass ein Angreifer kurzfristig mehr Blöcke erzeugen könnte, als die wahre Hauptkette, sollte eine Transaktion erst nach ca. sechs weiteren Blöcken als Bestätigt angesehen werden.
+
+\subsection{Angriffsszenarien}\label{bitcoin:angriffsszenarios}
+Im Folgenden werden diverse Angriffsszenarios auf das Bitcoin-Netzwerk beschrieben. Es wird erläutert mit welchen Mechanismen sich die Blockchain-Technologie vor diesen Angriffen schützt.
+
+\subsubsection{51\%-Attacke}
+In Satoshi Nakamotos Bitcoin-Whitepaper wird erklärt, wie eine möglicher Angriff durchzuführen wäre. Er beschreibt ein Szenario, welches als 51\%-Attacke bekannt ist. Grundlegend hiermit gemeint, das ein Angreifer mehr als 50\% der Hash-Rate (Gesamteistung) des Netzwerkes besitzt und diese Leistung nutzt um schneller eigene Blöcke in das Netzwerk zu publizieren.
+
+Dies wird nützlich, um Transaktionen die man getätigt hat ungültig zu machen indem man eine weitere Transaktion von der Adresse an eine andere, eigene Adresse erstellt. Zum Beispiel kann damit ein Verkäufer getäuscht werden, sodass die Person denkt, man hätte die Bitcoins gezahlt. Im Hintergrund jedoch erstellt der Angreifer seine eigene Blockchain mit der, zu diesem Zweck, erstellten Transaktion an die eigene Adresse, womit zugleich die anfängliche Transaktion nicht mehr in einen Block aufgenommen werden kann, da die Bitcoins nicht mehr an der hinterlegten Adresse sind. Es müssen solange Blocks erzeugt werden, bis die falsche Blockchain länger ist als die ehrliche.
+
+Bei einem erfolgreichen Angriff würde die eigene Wallet nicht mit der Zahlung an den Verkäufer belastet werden. Ein weiterer Nebeneffekt ist, das womöglich viele Transaktionen in der Hauptkette nicht mehr validiert sind und erneut aufgenommen werden müssen.
+
+Der Angriff hat jedoch Grenzen, es können keine ungültigen Blöcke vom Angreifer erstellt werden, da diese von anderen ehrlichen Nodes nicht angenommen werden würden. Der Konsens liegt weiterhin bei der Hauptkette.
+
+Dieses Szenario ist auch denkbar bei einer Hash-Rate von unter 50\%, wird jedoch immer unwahrscheinlicher je mehr Blöcke der Angreifer zurückliegt.
+\begin{figure}[h]%
+\includegraphics[scale=0.75]{26Prozent.PNG}%
+\caption{Veranschaulichung zeigt wie unwahrscheinlich es wird, je weiter man zurückliegt (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
+\label{fig:26prozent}%
+\end{figure}
+
+Langfristig kann die Hauptkette nur ersetzt werden, wenn über 50\% der Hash-Rate dem Angreifer zur Verfügung stehen.
+\begin{figure}[h]%
+\includegraphics[scale=0.75]{51Prozent.PNG}%
+\caption{Zeigt wie hoch die Wahrscheinlichkeit ist, sechs Blöcke hintereinander zu generieren (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
+\label{fig:51prozent}%
+\end{figure}
+
+Satoshi Nakamoto führt folgende Formel zur Berechnung der Wahrscheinlichkeit an, dass ein Angreifer die Blockchain einholen kann aus \emph{z} Blöcken im Rückstand. Der zeitliche Rahmen ist unbegrenzt.
+
+$ p = $ Wahrscheinlichkeit, dass ein ehrlicher Node den nächsten Block erstellt\\
+$ q = $ Wahrscheinlichkeit, dass der Angreifer den nächsten Block erstellt\\
+$ q_{z} = $ Wahrscheinlichkeit, dass der Angreifer die ehrliche Blockchain überhohlt\\
+
+$ q_{z} = 1 \quad if\ p\leq q \\
+q_{z} = $ ( $ \frac{p}{q} $ ) $^{z} \quad if\ p > q $
+
+Es geht hervor, dass die Chancen des Angreifers die Hauptkette zu überhohlen bei unter 50\% Hash-Rate exponentiell schwinden.
+
+Diese Angriffsfläche eröffnet sich aufgrund der dezentralen Architektur von Blockchain und ist ein integraler Bestandteil eines, auf Konsens beruhenden, Systems.
+
+\subsection{Anreiz zur Ehrlichkeit}
+Durch die Entlohnung in Form von Bitcoins durch das Minen und durch die Transaktionsgebühren wird an Anreiz geschaffen, das Bitcoin-Netzwerk nicht zu manipulieren. Eine Kette mit ungültigen Blöcken würde auch nicht von ehrlichen Minern angenommen werden. Daher wird erhofft (Nakamoto whitepaper referenz), dass die Belohnung und das Eigeninteresse an der Integrität von Bitcoin ausreicht um Angreifer abzuwehren.
+
+\subsection{Quantenprozessorresistenz}
+Mit der Einführung leistungsstarker Quantenprozessoren die darauf ausgelegt sind, kryptographische Algorithmen zu entschlüsseln könnten Algorithmen wie, unter anderem, ECDSA unsicher werden. Auch die starke Leistung von Quantencomputern eröffnet eine neue Angriffsfläche unter dem Aspekt, dass der Anteil von über der Hälfte der Gesamtleistung des Miner-Netzwerkes dem Nutzer langfristig eine längere Blockchain gewähren kann, auf dieses Problem wird in Kapitel \ref{bitcoin:angriffsszenarios} eingegangen.
+
+Die genutzten kryptographischen Algorithmen sind nicht bewiesen, dass sie Quantenprozessoren standhalten könnten. Indes ist das Bitcoin-Netzwerk durch ihre Architektur und Nutzung nicht gegen Quantencomputern geschützt. Aber komplett ungeschützt bleibt die Technologie nicht.
+
+Auch wenn der ECDSA mit einem entsprechenden Algorithmus gelöst werden sollte, oder durch Quantenprozessoren in anderer Hinsicht unsicher werden sollte, wird durch das hashen des öffentlichen Schlüssels genau dieser verschleiert. Er kommt nur zum Vorschein, wenn von dieser Adresse eine Zahlung ausgeht, aufgrund der Signierung. Wenn nun von da an ein neues Schlüsselpaar generiert und genutzt wird, sollten die Bitcoins an der eigenen Adresse sicher sein.
 
 \section{IOTA}
 IOTA nutzt im Gegensatz zu Bitcoin keine Blockchain-Technologie, sondern setzt auf ein sogenanntes Tangle, welches wiederum auf einem mathematischem Konzept basiert, welches sich Directed-Acyclic-Graph (DAG) nennt (siehe zu Tangle Grundlagen \ref{grundlagen:tangle} auf Seite \pageref{grundlagen:tangle}). Dieses Konzept unterscheidet sich grundsätzlich von Blockchain und weist unter diesem Aspekt andere Sicherheitsrisiken auf. Im folgenden sollen diese beschrieben werden.
@@ -51,10 +95,14 @@ Vorerst muss notiert werden, dass Anonymität keine Priorität in der Entwicklung 
 Um eine Transaktion zu veranlassen wird ein Paar aus privatem und öffentlichem Schlüssel benötigt, welche aus dem Seed und einem Adressindex generiert werden. Der öffentliche Schlüssel dient hierbei als Adresse die man an seinen Transaktionspartner senden kann. Der private Schlüssel sollte verborgen bleiben, denn jener Schlüssel wird genutzt um die Inputs eines Bundles zu signieren. Damit wird bewiesen, dass der Ersteller der Transaktion den privaten Schlüssel zu der Adresse besitzt und folglich der Eigentümer ist.
 
 \subsection{Validität einer Transaktion}
+Eine Transaktion wird von anderen Nodes validiert. Typischerweise geschieht das wenn ein Nutzer eine Transaktion in das Tangle publizieren will. Dafür muss der Nutzer zwei Transaktionen validieren. Bei diesen Transaktionen handelt es sich um "`Tips"', die noch nicht referenziert sind. Das Transaktionsobjekt muss die Tips als "`branch"'- und "`trunkTransaction"' referenzieren und überprüfen.
+
+Das Objekt wird auf Syntax und Gültigkeit geprüft. Dafür wird der Transaction-Hash abgeglichen und die Signierung überprüft. 
+
 - wie wird eine einzelne transaktion verifiziert, wie wird bestimmt dass sie gültig ist\\
 - wann ist eine transaktion verifiziert\\
 
-\subsection{Angriffsszenarios}
+\subsection{Angriffsszenarien}
 Die Tangle ermöglicht durch ihre DAG spezifische Arten von Attacken die im weiteren Fortgang erläutert werden sollen. Durch die Darstellung der möglichen Angriffe, werden weitere Sicherheitsmechanismen veranschaulicht.
 
 \subsubsection{34\%-Attacke}
@@ -64,24 +112,16 @@ Dem entgegenwirken soll der, von der IOTA-Foundation bereitgestellte, Coordinato
 
 Diese Coordinators bieten jedoch eine neue Angriffsfläche. Dabei geht es um das derzeit nicht vollkommen dezentrale System der Tangle bei IOTA. IOTA löst also noch nicht das Problem, ohne dritte Instanz Transaktionen vermitteln zu können. Laut IOTA-Foundation sollen die Coordinators ihren Dienst einstellen, sobald das Tangle Netzwerk ausreichend groß ist, um 34\%-Attacken durch eine zu hohe Anforderung an Rechenleistung abwehren zu können.
 
-\subsubsection{reorg}
-
 \subsubsection{Parasiten-Kette}
 
 - wie schützt sich das Bitcoin netzwerk vor Angriffen\\
 - welche angriffsszenarios sind denkbar\\
 - was kann dagegen getan werden\\
 
-\subsection{Zukunftssicherheit}
-In diesem Abschnitt soll erfasst werden, wie sich IOTA in einer voranschreitenden Entwicklung von Technologien behaupten kann.
-
-\subsubsection{Quantenprozessorresistenz}
+\subsection{Quantenprozessorresistenz}
 Bei der Frage nach Zukunftssicherheit bei IOTA geht es auch um die Resistenz vor Quantenprozessoren. Genauer soll betrachtet werden, ob sich die Fertigstellung von diesen leistungsstarken Prozessoren auf die Sicherheit und Beständigkeit von IOTAs auswirkt.
 
 Hierbei ist es nötig, auf den Winternitz onetime hashing algorithmus zurückzugreifen um zu verstehen wie sich der Algorithmus auf Quantenresistenz auswirkt.
-
-\subsubsection{Bugfixing}
-Der Source-Code von IOTA ist öffentlich zugänglich, das macht flexible Anpassungen an das IOTA-Netzwerk von verschiedenen Individuen möglich. Falls eine große Sicherheitslücke aufkommt, die auf einen Fehler im Code zurückzuführen ist, kann diese behoben werden und eine aktualisierte Version kann veröffentlicht werden. Jedoch muss diese Anpassung von allen Nodes übernommen werden, da sonst neue Transaktionen möglicherweise nicht mehr akzeptiert werden würden.
 
 \section{Gegenüberstellung}
 - Iota nennt sich nachfolger von blockchain, welche Sicherheits risiken wurden dort gelöst und welche sind neu aufgekommen

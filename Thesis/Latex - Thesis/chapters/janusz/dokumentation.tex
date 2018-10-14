@@ -4,6 +4,9 @@ Das Programm soll für einen realitätsnahen Anwendungsfall auf einem relativ leis
 
 Der Raspberry Pi soll in dieser prototypischen Umsetzung die Steuereinheit eines zukünftigen Autos ersetzen. Es soll mittels zwei Knöpfen bedienbar sein, die die Steuerelemente in der Armatur des Autos darstellen sollen.
 
+Da der Anspruch an starke Rechenleistung in einem Auto nicht zu hoch sein sollte (um zum Beispiel Kosten zu minimieren) ist es sinnvoll, keinen IOTA Full-Node zu betrieben, sondern nur einen Light-Node, der die Arbeit an einen Full-Node delegiert.\\
+Die Limitation der Hardware-Ressourcen ist ein Grund für die Umsetzung auf einem Raspberry Pi.
+
 Hier noch beschreiben was die anforderungen an das smartauto sind, und graphische nutzerinteraktion anzeigen. Hier soll erklärt werden, was von der tankanwendung gefordert ist, und wie sich das auf die tatsächlich umsetzung auswirkt.
 
 \section{Aufbau}
@@ -96,23 +99,139 @@ Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus d
 
 Damit die Taster eine blabla...
 
-\subsubsection{PyOta}
-Lorem ipsum
+\subsubsection{PyOTA}
+Bei PyOTA handelt es sich um eine Python-Bibliothek für IOTA. Sie implementiert die API und unterstützt Funktionalitäten um eine Transaktion eigenständig erstellen zu können\footnote{siehe dazu https://pyota.readthedocs.io/en/latest/}.
+
+Um die Bibliothek für die Umsetzung zur Verfügung zu stellen kann sie über das Paketverwaltungsprogramm für die Umgebung installiert werden.
+\begin{lstlisting}[language=bash]
+> pip install pyota
+\end{lstlisting}
+
+Eine wichtige Dependancy von PyOTA ist die Cryptography-Bibliothek. Diese wird nicht automatisch heruntergeladen und installiert, sondern dies muss manuell geschehen\footnote{mehr Informationen dazu https://cryptography.io/en/latest/installation/}.
+
+Weiterhin muss angemerkt werden, das bei Raspbian kein System-Pfad zu den zusätzlich installierten Paketen (per pip install) für Python2.7 gibt. Demzufolge muss der Pfad vor jedem Programmstart in das Suchverzeichnis hinzugefügt werden. Dies geschieht mit folgendem Code:
+\begin{lstlisting}[language=Python]
+import sys
+sys.path.append("/home/pi/.local/lib/python2.7/site-packages")  #path muss erweitert werden damit PyOta librarys gefunden werden können
+\end{lstlisting}
 
 \subsection{Ergebnis der Vorbereitung}
 Nachdem alle Vorbedingungen erfüllt sind, ist der Raspberry Pi einsatzbereit um ein Programm zu erstellen und auszuführen, welches auf Benutzereingaben an Knöpfen horcht, visuelles Feedback gibt und mit der PyOta-Bibliothek arbeitet.
 
 \section{Umsetzung}
+In diesem Abschnitt sollen die ausgewählten Programmieransätze gezeigt und besprochen werden. Es soll ein Überblick über die verwendeten Methoden geschaffen werden. Bei mehreren möglichen Methoden soll darüber hinaus deutlich werden, warum die entsprechende Methode gewählt wurde.
+
 \subsection{GPIO-Pins}
-Wie sind die GPIO-Pins eingerichtet wurden, damit man sie ansprechen kann.
+Auf dem Raspberry Pi müssen die GPIO-Pins vorkonfiguriert werden um danach einzelne Pins als Inputs oder Outputs setzen zu können. Die Funktionalität wird der vorinstallierten RPi.GPIO-Bibliothek entnommen. Sie wird zur Abkürzung fortan mit "`GPIO"' referenziert.
+\begin{lstlisting}[language=Python]
+import RPi.GPIO as GPIO     #importiere GPIO-Bibliothek für Ein-/Ausgaben von Inputs und Outputs (Buttons/LEDs)
+\end{lstlisting}
+
+Zum Ansprechen der Pins muss bestimmt werden, welche Pins mit welcher Nummer korrespondieren. Zum Beispiel hat Pin 12 eine Zweideutigkeit in dem Sinne, dass er zum einen Pin 12 bei einer, numerisch sortierten Aneinanderreihung, der zwölfte Pin des Panels ist. Zum anderen kann sich Pin 12 auch auf den Namen des Pins beziehen, in diesem Beispiel "`GPIO12"', welcher sich nicht an einer numerischen Anordnung befindet.
+
+Daher muss der Modus des Boards gesetzt werden mit folgender Code Zeile.
+\begin{lstlisting}[language=Python]
+GPIO.setmode(GPIO.BCM)
+\end{lstlisting}
+GPIO.BCM bezieht sich auf den Broadcom SOC (system on chip) Kanal, der angesprochen wird. Die Auswahl von dieser Variante hat keine Vor- oder Nachteile für das Projekt und wurde arbiträr ausgewählt.
+
+Nachdem der Modus eingestellt wurde kann nun die Datenrichtung der Pins bestimmt werden. Dafür wird der Pin als Input oder als Output gesetzt.
+\begin{lstlisting}[language=Python]
+BUTTON1 = 11
+BUTTON2 = 22
+LED = 10
+
+GPIO.setup(BUTTON1, GPIO.IN)
+GPIO.setup(BUTTON2, GPIO.IN)
+GPIO.setup(LED, GPIO.OUT, initial = False)
+\end{lstlisting}
+
+Nun sind die einzelnen Pins manipulierbar, bzw. auslesbar. Je nachdem ob man einen Output-Pin setzten möchte oder einen Input-Pin auslesen möchte, sind verschiedene Funktionen verwendbar.
+
+Zum auslesen ob ein Knopf gedrückt wurde bietet sich die folgende einfache Implementierung an. Das Programm wartet solange, bis der Knopf gedrückt und losgelassen wurde.
+\begin{lstlisting}[language=Python]
+def wait_for_button_click(button):
+    while not GPIO.input(button):
+        pass
+    while GPIO.input(button):
+        pass
+\end{lstlisting}
+Wobei der Parameter 'button' die Pin-Nummer referenziert.\\
+Es bieten sich auch andere, effizientere Methoden an, jedoch ist diese Implementierung für den Prototypen ausreichend.
+
+Um einen Output wie zum Beispiel die LED zu setzen, benötigen wir diese Code-Zeile:
+\begin{lstlisting}[language=Python]
+GPIO.output(LED, True)
+\end{lstlisting}
 
 \subsection{IOTA Einrichtung}
-public fullnode auswählen, fullnode da raspbi zu schwach um POF zu machen, dauert zulange
+Unter der Einrichtung von IOTA ist zu verstehen, die IOTA-Bibliothek so zu utilisieren, dass mit der API eine Transaktion in das Tangle-Netzwerk veröffentlicht werden kann. Für so eine Funktionalität bietet sich das Iota-Objekt an. Dieses wird dank des iota-Moduls bereitgestellt.
+\begin{lstlisting}[language=Python]
+from iota import Iota
+\end{lstlisting}
 
-\subsection{IOTA Transaktionen}
-Bezahlen mit IOTA
+Damit nun das Iota Objekt initialisiert werden kann, braucht es zwei Argumente. Den Seed, und eine Adresse zu einer Full-Node.
+
+\paragraph{Seed} Der Seed "`DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"' wurde aus einer zufälligen Kombination der Großbuchstaben 'A-Z' und der Nummer 9 eigenhändig generiert und wird für den Prototypen genutzt. Im Programmcode ist der Seed hinterlegt, dies könnte bei einer realistischen Umgebung zu Sicherheitsrisiken führen, für die prototypische Umsetzung genügt es.
+
+\paragraph{Full-Node} Aus einer Liste im Internet\footnote{siehe https://iotasalad.org/nodes}, in der einige Full-Nodes aufgelistet sind, wurde die folgende Adresse beliebig ausgesucht: https://potato.iotasalad.org:14265. Der Full-Node übernimmt die Arbeit die erstellte Transaktion in das Tangle zu veröffentlichen, da der Raspberry Pi zu langsam ist um den Proof-Of-Work Zeiteffizient zu übernehmen.
+
+Aus den gegebenen Parametern kann das Iota-Objekt erstellt werden.
+\begin{lstlisting}[language=Python]
+seed = "DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"  
+fullnode_url = "https://potato.iotasalad.org:14265"
+api = Iota(fullnode_url, seed)
+\end{lstlisting}
+
+Es ist nun möglich, grundlegende Funktionen wie Adressgenerierung nutzen zu können.
+
+\subsection{IOTA Transaktion}
+Um eine Transaktion zu erstellen werden für diese Implementierung die Klassen ProposedTransaction, ProposedBundle, Address, Tag und TryteString zusätzlich zu Iota von dem iota-Modul genutzt.
+\begin{lstlisting}[language=Python]
+from iota import Iota, ProposedTransaction, ProposedBundle, Address, Tag, TryteString
+\end{lstlisting}
+
+Vorerst muss ein "`Vorabtransaktions"'-Objekt erstellt werden mit Adresse, Wert, Tag und Message.
+\begin{lstlisting}[language=Python]
+proposedTrx = ProposedTransaction(
+    address = Address(reciever_address),
+    value = 0,
+    tag = Tag("BACHELORTEST"),
+    message = TryteString.from_string("This is a test transaction")
+)
+proposedBundle = ProposedBundle([proposedTrx])
+\end{lstlisting}
+Das Transaktionsobjekt wird gefüllt mit der Empfängeradresse, dem Wert 0 (eine "`Meta Transaction"'), einem Tag welcher mithilfe des Tag-Objekts erstellt wird und einer beliebigen Nachricht, welche mithilfe von TryteString in Trits umgewandelt wird. Abschließend wird ein "`Vorabbundle"' erstellt, welches mit der Vorabtransaktion befüllt wird.
+
+Dieses Vorabbundle muss geprüft und signiert werden, dafür wird es als Parameter an die vorher erstellte Iota-Instanz übergeben. Der Aufruf gibt ein vorbereitetes Bundle zurück, welches mittels API-Aufruf an die Full-Node verschickt wird. Dort wird sie abschließend verarbeitet und in das Tangle-Netzwerk veröffentlicht.
+\begin{lstlisting}[language=Python]
+preparedBundle = api.prepare_transfer(proposedBundle)
+publishedBundle = api.send_transfer(depth = 3, transfers = proposedBundle)
+\end{lstlisting}
+
+Die Hash des PublishedBundle-Objekts kann genutzt werden, um die Transaktion nachzuvollziehen\footnote{z.B auf https://iotasear.ch/}.
+
+\subsection{Kommunikation mit Tankstelle}
+Die Kommunikation mit der Tankstelle erfolgt über eine REST API. Dies ist vereinfacht betrachtet eine Schnittstelle auf die über HTTP zugegriffen werden kann. Hierfür bietet sich das vorinstallierte requests-Modul an.
+\begin{lstlisting}[language=Python]
+import requests #importiere requests-Bibliothek um HTTP-Anfragen zu erstellen
+\end{lstlisting}
+
+Ein Beispiel eines Anwendungsfalles ist das Beenden des Tankvorgangs. Der Code hierfür ist in einer Methode ausgelagert mit den Argumenten 'route' und 'carId'. Die 'route' ist die Schnittstelle die angesprochen werden soll, in diesem Beispiel "`endFueling"'. Die 'carId' ist eine von der Tankstelle zugewiesene Nummer. Das Beispiel verschickt eine Anfrage an den Server (die Tankstelle) mit einem Parameter, der Identifikationsnummer des Autos, und gibt die Antwort zurück.
+\begin{lstlisting}[language=Python]
+endFuelingData = call_api("endFueling", carId)
+
+def call_api(route, carId):
+		params = {
+				"id": carId
+		}
+	response = requests.get(fueling_url + route, params)
+return response.json()
+\end{lstlisting}
 
 \section{Ergebnis}
-Was tut das Programm nun.
+Was aus den vorherigen Abschnitten folgt, ist ein Programm, welches mit einem Server über eine Rest-Schnittstelle kommunizieren kann und eigenständig eine Transaktion ausführen kann. Mit dieser Applikation werden die Bezahlvorgänge mit IOTAs abgewickelt.
 
-Einmal probedurchlaufen mit dem Programm und erklären wie das mit dem vorher erklärten zusammenhängt
+Um das Ergebnis zu veranschaulichen wird das Programm vorgespielt.
+
+...... Einmal probedurchlaufen mit dem Programm und erklären wie das mit dem vorher erklärten zusammenhängt
