@@ -1,13 +1,12 @@
 \chapter{Fahrzeug - Client}
 \section{Ziel und Anforderungen}
-Das Programm soll für einen realitätsnahen Anwendungsfall auf einem relativ leistungsschwachen System arbeiten können. Daher liegt es nahe für die Programmierung des Programmierteils, der für das tanken und bezahlen mit IOTAs zuständig ist, einen Raspberry Pi anzusteuern.
+Das Programm soll für einen realitätsnahen Anwendungsfall auf einem relativ leistungsschwachen System arbeiten können. Daher liegt es nahe für die Programmierung des Programmierteils, der für das Tanken und Bezahlen mit IOTAs zuständig ist, einen Raspberry Pi anzusteuern.
 
 Der Raspberry Pi soll in dieser prototypischen Umsetzung die Steuereinheit eines zukünftigen Autos ersetzen. Es soll mittels zwei Knöpfen bedienbar sein, die die Steuerelemente in der Armatur des Autos darstellen sollen.
 
-Da der Anspruch an starke Rechenleistung in einem Auto nicht zu hoch sein sollte (um zum Beispiel Kosten zu minimieren) ist es sinnvoll, keinen IOTA Full-Node zu betrieben, sondern nur einen Light-Node, der die Arbeit an einen Full-Node delegiert.\\
-Die Limitation der Hardware-Ressourcen ist ein Grund für die Umsetzung auf einem Raspberry Pi.
+Da der Anspruch an starke Rechenleistung in einem Auto nicht zu hoch sein sollte (um zum Beispiel Kosten zu minimieren) ist es sinnvoll, keinen IOTA Full-Node zu betrieben, sondern nur einen Light-Node, der die Arbeit an einen Full-Node delegiert. Die Limitation der Hardware-Ressourcen ist ein Grund für die Umsetzung auf einem Raspberry Pi.
 
-Hier noch beschreiben was die anforderungen an das smartauto sind, und graphische nutzerinteraktion anzeigen. Hier soll erklärt werden, was von der tankanwendung gefordert ist, und wie sich das auf die tatsächlich umsetzung auswirkt.
+(PICTURE)Hier noch beschreiben was die Anforderungen an das Smartauto sind, und graphische nutzerinteraktion anzeigen. Hier soll erklärt werden, was von der tankanwendung gefordert ist, und wie sich das auf die tatsächlich umsetzung auswirkt.
 
 \section{Aufbau}
 Unter diesem Aspekt wird der Aufbau und die Einrichtung der einzelnen Komponenten beschrieben die für die Umsetzung nötig sind.
@@ -18,16 +17,16 @@ Unter diesem Aspekt werden die Voraussetzungen für die Umsetzung der clientseiti
 Um die prototypische Anwendung umsetzen zu können, werden folgende Komponenten genutzt:
 
 \subsubsection{Raspberry Pi 3 Model B}
-Auf dem Raspberry Pi wird die Anwendung ausgeführt, Daten des Benutzers Verarbeitet und Anfragen auf Webservices vollzogen. Auch die Transaktionen von IOTAs sollen mithilfe des CPUs erstellt werden.
+Auf dem Raspberry Pi wird die Anwendung ausgeführt, Daten des Benutzers verarbeitet und Anfragen auf Webservices vollzogen. Auch die Transaktionen von IOTAs sollen mithilfe des CPUs erstellt werden.
 
 \subsubsection{Steckbrett}
-Das Steckbrett dient der Verbindung von Bedienelementen mit den GPIO-Pins des Raspberry Pis. Die Knöpfe für die Bedienung der Tank-Anwendung werden auf diesem Befestigt und mit den GPIO-Pins elektronisch verbunden.
+Das Steckbrett dient der Verbindung von Bedienelementen mit den GPIO-Pins des Raspberry Pis. Die Knöpfe für die Bedienung der Tank-Anwendung werden auf diesem befestigt und mit den GPIO-Pins elektronisch verbunden.
 
 \subsubsection{Micro SD Karte}
-Diese Speicherkarte wird für den Raspberry Pi gebraucht. Auf dieser Befindet sich das Betriebssystem mit dem der Raspberry Pi erst genutzt werden kann. Auch das Programm und sonstige Benutzerdaten werden auf dieser Speicherkarte gespeichert.
+Diese Speicherkarte wird für den Raspberry Pi gebraucht. Auf dieser befindet sich das Betriebssystem mit dem der Raspberry Pi erst genutzt werden kann. Auch das Programm und sonstige Benutzerdaten werden auf dieser Speicherkarte gespeichert.
 
 \subsubsection{Micro USB Netzteil 5,1 Volt 3,1 Ampere}
-Der Raspberry Pi muss mittels eines Micro USB Eingangs mit Strom versorgt werden. Das Netzteil sollte eine Ausgangsspannung von mindestens 5,1 Volt aufweisen und es werden mindestens 2,5 Ampere empfohlen.[25]
+Der Raspberry Pi muss mittels eines Micro USB Eingangs mit Strom versorgt werden. Das Netzteil sollte eine Ausgangsspannung von mindestens 5,1 Volt aufweisen und es werden mindestens 2,5 Ampere empfohlen.[25](QUELLE)
 
 \subsubsection{5x Weiblich-Männlich Kabel, 2x Männlich-Männlich Kabel}
 Verbindungskabel für das Steckbrett um elektronische Komponenten miteinander zu Verbinden.
@@ -41,7 +40,7 @@ Die Widerstände sind für den kontrollierten Stromfluss unentbehrlich und sie ver
 \subsection{Einrichtung}
 Um den Raspberry Pi so einzurichten, dass es möglich ist, Anwendungen zu programmieren und zu testen, sollte dieser mittels eines HDMI-Kabels an einen Monitor angeschlossen werden. Darüber hinaus sollten Peripheriegeräte wie Tastatur und Maus über die USB-Ausgänge angeschlossen werden um sich durch die Bedienoberfläche navigieren zu können.
 
-Damit das Gerät jedoch vollständig bedienbar wird, muss es mit einem Betriebssystem ausgestattet sein. Aufgrund von offiziellem Support seitens der Raspberry Pi Foundation [26] wurde das Raspbian Betriebssystem für die Umsetzung ausgewählt. Bei Raspbian handelt es sich um ein, auf Linux basierendes Betriebssystem, welches von der Raspberry Pi Foundation veröffentlicht wurde.
+Damit das Gerät jedoch vollständig bedienbar wird, muss es mit einem Betriebssystem ausgestattet sein. Aufgrund von offiziellem Support seitens der Raspberry Pi Foundation [26](Quelle) wurde das Raspbian Betriebssystem für die Umsetzung ausgewählt. Bei Raspbian handelt es sich um ein, auf Linux basierendes Betriebssystem, welches von der Raspberry Pi Foundation veröffentlicht wurde.
 
 Das Raspbian Betriebssystem muss auf die Micro SD Karte geladen werden, damit es für den Raspberry Pi zur Verfügung steht. In folgenden Schritten wurde die Speicherkarte mit Raspbian beschrieben:
 \begin{enumerate}
@@ -71,33 +70,31 @@ Dafür ist es nützlich, mit dem Pin-Layout des Raspberry Pis vertraut zu sein. Mi
 
 ist es möglich einen Überblick über das Layout des Raspberry Pis zu erhalten. Auch die Benennung der einzelnen Pins ist aufgeführt.
 
-[Bild der "`pinout"'-Ausgabe einfügen]
+[Bild der "`pinout"'-Ausgabe einfügen](PICTURE)
 
 Die Komponenten müssen in das Steckbrett gesteckt werden, sodass sie erreichbar bleiben, um sie zu verkabeln und zugleich nutzen zu können. Für eine optimale Übersicht wurden die Komponenten mittig plaziert.
 
-[Bild von der Plazierung der Komponenten Button 1 und 2 und LED]
+[Bild von der Plazierung der Komponenten Button 1 und 2 und LED](PICTURE)
 
 Für die Umsetzung müssen diese Komponenten für den Nutzer interagierbar sein, dazu werden sie mit zufälligen, freien GPIO-Pins verbunden.
 
-[Tabelle hier einfügen, wie buttons 1 und 2 und LED mit gpios verbunden sind]
+[Tabelle hier einfügen, wie buttons 1 und 2 und LED mit gpios verbunden sind](PICTURE)
 
-Dies erfolgt indem die Weibliche Seite des Kabels in den jeweiligen Pin geführt wird, die andere Seite des Weiblich-Männlich Kabels wird nun in die Reihe des Steckbretts gesteckt an der sich auch die Komponente befindet, die mit dem GPIO-Pin interagieren soll.
+Dies erfolgt indem die weibliche Seite des Kabels in den jeweiligen Pin geführt wird, die andere Seite des Weiblich-Männlich Kabels wird nun in die Reihe des Steckbretts gesteckt an der sich auch die Komponente befindet, die mit dem GPIO-Pin interagieren soll.
 
-Um auf dem Steckbrett einen Stromkreis erzeugen zu können, sollten an den Querreihen des Steckbretts Spannungen angelegt werden. Dafür gibt es auf dem Raspberry Pi Pins, die entweder eine Spannung von 5V, 3,3V oder 0V (GND) haben. Für diese Umsetzung nutzen wir die 3.3V Pins und GND-Pins um einen Stromkreis zu erzeugen, da 3,3V ausreichen um ein Signal auf den Pins zu erfassen. Diese werden jeweils auf die korrespondierende Querreihe mittels Weiblich-Männlich Kabeln verbunden.
+Um auf dem Steckbrett einen Stromkreis erzeugen zu können, sollten an den Querreihen des Steckbretts Spannungen angelegt werden. Dafür gibt es auf dem Raspberry Pi Pins, die entweder eine Spannung von 5V, 3,3V oder 0V (GND) haben. Für diese Umsetzung werden die 3.3V Pins und GND-Pins genutzt um einen Stromkreis zu erzeugen, da 3,3V ausreichen um ein Signal auf den Pins zu erfassen. Diese werden jeweils auf die korrespondierende Querreihe mittels Weiblich-Männlich Kabeln verbunden.
 
 Zum Schutz vor Überspannung an der LED muss ein Widerstand in den Stromkreis eingebaut werden, der verhindert, dass die LED zu viel Energie erhält und sie dadurch zu heiß wird und durchbrennt.
 
 Für die Berechnung des passenden Widerstandes empfiehlt es sich, mit der Formel 
 
-[Formel für berechnung des widerstandes]
+[Formel für berechnung des widerstandes](PICTURE)
 
 zu arbeiten. Wobei Im = Eingangspannung also 3.3V und Ia = Spannungsverringerung der LED also 0.2A ist. Dies ergibt 
 
-[Formel mit eingesetzten parametern]
+[Formel mit eingesetzten parametern](PICTURE)
 
-Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus diesem Grund wird der nächsthöhere verfügbare Wert angenommen. In diesem Fall ist dies 330 Ohm. Dieser Widerstand muss nun in den Stromkreis mit der LED eingebunden werden.
-
-Damit die Taster eine blabla...
+Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus diesem Grund wird der nächsthöhere verfügbare Wert angenommen. In diesem Fall ist dies 330 Ohm. Dieser Widerstand muss nun in den Stromkreis mit der LED eingebunden werden. Nach Einfügen des Widerstandes ist der Stromkreis geschlossen. Dies wiederholt man auch für die Taster.
 
 \subsubsection{PyOTA}
 Bei PyOTA handelt es sich um eine Python-Bibliothek für IOTA. Sie implementiert die API und unterstützt Funktionalitäten um eine Transaktion eigenständig erstellen zu können\footnote{siehe dazu https://pyota.readthedocs.io/en/latest/}.
@@ -107,7 +104,7 @@ Um die Bibliothek für die Umsetzung zur Verfügung zu stellen kann sie über das P
 > pip install pyota
 \end{lstlisting}
 
-Eine wichtige Dependancy von PyOTA ist die Cryptography-Bibliothek. Diese wird nicht automatisch heruntergeladen und installiert, sondern dies muss manuell geschehen\footnote{mehr Informationen dazu https://cryptography.io/en/latest/installation/}.
+Eine wichtige Abhängigkeit (Dependancy) von PyOTA ist die Cryptography-Bibliothek. Diese wird nicht automatisch heruntergeladen und installiert, sondern dies muss manuell geschehen\footnote{mehr Informationen dazu https://cryptography.io/en/latest/installation/}.
 
 Weiterhin muss angemerkt werden, das bei Raspbian kein System-Pfad zu den zusätzlich installierten Paketen (per pip install) für Python2.7 gibt. Demzufolge muss der Pfad vor jedem Programmstart in das Suchverzeichnis hinzugefügt werden. Dies geschieht mit folgendem Code:
 \begin{lstlisting}[language=Python]
@@ -148,7 +145,7 @@ GPIO.setup(LED, GPIO.OUT, initial = False)
 
 Nun sind die einzelnen Pins manipulierbar, bzw. auslesbar. Je nachdem ob man einen Output-Pin setzten möchte oder einen Input-Pin auslesen möchte, sind verschiedene Funktionen verwendbar.
 
-Zum auslesen ob ein Knopf gedrückt wurde bietet sich die folgende einfache Implementierung an. Das Programm wartet solange, bis der Knopf gedrückt und losgelassen wurde.
+Zum Auslesen ob ein Knopf gedrückt wurde bietet sich die folgende einfache Implementierung an. Das Programm wartet solange, bis der Knopf gedrückt und losgelassen wurde.
 \begin{lstlisting}[language=Python]
 def wait_for_button_click(button):
     while not GPIO.input(button):
@@ -174,7 +171,7 @@ Damit nun das Iota Objekt initialisiert werden kann, braucht es zwei Argumente. 
 
 \paragraph{Seed} Der Seed "`DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"' wurde aus einer zufälligen Kombination der Großbuchstaben 'A-Z' und der Nummer 9 eigenhändig generiert und wird für den Prototypen genutzt. Im Programmcode ist der Seed hinterlegt, dies könnte bei einer realistischen Umgebung zu Sicherheitsrisiken führen, für die prototypische Umsetzung genügt es.
 
-\paragraph{Full-Node} Aus einer Liste im Internet\footnote{siehe https://iotasalad.org/nodes}, in der einige Full-Nodes aufgelistet sind, wurde die folgende Adresse beliebig ausgesucht: https://potato.iotasalad.org:14265. Der Full-Node übernimmt die Arbeit die erstellte Transaktion in das Tangle zu veröffentlichen, da der Raspberry Pi zu langsam ist um den Proof-Of-Work Zeiteffizient zu übernehmen.
+\paragraph{Full-Node} Aus einer Liste im Internet\footnote{siehe https://iotasalad.org/nodes}, in der einige Full-Nodes aufgelistet sind, wurde die folgende Adresse beliebig ausgesucht: https://potato.iotasalad.org:14265. Der Full-Node übernimmt die Arbeit die erstellte Transaktion in das Tangle zu veröffentlichen, da der Raspberry Pi zu leistungsschwach ist um den Proof-Of-Work zeiteffizient zu übernehmen.
 
 Aus den gegebenen Parametern kann das Iota-Objekt erstellt werden.
 \begin{lstlisting}[language=Python]
