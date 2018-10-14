@@ -11,104 +11,120 @@
 \contentsline {section}{\numberline {2.5}Proof-of-Work (Hashcash)}{7}
 \contentsline {section}{\numberline {2.6}Internet of Things (IoT)}{7}
 \contentsline {section}{\numberline {2.7}Industrie 4.0}{8}
-\contentsline {section}{\numberline {2.8}Trits, Trytes \& Tryte-Alphabet}{8}
-\contentsline {section}{\numberline {2.9}Distributed Ledger}{9}
-\contentsline {part}{I\hspace {1em}Theoretischer Teil}{11}
-\contentsline {chapter}{\numberline {3}Einf\"uhrung}{13}
-\contentsline {chapter}{\numberline {4}Funktion}{15}
-\contentsline {section}{\numberline {4.1}Bitcoin}{15}
-\contentsline {subsection}{\numberline {4.1.1}Allgemeine Funktion}{15}
-\contentsline {subsection}{\numberline {4.1.2}Privater \& \"offentlicher Schl\"ussel}{16}
-\contentsline {paragraph}{Endliche Felder}{16}
-\contentsline {paragraph}{Elliptische Kurven}{17}
-\contentsline {subsection}{\numberline {4.1.3}Transaktionen}{19}
-\contentsline {subsection}{\numberline {4.1.4}Mining}{20}
-\contentsline {section}{\numberline {4.2}IOTA}{21}
-\contentsline {subsection}{\numberline {4.2.1}IOTA Seed}{22}
-\contentsline {subsection}{\numberline {4.2.2}Tangle}{22}
-\contentsline {subsection}{\numberline {4.2.3}Directed Acyclic Graph}{23}
-\contentsline {subsection}{\numberline {4.2.4}Transaktion}{24}
-\contentsline {paragraph}{signatureMessageFragment}{24}
-\contentsline {paragraph}{hash}{24}
-\contentsline {paragraph}{address}{24}
-\contentsline {paragraph}{value}{24}
-\contentsline {paragraph}{obsoleteTag}{25}
-\contentsline {paragraph}{timestamp}{25}
-\contentsline {paragraph}{currentIndex}{25}
-\contentsline {paragraph}{lastIndex}{25}
-\contentsline {paragraph}{bundle}{25}
-\contentsline {paragraph}{branch- \& trunkTransaction}{26}
-\contentsline {paragraph}{tag}{26}
-\contentsline {paragraph}{attachmentTimestamp}{26}
-\contentsline {paragraph}{attachmentTimestampLowerBound \& attachmentTimestampUpperBound}{26}
-\contentsline {paragraph}{nonce}{26}
-\contentsline {subsection}{\numberline {4.2.5}Zusammenfassung}{26}
-\contentsline {subsection}{\numberline {4.2.6}Proof-of-Work}{27}
-\contentsline {subsection}{\numberline {4.2.7}Bundle}{27}
-\contentsline {subsection}{\numberline {4.2.8}Signatur}{28}
-\contentsline {chapter}{\numberline {5}Sicherheit}{31}
-\contentsline {section}{\numberline {5.1}Bitcoin}{31}
-\contentsline {subsection}{\numberline {5.1.1}Wallet Schutz}{31}
-\contentsline {subsection}{\numberline {5.1.2}Anonymit\"at}{31}
-\contentsline {subsection}{\numberline {5.1.3}Validit\"at einer Transaktion}{32}
-\contentsline {subsection}{\numberline {5.1.4}Angriffsszenarios}{32}
-\contentsline {subsection}{\numberline {5.1.5}Zukunftssicherheit}{32}
-\contentsline {section}{\numberline {5.2}IOTA}{32}
-\contentsline {section}{\numberline {5.3}Gegen\"uberstellung}{32}
-\contentsline {section}{\numberline {5.4}Ergebnis}{32}
-\contentsline {chapter}{\numberline {6}Programmierbarkeit}{33}
-\contentsline {chapter}{\numberline {7}Nutzen}{35}
-\contentsline {section}{\numberline {7.1}IOTA}{35}
-\contentsline {subsection}{\numberline {7.1.1}MAM}{35}
-\contentsline {paragraph}{Verschl\"usselung}{36}
-\contentsline {paragraph}{Signatur}{36}
-\contentsline {section}{\numberline {7.2}Bitcoin}{37}
-\contentsline {chapter}{\numberline {8}Beurteilung}{39}
-\contentsline {part}{II\hspace {1em}Praktischer Teil}{41}
-\contentsline {chapter}{\numberline {9}Tanken in der Zukunft}{43}
-\contentsline {section}{\numberline {9.1}Projektbeschreibung}{43}
-\contentsline {section}{\numberline {9.2}Projektbegr\"undung}{43}
-\contentsline {section}{\numberline {9.3}IOTA als W\"ahrung}{44}
-\contentsline {chapter}{\numberline {10}Fahrzeug - Client}{45}
-\contentsline {section}{\numberline {10.1}Ziel und Anforderungen}{45}
-\contentsline {section}{\numberline {10.2}Aufbau}{45}
-\contentsline {subsection}{\numberline {10.2.1}Vorbedingungen}{46}
-\contentsline {subsubsection}{Raspberry Pi 3 Model B}{46}
-\contentsline {subsubsection}{Steckbrett}{46}
-\contentsline {subsubsection}{Micro SD Karte}{46}
-\contentsline {subsubsection}{Micro USB Netzteil 5,1 Volt 3,1 Ampere}{46}
-\contentsline {subsubsection}{5x Weiblich-M\"annlich Kabel, 2x M\"annlich-M\"annlich Kabel}{47}
-\contentsline {subsubsection}{2x Taster, 1x Rote LED}{47}
-\contentsline {subsubsection}{Widerst\"ande 1x 330 Ohm, 2x 10.000 Ohm, 2x 1.000 Ohm}{47}
-\contentsline {subsection}{\numberline {10.2.2}Einrichtung}{47}
-\contentsline {subsubsection}{Steckbrett und GPIO-Pins}{48}
-\contentsline {subsubsection}{PyOta}{50}
-\contentsline {subsection}{\numberline {10.2.3}Ergebnis der Vorbereitung}{50}
-\contentsline {section}{\numberline {10.3}Umsetzung}{50}
-\contentsline {subsection}{\numberline {10.3.1}GPIO-Pins}{50}
-\contentsline {subsection}{\numberline {10.3.2}IOTA Einrichtung}{50}
-\contentsline {subsection}{\numberline {10.3.3}IOTA Transaktionen}{50}
-\contentsline {section}{\numberline {10.4}Ergebnis}{51}
-\contentsline {chapter}{\numberline {11}Tankstelle - Server}{53}
-\contentsline {section}{\numberline {11.1}Projektaufbau}{54}
-\contentsline {subsection}{\numberline {11.1.1}Vorbedingungen}{54}
-\contentsline {subsubsection}{NodeJS}{54}
-\contentsline {subsubsection}{NPM}{55}
-\contentsline {subsubsection}{PowerShell}{55}
-\contentsline {subsubsection}{Express.js}{55}
-\contentsline {subsubsection}{MySQL}{56}
-\contentsline {subsubsection}{Port Weiterleitung}{56}
-\contentsline {subsection}{\numberline {11.1.2}Projektabgrenzung}{57}
-\contentsline {section}{\numberline {11.2}Umsetzung}{57}
-\contentsline {subsection}{\numberline {11.2.1}Tank-Vorgang}{57}
-\contentsline {paragraph}{getStationInfo}{58}
-\contentsline {paragraph}{initializeFueling}{58}
-\contentsline {paragraph}{startFueling}{59}
-\contentsline {paragraph}{pauseFueling}{60}
-\contentsline {paragraph}{endFueling}{60}
-\contentsline {paragraph}{getFueling}{61}
-\contentsline {subsection}{\numberline {11.2.2}Neue Adresse generieren}{62}
-\contentsline {section}{\numberline {11.3}Ergebnis}{65}
-\contentsline {part}{III\hspace {1em}Schlussteil}{67}
-\contentsline {chapter}{\numberline {12}Evaluierung}{69}
-\contentsline {chapter}{\numberline {13}Fazit}{71}
+\contentsline {section}{\numberline {2.8}Tangle}{8}
+\contentsline {subsection}{\numberline {2.8.1}Funktionsweise}{9}
+\contentsline {section}{\numberline {2.9}Trits, Trytes \& Tryte-Alphabet}{9}
+\contentsline {section}{\numberline {2.10}Distributed Ledger}{10}
+\contentsline {part}{I\hspace {1em}Theoretischer Teil}{13}
+\contentsline {chapter}{\numberline {3}Einf\"uhrung}{15}
+\contentsline {chapter}{\numberline {4}Funktion}{17}
+\contentsline {section}{\numberline {4.1}Bitcoin}{17}
+\contentsline {subsection}{\numberline {4.1.1}Allgemeine Funktion}{17}
+\contentsline {subsection}{\numberline {4.1.2}Privater \& \"offentlicher Schl\"ussel}{18}
+\contentsline {paragraph}{Endliche Felder}{18}
+\contentsline {paragraph}{Elliptische Kurven}{19}
+\contentsline {subsection}{\numberline {4.1.3}Transaktionen}{21}
+\contentsline {subsection}{\numberline {4.1.4}Mining}{22}
+\contentsline {section}{\numberline {4.2}IOTA}{23}
+\contentsline {subsection}{\numberline {4.2.1}IOTA Seed}{24}
+\contentsline {subsection}{\numberline {4.2.2}Tangle}{24}
+\contentsline {subsection}{\numberline {4.2.3}Directed Acyclic Graph}{25}
+\contentsline {subsection}{\numberline {4.2.4}Transaktion}{26}
+\contentsline {paragraph}{signatureMessageFragment}{26}
+\contentsline {paragraph}{hash}{26}
+\contentsline {paragraph}{address}{26}
+\contentsline {paragraph}{value}{26}
+\contentsline {paragraph}{obsoleteTag}{27}
+\contentsline {paragraph}{timestamp}{27}
+\contentsline {paragraph}{currentIndex}{27}
+\contentsline {paragraph}{lastIndex}{27}
+\contentsline {paragraph}{bundle}{27}
+\contentsline {paragraph}{branch- \& trunkTransaction}{28}
+\contentsline {paragraph}{tag}{28}
+\contentsline {paragraph}{attachmentTimestamp}{28}
+\contentsline {paragraph}{attachmentTimestampLowerBound \& attachmentTimestampUpperBound}{28}
+\contentsline {paragraph}{nonce}{28}
+\contentsline {subsection}{\numberline {4.2.5}Zusammenfassung}{28}
+\contentsline {subsection}{\numberline {4.2.6}Proof-of-Work}{29}
+\contentsline {subsection}{\numberline {4.2.7}Bundle}{29}
+\contentsline {subsection}{\numberline {4.2.8}Signatur}{30}
+\contentsline {chapter}{\numberline {5}Sicherheit}{33}
+\contentsline {section}{\numberline {5.1}Bitcoin}{33}
+\contentsline {subsection}{\numberline {5.1.1}Konto Sicherheit}{33}
+\contentsline {subsection}{\numberline {5.1.2}Anonymit\"at}{34}
+\contentsline {subsection}{\numberline {5.1.3}Validit\"at einer Transaktion}{35}
+\contentsline {subsection}{\numberline {5.1.4}Angriffsszenarien}{35}
+\contentsline {subsubsection}{51\%-Attacke}{36}
+\contentsline {subsection}{\numberline {5.1.5}Anreiz zur Ehrlichkeit}{38}
+\contentsline {subsection}{\numberline {5.1.6}Quantenprozessorresistenz}{38}
+\contentsline {section}{\numberline {5.2}IOTA}{39}
+\contentsline {subsection}{\numberline {5.2.1}Konto Sicherheit}{39}
+\contentsline {subsection}{\numberline {5.2.2}Anonymit\"at}{40}
+\contentsline {subsection}{\numberline {5.2.3}Validit\"at einer Transaktion}{41}
+\contentsline {subsection}{\numberline {5.2.4}Angriffsszenarien}{41}
+\contentsline {subsubsection}{34\%-Attacke}{41}
+\contentsline {subsubsection}{Parasiten-Kette}{42}
+\contentsline {subsection}{\numberline {5.2.5}Quantenprozessorresistenz}{42}
+\contentsline {section}{\numberline {5.3}Gegen\"uberstellung}{42}
+\contentsline {section}{\numberline {5.4}Ergebnis}{43}
+\contentsline {chapter}{\numberline {6}Programmierbarkeit}{45}
+\contentsline {section}{\numberline {6.1}Bitcoin}{45}
+\contentsline {section}{\numberline {6.2}IOTA}{45}
+\contentsline {chapter}{\numberline {7}Nutzen}{47}
+\contentsline {section}{\numberline {7.1}IOTA}{47}
+\contentsline {subsection}{\numberline {7.1.1}MAM}{47}
+\contentsline {paragraph}{Verschl\"usselung}{48}
+\contentsline {paragraph}{Signatur}{48}
+\contentsline {section}{\numberline {7.2}Bitcoin}{49}
+\contentsline {chapter}{\numberline {8}Beurteilung}{51}
+\contentsline {part}{II\hspace {1em}Praktischer Teil}{53}
+\contentsline {chapter}{\numberline {9}Tanken in der Zukunft}{55}
+\contentsline {section}{\numberline {9.1}Projektbeschreibung}{55}
+\contentsline {section}{\numberline {9.2}Projektbegr\"undung}{55}
+\contentsline {section}{\numberline {9.3}IOTA als W\"ahrung}{56}
+\contentsline {chapter}{\numberline {10}Fahrzeug - Client}{57}
+\contentsline {section}{\numberline {10.1}Ziel und Anforderungen}{57}
+\contentsline {section}{\numberline {10.2}Aufbau}{58}
+\contentsline {subsection}{\numberline {10.2.1}Vorbedingungen}{58}
+\contentsline {subsubsection}{Raspberry Pi 3 Model B}{58}
+\contentsline {subsubsection}{Steckbrett}{58}
+\contentsline {subsubsection}{Micro SD Karte}{58}
+\contentsline {subsubsection}{Micro USB Netzteil 5,1 Volt 3,1 Ampere}{59}
+\contentsline {subsubsection}{5x Weiblich-M\"annlich Kabel, 2x M\"annlich-M\"annlich Kabel}{59}
+\contentsline {subsubsection}{2x Taster, 1x Rote LED}{59}
+\contentsline {subsubsection}{Widerst\"ande 1x 330 Ohm, 2x 10.000 Ohm, 2x 1.000 Ohm}{59}
+\contentsline {subsection}{\numberline {10.2.2}Einrichtung}{59}
+\contentsline {subsubsection}{Steckbrett und GPIO-Pins}{60}
+\contentsline {subsubsection}{PyOTA}{62}
+\contentsline {subsection}{\numberline {10.2.3}Ergebnis der Vorbereitung}{63}
+\contentsline {section}{\numberline {10.3}Umsetzung}{63}
+\contentsline {subsection}{\numberline {10.3.1}GPIO-Pins}{63}
+\contentsline {subsection}{\numberline {10.3.2}IOTA Einrichtung}{65}
+\contentsline {paragraph}{Seed}{65}
+\contentsline {paragraph}{Full-Node}{65}
+\contentsline {subsection}{\numberline {10.3.3}IOTA Transaktion}{66}
+\contentsline {subsection}{\numberline {10.3.4}Kommunikation mit Tankstelle}{67}
+\contentsline {section}{\numberline {10.4}Ergebnis}{68}
+\contentsline {chapter}{\numberline {11}Tankstelle - Server}{69}
+\contentsline {section}{\numberline {11.1}Projektaufbau}{70}
+\contentsline {subsection}{\numberline {11.1.1}Vorbedingungen}{70}
+\contentsline {subsubsection}{NodeJS}{70}
+\contentsline {subsubsection}{NPM}{71}
+\contentsline {subsubsection}{PowerShell}{71}
+\contentsline {subsubsection}{Express.js}{71}
+\contentsline {subsubsection}{MySQL}{72}
+\contentsline {subsubsection}{Port Weiterleitung}{72}
+\contentsline {subsection}{\numberline {11.1.2}Projektabgrenzung}{73}
+\contentsline {section}{\numberline {11.2}Umsetzung}{73}
+\contentsline {subsection}{\numberline {11.2.1}Tank-Vorgang}{73}
+\contentsline {paragraph}{getStationInfo}{74}
+\contentsline {paragraph}{initializeFueling}{74}
+\contentsline {paragraph}{startFueling}{75}
+\contentsline {paragraph}{pauseFueling}{76}
+\contentsline {paragraph}{endFueling}{76}
+\contentsline {paragraph}{getFueling}{77}
+\contentsline {subsection}{\numberline {11.2.2}Neue Adresse generieren}{78}
+\contentsline {section}{\numberline {11.3}Ergebnis}{81}
+\contentsline {part}{III\hspace {1em}Schlussteil}{83}
+\contentsline {chapter}{\numberline {12}Evaluierung}{85}
+\contentsline {chapter}{\numberline {13}Fazit}{87}
