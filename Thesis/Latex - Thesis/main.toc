@@ -61,11 +61,11 @@
 \contentsline {subsection}{\numberline {5.2.1}Konto Sicherheit}{39}
 \contentsline {subsection}{\numberline {5.2.2}Anonymit\"at}{40}
 \contentsline {subsection}{\numberline {5.2.3}Validit\"at einer Transaktion}{41}
-\contentsline {subsection}{\numberline {5.2.4}Angriffsszenarien}{41}
-\contentsline {subsubsection}{34\%-Attacke}{41}
+\contentsline {subsection}{\numberline {5.2.4}Angriffsszenarien}{42}
+\contentsline {subsubsection}{34\%-Attacke}{42}
 \contentsline {subsubsection}{Parasiten-Kette}{42}
-\contentsline {subsection}{\numberline {5.2.5}Quantenprozessorresistenz}{42}
-\contentsline {section}{\numberline {5.3}Gegen\"uberstellung}{42}
+\contentsline {subsection}{\numberline {5.2.5}Quantenprozessorresistenz}{43}
+\contentsline {section}{\numberline {5.3}Gegen\"uberstellung}{43}
 \contentsline {section}{\numberline {5.4}Ergebnis}{43}
 \contentsline {chapter}{\numberline {6}Programmierbarkeit}{45}
 \contentsline {section}{\numberline {6.1}Bitcoin}{45}
