@@ -97,10 +97,11 @@ Um eine Transaktion zu veranlassen wird ein Paar aus privatem und öffentlichem S
 \subsection{Validität einer Transaktion}
 Eine Transaktion wird von anderen Nodes validiert. Typischerweise geschieht das wenn ein Nutzer eine Transaktion in das Tangle publizieren will. Dafür muss der Nutzer zwei Transaktionen validieren. Bei diesen Transaktionen handelt es sich um "`Tips"', die noch nicht referenziert sind. Das Transaktionsobjekt muss die Tips als "`branch"'- und "`trunkTransaction"' referenzieren und überprüfen.
 
-Das Objekt wird auf Syntax und Gültigkeit geprüft. Dafür wird der Transaction-Hash abgeglichen und die Signierung überprüft. 
+Das Objekt wird auf Syntax und Gültigkeit geprüft. Dafür wird die Transaction-Hash abgeglichen und die Signierung überprüft. Wenn die Transaktionen gültig sind, kann die eigene Transaktion diese referenzieren und publiziert werden.
 
-- wie wird eine einzelne transaktion verifiziert, wie wird bestimmt dass sie gültig ist\\
-- wann ist eine transaktion verifiziert\\
+Eine Transaktion gilt als verifiziert, wenn sie durch einen bestimmten Anteil neuer Tips referenziert und damit validiert wird. Der Wert kann selber bestimmt werden, zum Beispiel kann festgelegt werden, das die Transaktion als verifiziert gilt, wenn sie von mehr als 75\% aller Tips direkt oder indirekt referenziert wird.
+
+Eine falsche Transaktion (zum Beispiel nicht genügend IOTAs) kann so also von entsprechenden Tips in einer Sub-Tangle vorerst validiert werden, jedoch wird spätestens wenn andere Transaktionen die Sub-Tangle mit der anderen Sub-Tangle validieren, entsteht ein Konflikt. Der Konflikt wird aufgelöst indem neue Tips ausgewählt werden und so eine der beiden Sub-Tangles nicht weiter verifiziert wird. Dadurch verwaist eine Sub-Tangle und diejenige mit dem höheren "`Gewicht"' (mehr Proof-Of-Work) wird für neue Transaktionen genutzt. Das heißt auch, das die anderen, validen Transaktionen, die die Fehlerhafte Transaktion referenzierten, nun auch verwaisen und nicht mehr Bestätigt werden können. Diese müssen neu in die Tangle attached werden um eine weitere Chance auf Validierung zu bekommen.
 
 \subsection{Angriffsszenarien}
 Die Tangle ermöglicht durch ihre DAG spezifische Arten von Attacken die im weiteren Fortgang erläutert werden sollen. Durch die Darstellung der möglichen Angriffe, werden weitere Sicherheitsmechanismen veranschaulicht.
