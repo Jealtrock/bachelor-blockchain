@@ -2,6 +2,8 @@ const express = require('express');
 const basicAuth = require('express-basic-auth');
 const passwordHash = require('password-hash');
 const db = require('../../database/db.js');
+const IotaInterface = require('../instances/iota.js');
+const pii = new IotaInterface();
 const router = express.Router();
 
 var arr_is_empty = function (array){
@@ -39,21 +41,27 @@ router.use(basicAuth({
 
 router.post('/addNewAddress', async (req, resp, next) => {
 
-	_add_to_db = new Promise((resolve, reject) => {
+	_add_to_db = new Promise((resolve, reject) => {	
 
-		db.connect();
+		pii.addNewAddressToTangle((err, address) => {
 
-		db.set_new_IOTA_address(req.body.address, (err, result) => {
+			if(err)	return reject(err);
+			db.connect();
 
-			if(err){
-				db.end();
-				return reject(err);
-			}
+			db.set_new_IOTA_address(address, (err, result) => {
 
-			let response = {};
+				if(err){
+					db.end();
+					return reject(err);
+				}
 
-			response.affectedRows = result.affectedRows;
-			resolve(response);
+				let response = {};
+
+				response.newAddress = address;
+				response.affectedRows = result.affectedRows;
+				resolve(response);
+
+			});
 
 		});
 
@@ -78,7 +86,7 @@ router.post('/addNewAddress', async (req, resp, next) => {
 			let response = req.responseObject;
 			response.saved_addresses = [];
 			for (var row of rows){
-				response.saved_addresses.push(row.address);
+				response.savedAddresses.push(row.address);
 			}
 			resolve(response);
 		});
