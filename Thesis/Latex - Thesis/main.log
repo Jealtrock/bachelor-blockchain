@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  10 OCT 2018 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  14 OCT 2018 14:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -465,7 +465,11 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-)) (main.aux)
+)) (main.aux
+
+LaTeX Warning: Label `tab:comparison' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -482,8 +486,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 2.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 2.
@@ -647,10 +650,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] [4
 
-] (main.toc [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6])
+] (main.toc [5] [6])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -666,21 +666,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
-
-[11] [12
+ [11] [12
 
 ] (chapters/einleitung.tex
 Kapitel 1.
+[1
 
-Underfull \vbox (badness 5563) has occurred while \output is active []
-
- [1
-
-] [2] [3]) (chapters/grundlagen.tex [4]
-Kapitel 2.
-[5
+]) (chapters/grundlagen.tex [2] [3] [4
 
 ]
+Kapitel 2.
+[5]
 Overfull \hbox (9.42474pt too wide) in paragraph at lines 13--15
 \T1/cmr/m/n/12 Ein Steck-brett wird ge-nutzt um löt-frei Kom-po-nen-ten mit den Pins des Raspber-
  []
@@ -688,16 +684,28 @@ Overfull \hbox (9.42474pt too wide) in paragraph at lines 13--15
 
 Underfull \vbox (badness 7203) has occurred while \output is active []
 
- [6]) (chapters/theoretischerteil.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [6] [7] [8]
+Overfull \hbox (2.19966pt too wide) in paragraph at lines 37--38
+ []|\T1/cmr/m/n/12 Buchstabe| 
+ []
 
- [7] [8] [9
 
-] [10]
+Overfull \hbox (2.19966pt too wide) in paragraph at lines 68--69
+ []|\T1/cmr/m/n/12 Buchstabe| 
+ []
+
+
+Overfull \hbox (15.29022pt too wide) in paragraph at lines 35--99
+ [][] 
+ []
+
+[9]) (chapters/theoretischerteil.tex [10] [11
+
+] [12]
 Kapitel 3.
-(chapters/jens/funktion.tex [11
+(chapters/jens/funktion.tex [13
 
-] [12
+] [14
 
 ]
 Kapitel 4.
@@ -706,7 +714,7 @@ Overfull \hbox (26.49635pt too wide) in paragraph at lines 7--8
 \T1/cmr/m/n/12 ele-men-ta-re Tech-ni-ken not-wen-dig. Zum Einen ist das die Public-Key-Kryptographie
  []
 
-[13] [14] [15]
+[15] [16] [17]
 Overfull \hbox (19.42201pt too wide) in paragraph at lines 61--62
 \T1/cmr/m/n/12 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFF-FE FFFFFC2F
  []
@@ -731,7 +739,7 @@ Overfull \hbox (18.12671pt too wide) in paragraph at lines 64--65
 \T1/cmr/m/n/12 FFFFFFFF FFFFFFFF FFFFFF-FE BAA-ED-CE6 AF48A03B BFD25E8C
  []
 
-[16] [17] [18] [19]
+[18] [19] [20] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 85--85
 [][]\T1/cmr/m/n/10 Diese Vor-ga-ben sind von der IO-TA Foun-da-ti-on ver-öf-fent-licht:
  []
@@ -741,7 +749,7 @@ Overfull \hbox (4.80293pt too wide) in paragraph at lines 88--89
 \T1/cmr/m/n/12 Block-chain be-schrie-ben. Die Tech-no-lo-gie nimmt sich den Schwä-chen der Block-
  []
 
-[20]
+[22]
 Overfull \hbox (6.1566pt too wide) in paragraph at lines 96--96
 [][]\T1/cmr/m/n/10 Daten be-zo-gen von: https://www.forbes.com/sites/shermanlee/2018/01/22/explaining-
  []
@@ -754,12 +762,12 @@ Overfull \hbox (3.46918pt too wide) in paragraph at lines 96--97
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
+ [23]
 Overfull \hbox (1.14192pt too wide) in paragraph at lines 102--103
  \T1/cmr/bx/n/12 si-gna-tu-re-Mes-sa-ge-Frag-ment[] \T1/cmr/m/n/12 Soll-te die Trans-ak-ti-on ei-ne aus-ge-hen-de Zah-
  []
 
-[22] [23]
+[24] [25]
 Overfull \hbox (8.6497pt too wide) in paragraph at lines 154--155
  \T1/cmr/bx/n/12 at-tach-ment-Ti-me-stam-pLo-wer-Bound & at-tach-ment-Ti-me-stam-pUp-per-
  []
@@ -769,7 +777,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--160
 [][]\T1/cmr/m/n/10 Diese Vor-ga-ben sind von der IO-TA Foun-da-ti-on ver-öf-fent-licht:
  []
 
-[24] [25] [26]) (chapters/janusz/sicherheit.tex [27] [28
+[26] [27] [28]) (chapters/janusz/sicherheit.tex [29] [30
 
 ]
 Kapitel 5.
@@ -783,7 +791,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
  []
 
-[29]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 17--20
 
  []
@@ -793,26 +801,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
  []
 
-) (chapters/janusz/programmierbarkeit.tex [30]
+) (chapters/janusz/programmierbarkeit.tex [32]
 Kapitel 6.
-) (chapters/jens/nutzen.tex [31
+) (chapters/jens/nutzen.tex [33
 
-] [32
+] [34
 
 ]
 Kapitel 7.
-[33]
+[35]
 Underfull \vbox (badness 2343) has occurred while \output is active []
 
- [34]) [35] [36
+ [36]) [37] [38
 
 ]
 Kapitel 8.
-) (chapters/praktischerteil.tex [37] [38
+) (chapters/praktischerteil.tex [39] [40
 
-] [39] [40]
+] [41] [42]
 Kapitel 9.
-(chapters/janusz/dokumentation.tex [41
+(chapters/janusz/dokumentation.tex [43
 
 ]
 
@@ -821,15 +829,18 @@ Package Fancyhdr Warning: \headheight is too small (14.49998pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
+[44]
 Kapitel 10.
-[43
+[45
 
-] [44] [45] [46] [47] [48]) (chapters/jens/dokumentation.tex [49] [50
+] [46] [47] [48] [49] [50]) (chapters/jens/dokumentation.tex [51] [52
 
 ]
 Kapitel 11.
-[51] [52]
+[53]
+Underfull \vbox (badness 1748) has occurred while \output is active []
+
+ [54]
 Overfull \hbox (0.81781pt too wide) in paragraph at lines 32--33
 \T1/cmr/m/n/12 voll-wer-ti-ge Midd-le-wa-res zu er-stel-len. Die In-stal-la-ti-on ge-stal-tet sich sehr leicht.
  []
@@ -839,22 +850,27 @@ Overfull \hbox (4.50085pt too wide) in paragraph at lines 32--33
 \T1/cmr/m/n/12 Vor-aus-set-zung sind ei-ne funk-tio-nie-ren-de Bash, so-wie der Pa-ket-ma-na-ger npm.
  []
 
-[53] [54]
-Overfull \hbox (42.89693pt too wide) in paragraph at lines 62--63
-[]\T1/cmr/m/n/12 IP-Adresse des Ser-ver-s/-fue-ling/i-ni-tia-li-ze-Fue-ling?ID der Zapf-säu-le&Kraftstoffart 
- []
+[55] [56] [57]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 86.
+ [58] [59] [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[55] [56])) (chapters/evaluierung.tex [57] [58
+ [61] [62] [63]
+Underfull \vbox (badness 6825) has occurred while \output is active []
 
-] [59] [60]
+ [64])) (chapters/evaluierung.tex [65] [66
+
+] [67]
+[68]
 Kapitel 12.
-[61
+[69
 
-] [62
+] [70
 
 ]
 Kapitel 13.
-) (main.bbl [63] [64
+) (main.bbl [71] [72
 
 ]
 Underfull \hbox (badness 7888) in paragraph at lines 9--12
@@ -902,7 +918,7 @@ Overfull \hbox (1.45276pt too wide) in paragraph at lines 37--43
 \T1/cmr/m/n/12 https://www.usenix.org/system/files/conference/nsdi16/nsdi16-
  []
 
-[65]
+[73]
 Underfull \hbox (badness 10000) in paragraph at lines 53--56
 []\T1/cmr/m/sc/12 Nakamoto, Sa-to-s-hi\T1/cmr/m/n/12 : \T1/cmr/m/it/12 Bit-coin Whi-te-pa-per\T1/cmr/m/n/12 .
  []
@@ -965,34 +981,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--78
 \T1/cmr/m/n/12 rc.de/Paperbibliothek/Veroeffentlicht/642/wi-642.pdf, 2016.
  []
 
-) [66] (main.aux) ) 
+) [74] (main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7565 strings out of 492970
- 100565 string characters out of 3135855
- 353244 words of memory out of 3000000
- 11207 multiletter control sequences out of 15000+200000
+ 7662 strings out of 492970
+ 101726 string characters out of 3135855
+ 359275 words of memory out of 3000000
+ 11304 multiletter control sequences out of 15000+200000
  30456 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,12n,47p,1771b,1226s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\J
-ayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\
-dpi600\MnSymbolC8.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA12.pk> <C
-:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC12.pk> <C:\Users\JayPi\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD12.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\public\mnsymbol\dpi600\MnSymbolE12.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ecrm1000.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\JayPi\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\
-pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-bx1440.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\JayPi\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\l
-jfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx12
-00.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (80 pages, 382916 bytes).
+ 39i,16n,47p,1771b,2019s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\JayPi\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\tcrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC8
+.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA12.pk> <C:\Users\JayPi\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC12.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fo
+nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE12.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mns
+ymbol\dpi600\MnSymbolD12.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C
+:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\JayPi\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+n\ec\dpi600\ecbx1728.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Us
+ers\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecrm1200.pk> <C:\Users\JayPi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (88 pages, 407926 bytes).
 PDF statistics:
- 886 PDF objects out of 1000 (max. 8388607)
+ 955 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

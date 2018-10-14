@@ -39,7 +39,7 @@ Petrolstation.prototype.initialize_fueling = async function(fuel_type, station, 
 						fuel_type: fuel_type, 
 						cost: 0, 
 						amount: 0, 
-						timestamp: Date.now(), 
+						initTimestamp: Date.now(), 
 						id: id
 					};
 
@@ -72,8 +72,9 @@ Petrolstation.prototype.start_fueling = function(id){
 
 	cost_per_unit = parseInt(Petrolstation.stationInfoObject[Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fuel_type].cost);
 
+	if(typeof Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].start_fueling_at === 'undefined')
+		Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].start_fueling_at = Date.now();
 
-	Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].start_fueling_at = Date.now();
 	Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fueling = new Promise((resolve, reject) => {
 
 		let fueling = setInterval(() => {
@@ -97,6 +98,15 @@ Petrolstation.prototype.get_fueling = function(id) {
 		amount: Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].amount, 
 		unit: Petrolstation.stationInfoObject[Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fuel_type].unit};
 
+};
+
+Petrolstation.prototype.pause_fueling = async function(id, callback) {
+	try{
+		clearInterval(await Petrolstation.blockedStations[Petrolstation.costumerFuelingAt[id]].fueling);
+		callback(null, true);
+	}catch(err){
+		callback(err);
+	}
 };
 
 Petrolstation.prototype.end_fueling = async function(id, callback) {

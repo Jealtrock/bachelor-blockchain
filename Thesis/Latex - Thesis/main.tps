@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=main.tex
 
 [Frame2_View0,0]
-TopLine=0
-Cursor=3197
+TopLine=6
+Cursor=1753
 
 [Frame3]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=chapters\jens\funktion.tex
 
 [Frame3_View0,0]
-TopLine=135
+TopLine=243
 Cursor=10074
 
 [Frame4]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=chapters\grundlagen.tex
 
 [Frame4_View0,0]
-TopLine=49
-Cursor=5011
+TopLine=54
+Cursor=4561
 
 [Frame5]
 Flags=0
@@ -125,10 +125,46 @@ Class=LaTeXView
 Document=main-preamble.tex
 
 [Frame6_View0,0]
-TopLine=0
-Cursor=125
+TopLine=69
+Cursor=2093
+
+[Frame7]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1161
+NormalPos.bottom=325
+Class=LaTeXView
+Document=chapters\einleitung.tex
+
+[Frame7_View0,0]
+TopLine=36
+Cursor=673
+
+[Frame8]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1161
+NormalPos.bottom=325
+Class=LaTeXView
+Document=chapters\jens\dokumentation.tex
+
+[Frame8_View0,0]
+TopLine=164
+Cursor=10650
 
 [SessionInfo]
-FrameCount=7
-ActiveFrame=3
+FrameCount=9
+ActiveFrame=8
 

@@ -13,6 +13,12 @@ Die GPIO-Pins ermöglichen es, angeschlossene Schaltkreise zu steuern oder einzul
 Ein Steckbrett wird genutzt um lötfrei Komponenten mit den Pins des Raspberry Pis zu verbinden. Mittels Kabeln werden die Pins mit einer Reihe des Bretts verbunden, wodurch an der Reihe eine Spannung angelegt wird. Nun kann an dieser Reihe eine Komponente angesteckt werden. Damit der Schaltkreis geschlossen wird, muss das andere Ende mit einem Pin verbunden werden, der geerdet ist (ein GRND-Pin).
 Da es damit möglich ist, schnell neue Komponenten anzuschließen und den Schaltkreis nach belieben zu verändern ist es gut geeignet um prototypisch Schaltkreise zu erstellen.
 
+\section{Hash Tree (Merkle Tree)}
+Im Jahr 1979 patentierte Ralph Merkle das Prinzip des Hash Trees. Dieses ist später auch bekannt als “Merkle Tree”.[5] Der Nutzen des Hash Trees wird bei der effizienten Verifizierung von Daten deutlich. Anfänglich werden Dateien, in der Regel Paare aus zwei Dateien, miteinander gehasht. Der daraus resultierende Kind-Hash wird mit dem Kind-Hash anderer Dateien zu einem gemeinsam Hash verrechnet. So entsteht nach und nach ein Baum aus diversen Hashes die schließlich einen Top-Hash ergeben. Mithilfe dieses Top-Hashes ist es möglich die Unversehrtheit jeder anfänglichen Datei zu gewährleisten. 
+
+\section{Proof-of-Work (Hashcash)}
+Das Proof-of-Work Konzept wurde anfänglich gegen denial-of-service Attacken oder für die Abwehr von Spam beim Email Verkehr gedacht. Der Erfinder Adam Back nannte dieses System auch “Hashcash”.[6] Damit eine Person, die dieses Konzept nutzt, beispielsweise eine Email versenden kann, muss sie vorher einen kleinen Aufwand betreiben. Dies könnte eine einfache mathematische Formel sein. Bei erfolgreicher Berechnung ist die Email freigegeben. Da eine Vielzahl dieser kleinen Aufwände sich zu einem großem Rechenaufwand aufstaut und da die Komplexität der Aufwände mit jeder erfolgreichen Abarbeitung steigt, wird in der Schlussfolgerung das schnelle Versenden vieler aufeinander folgender Emails verhindert.
+
 \section{Internet of Things (IoT)}
 Das Internet of Things (deutsch: Internet der Dinge) beschreibt die Verknüpfung von Geräten und Sensoren die vorher eigenständig und isoliert waren mit dem Internet. Damit ist es ihnen möglich Daten untereinander auszutauschen indem sie ihre eigenen Daten übertragen und externe Daten anfordern. So lassen sich die Geräte über das Internet gleichzeitig von Menschen und auch anderen Maschinen fernsteuern. Mit diesem Begriff wird die Idee eingeleitet, dass die Nutzer des Internets nicht ausschließlich Menschen sind, sondern zunehmend auch „Dinge“ (Things) über diesem Kommunizieren.
 Im privaten Gebrauch werden als Beispiele alltägliche Geräte aufgeführt, die durch die Vernetzung im Internet mit anderen Geräten das Leben des Nutzers komfortabler machen oder auf sonstige Weise positiv beeinflussen. Ein Beispiel wäre die Hausautomation mit Sicherheitskameras, die, wenn etwas verdächtiges ermittelt wird, sofort den Hauseigentümer über das Internet warnen und das Videomaterial live auf das Smartphone übertragen wird. [18]
@@ -22,6 +28,79 @@ Das Internet der Dinge lässt sich auch im industriellen Bereich anwenden. So las
 In diesem Zusammenhang fällt oft der Begriff Industrie 4.0. [19] Damit ist eine vierte industrielle Revolution gemeint. Kurz beschrieben geht die erste industrielle Revolution mit der Mechanisierung einher, die zweite mit der Massenfertigung von Produkten mittels Fließbändern und Fabriken, und die dritte mit der Automatisierung von Arbeitsschritten mittels Maschinen. [20] Insofern handelt es sich bei Industrie 4.0 um die Vernetzung der automatisierten Arbeitsschritte, sodass sie autonom miteinander kommunizieren können und sich dem nächsten Arbeitsschritt anpassen können.
 
 \section{Trits, Trytes \& Tryte-Alphabet}
+Das Ternäre System ist eine Alternative zu dem Binären System, mit dem Unterschied dass das Ternäre System die Basis 3 hat. Ein Trit kann drei verschiedene Werte annehmen. Es ist die kleinste Einheit in dem Ternären System. Die Werte belaufen sich auf -1, 0 oder 1. Drei Trits ergeben ein Tryte. Ein Tryte kann $3^3 = 27$ Zustände annehmen. Um die Lesbarkeit einer längeren ternären Zahl zu verbessern wurde von der IOTA-Foundation das sogenannte "`Tryte-Alphabet"' erstellt. Es besteht aus den 26 Zeichen des Alphabetes in Großbuchstaben (A-Z) und der Zahl $9$. Jedes Zeichen repräsentiert den Wert eines Tryte.
+
+\begin{table}[h]
+\centering
+	\begin{tabular}{c|c}
+		\begin{tabular}{P{1.8cm}|P{1.8cm}|P{1.8cm}}
+			Tryte & Dezimal & Buchstabe \\
+			\hline
+			0, 0, 0 & 0 & 9 \\
+			\hline
+			1, 0, 0 & 1 & A \\
+			\hline
+			-1, 1, 0 & 2 & B \\
+			\hline
+			0, 1, 0 & 3 & C \\
+			\hline
+			1, 1, 0 & 4 & D \\
+			\hline
+			-1, -1, 1 & 5 & E \\
+			\hline
+			0, -1, 1 & 6 & F \\
+			\hline
+			1, -1, 1 & 7 & G \\
+			\hline
+			-1, 0, 1 & 8 & H \\
+			\hline
+			0, 0, 1 & 9 & I \\
+			\hline
+			1, 0, 1 & 10 & J \\
+			\hline
+			-1, 1, 1 & 11 & K \\
+			\hline
+			0, 1, 1 & 12 & L \\
+			\hline
+			1, 1, 1 & 13 & M \\
+		\end{tabular}&
+		\begin{tabular}{P{1.8cm}|P{1.8cm}|P{1.8cm}}
+			Tryte & Dezimal & Buchstabe \\
+			\hline
+				&	&	\\
+			\hline
+			-1, -1, -1 & -13 & N \\
+			\hline
+			0, -1, -1 & -12 & O \\
+			\hline
+			1, -1, -1 & -11 & P \\
+			\hline
+			-1, 0, -1 & -10 & Q \\
+			\hline
+			0, 0, -1 & -9 & R \\
+			\hline
+			1, 0, -1 & -8 & S \\
+			\hline
+			-1, 1, -1 & -7 & T \\
+			\hline
+			0, 1, -1 & -6 & U \\
+			\hline
+			1, 1, -1 & -5 & V \\
+			\hline
+			-1, -1, 0 & -4 & W \\
+			\hline
+			0, -1, 0 & -3 & X \\
+			\hline
+			1, -1, 0 & -2 & Y \\
+			\hline
+			-1, 0, 0 & -1 & Z \\
+		\end{tabular}
+	\end{tabular}
+\caption{Das Tryte Alphabet}
+\label{tab:comparison}
+\end{table}
 
 \section{Distributed Ledger}
-Lorem ipsum
+Eine Distributed Ledger (wörtlich "`verteiltes Kontobuch"') Technologie (kurz DLT) kann sich wie ein öffentlich einsehbares Kontobuch vorgestellt werden. Bei handelsüblichen zentralen Transaktionen kann der Zahlende sich seines Handels zwar bewusst sein, jedoch nicht über den Status des Eingangs bei dem Zahlungsempfängers. Des weiteren hat der Zahlungsempfänger keine Einsicht in die Verfügbarkeit des Geldes oder des zu transferierenden Gegenstandes des Zahlenden. Der Handelsgegenstand kann in einer weiteren Transaktion bereits reserviert sein. Bei zentralisierten Handelsaufträgen garantiert eine dritte Partei die Richtigkeit des Handels. Dabei wird das Vertrauen jedoch in diese vorausgesetzt. Eine DLT löst dieses Problem, indem die Richtigkeit eines Handels nicht durch zentrale Parteien versichert wird, sondern durch systemimmanente Prozesse. Darüber hinaus sind die getätigten Handelsaufträge anonymisiert öffentlich einsehbar und nicht auf die Handelsparteien zurückzuführen. Die Richtigkeit basiert nicht weiter auf Vertrauen.
+
+Eine DLT zeichnet den gesamten Handelsverlauf auf. Jeder Handel kann auf den Ursprung zurückverfolgt werden. Dem Handelspartner ist es ein leichtes, den Verlauf eines Guts oder Geldes nachzuweisen, indem er die Historie dessen zurückverfolgt.\footnote{Daten bezogen von: https://www.bafin.de/SharedDocs/Veroeffentlichungen/\\DE/Fachartikel/2016/fa\_bj\_1602\_blockchain.html}

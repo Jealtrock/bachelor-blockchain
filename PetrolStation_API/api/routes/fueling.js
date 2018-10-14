@@ -28,9 +28,7 @@ router.get('/initializeFueling', (req, resp, next) => {
 		if(err) return next(err);
 
 		resp.status(200).json({
-
 			id: result
-
 		});
 
 	});
@@ -60,6 +58,20 @@ router.get('/getFueling', check_for_initialisation, (req, resp, next) => {
 
 });
 
+router.get('/pauseFueling', check_for_initialisation, (req, resp, next) => {
+
+	petrolstation.pause_fueling(req.query.id, (err, success) => {
+
+		if(err) return next(err);
+
+		resp.status(200).json({
+			message: 'Pause fueling'
+		});
+
+	});
+
+});
+
 router.get('/endFueling', check_for_initialisation, (req, resp, next) => {
 
 	petrolstation.end_fueling(req.query.id, (err, result) => {
@@ -70,7 +82,8 @@ router.get('/endFueling', check_for_initialisation, (req, resp, next) => {
 			data: result
 		});
 
-	})
+	});
+
 });
 
 module.exports = router;
