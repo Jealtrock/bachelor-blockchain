@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 03:26
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  15 OCT 2018 03:33
->>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 04:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -382,7 +378,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/JayPi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>] [2
+{C:/Users/Janusz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>] [2
 
 ]) (main.toc
 Underfull \vbox (badness 3482) has occurred while \output is active []
@@ -391,9 +387,6 @@ Underfull \vbox (badness 3482) has occurred while \output is active []
 
 
 ]
-Underfull \vbox (badness 2173) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -401,7 +394,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-Underfull \vbox (badness 1953) has occurred while \output is active []
+Underfull \vbox (badness 1242) has occurred while \output is active []
 
  [3])
 \tf@toc=\write3
@@ -483,11 +476,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [11] [12]) (chapters/theoretischerteil.tex [13]
 [14
 
-] [15] [16]
+]
 Kapitel 3.
-(chapters/jens/funktion.tex [17
-
-] [18
+(chapters/jens/funktion.tex [15] [16
 
 ]
 Kapitel 4.
@@ -499,7 +490,7 @@ Overfull \hbox (26.59956pt too wide) in paragraph at lines 8--9
 
 Underfull \vbox (badness 5563) has occurred while \output is active []
 
- [19] [20] [21]
+ [17] [18] [19]
 Overfull \hbox (19.51259pt too wide) in paragraph at lines 64--65
 \T1/lmr/m/n/12 FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFF-FE FFFFFC2F
  []
@@ -519,30 +510,30 @@ Overfull \hbox (36.2146pt too wide) in paragraph at lines 66--67
 \T1/lmr/m/n/12 26A3C465 5DA4FBFC 0E1108A8 FD17B448 A6855419 9C47D08F FB10D4B8
  []
 
-[22]
+[20]
 Overfull \hbox (18.21768pt too wide) in paragraph at lines 67--68
 \T1/lmr/m/n/12 FFFFFFFF FFFFFFFF FFFFFF-FE BAA-ED-CE6 AF48A03B BFD25E8C
  []
 
-[23] [24]
+[21] [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
+ [23]
 Underfull \hbox (badness 10000) in paragraph at lines 88--88
 [][]\T1/lmr/m/n/10 Diese Vor-ga-ben sind von der IO-TA Foun-da-ti-on ver-öf-fent-licht:
  []
 
-[26]
+[24]
 Overfull \hbox (6.2529pt too wide) in paragraph at lines 99--99
 [][]\T1/lmr/m/n/10 Daten be-zo-gen von: https://www.forbes.com/sites/shermanlee/2018/01/22/explaining-
  []
 
-[27]
+[25]
 Overfull \hbox (1.23895pt too wide) in paragraph at lines 105--106
  \T1/lmr/bx/n/12 si-gna-tu-re-Mes-sa-ge-Frag-ment[] \T1/lmr/m/n/12 Soll-te die Trans-ak-ti-on ei-ne aus-ge-hen-de Zah-
  []
 
-[28] [29]
+[26] [27]
 Overfull \hbox (8.74886pt too wide) in paragraph at lines 157--158
  \T1/lmr/bx/n/12 at-tach-ment-Ti-me-stam-pLo-wer-Bound & at-tach-ment-Ti-me-stam-pUp-per-
  []
@@ -552,15 +543,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--162
 [][]\T1/lmr/m/n/10 Diese Vor-ga-ben sind von der IO-TA Foun-da-ti-on ver-öf-fent-licht:
  []
 
-[30]
+[28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31] [32] [33]) (chapters/janusz/sicherheit.tex
-[34]
+ [29] [30] [31]) (chapters/janusz/sicherheit.tex
+[32]
 Kapitel 5.
-[35
+[33
 
-] [36]
+] [34]
 Overfull \hbox (0.60585pt too wide) in paragraph at lines 24--25
 \T1/lmr/m/n/12 Die Ket-te, die am meis-ten Re-chen-leis-tung bürgt (längs-te Ket-te) ist die Haupt-
  []
@@ -568,8 +559,8 @@ Overfull \hbox (0.60585pt too wide) in paragraph at lines 24--25
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-<images/26Prozent.PNG, id=164, 241.65282pt x 277.035pt>
+ [35]
+<images/26Prozent.PNG, id=158, 241.65282pt x 277.035pt>
 File: images/26Prozent.PNG Graphic file (type png)
 <use images/26Prozent.PNG>
 Package pdftex.def Info: images/26Prozent.PNG  used on input line 39.
@@ -578,7 +569,7 @@ Package pdftex.def Info: images/26Prozent.PNG  used on input line 39.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/51Prozent.PNG, id=165, 255.95625pt x 279.29344pt>
+<images/51Prozent.PNG, id=159, 255.95625pt x 279.29344pt>
 File: images/51Prozent.PNG Graphic file (type png)
 <use images/51Prozent.PNG>
 Package pdftex.def Info: images/51Prozent.PNG  used on input line 46.
@@ -591,64 +582,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
-[38] [39 <./images/26Prozent.PNG>] [40 <./images/51Prozent.PNG>] [41]
+[36] [37 <./images/26Prozent.PNG>] [38 <./images/51Prozent.PNG>] [39]
 Overfull \hbox (9.03116pt too wide) in paragraph at lines 82--83
 []\T1/lmr/m/n/12 Durch das One-Time-Winternitz ha-shing (sie-he zu One-Time-Winternitz Funk-
  []
 
-[42]
+[40]
 Overfull \hbox (11.3481pt too wide) in paragraph at lines 96--97
 []\T1/lmr/m/n/12 Das Ob-jekt wird auf Syn-tax und Gül-tig-keit ge-prüft. Da-für wird die Transaction-
  []
 
-[43]
+[41]
 Overfull \hbox (0.15445pt too wide) in paragraph at lines 108--109
 []\T1/lmr/m/n/12 Dem ent-ge-gen-wir-ken soll der, von der IOTA-Foundation be-reit-ge-stell-te, Coor-
  []
 
-[44]
-
-LaTeX Warning: Citation `ja:winternitz' on page 45 undefined on input line 124.
-
-
-LaTeX Warning: Citation `ja:securelamport' on page 45 undefined on input line 124.
-
-[45]) (chapters/janusz/programmierbarkeit.tex [46]
+[42] [43]) (chapters/janusz/programmierbarkeit.tex [44]
 Kapitel 6.
 
-LaTeX Warning: Reference `' on page 47 undefined on input line 11.
+LaTeX Warning: Reference `' on page 45 undefined on input line 11.
 
 
-LaTeX Warning: Reference `' on page 47 undefined on input line 11.
+LaTeX Warning: Reference `' on page 45 undefined on input line 11.
 
-) (chapters/jens/nutzen.tex [47
+) (chapters/jens/nutzen.tex [45
 
-] [48
+] [46
 
 ]
 Kapitel 7.
-[49] [50]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [51]) [52]
+[47] [48] [49]) [50]
 Kapitel 8.
-[53
+) (chapters/praktischerteil.tex [51
 
-] [54
+] [52
 
 ]
 Kapitel 9.
-) (chapters/praktischerteil.tex [55] [56
+(chapters/janusz/dokumentation.tex [53] [54
 
-] [57] [58]
+]
 Kapitel 10.
-[59
-
-] (chapters/janusz/dokumentation.tex [60]
-Kapitel 11.
-[61
-
-] [62] [63] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+[55] [56] [57] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
@@ -658,12 +633,12 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 57.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-[64]
+[58]
 Overfull \hbox (18.77307pt too wide) in paragraph at lines 77--78
 []\T1/lmr/m/n/12 [Bild von der Pla-zie-rung der Kom-po-nen-ten But-ton 1 und 2 und LED](PICTURE) 
  []
 
-[65] [66] [67]
+[59] [60] [61]
 Overfull \hbox (346.11293pt too wide) in paragraph at lines 156--157
  \T1/lmr/bx/n/12 Seed[] \T1/lmr/m/n/12 Der Seed DSPOA-XMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9I
 ZY9IVPKTSZK
@@ -674,22 +649,22 @@ Overfull \hbox (57.61098pt too wide) in paragraph at lines 158--159
 \T1/lmr/m/n/12 sind, wur-de die fol-gen-de Adres-se be-lie-big aus-ge-sucht: htt-ps://potato.iotasalad.org:14265.
  []
 
-[68]
+[62]
 Overfull \hbox (107.14488pt too wide) in paragraph at lines 162--163
 [][][][][][][][][][]  
  []
 
-[69] [70]) (chapters/jens/dokumentation.tex [71] [72
+[63] [64]) (chapters/jens/dokumentation.tex [65] [66
 
 ]
-Kapitel 12.
+Kapitel 11.
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 8.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 8.
- [73] [74]
+ [67] [68]
 Overfull \hbox (0.91191pt too wide) in paragraph at lines 32--33
 \T1/lmr/m/n/12 voll-wer-ti-ge Midd-le-wa-res zu er-stel-len. Die In-stal-la-ti-on ge-stal-tet sich sehr leicht.
  []
@@ -699,27 +674,31 @@ Overfull \hbox (6.21031pt too wide) in paragraph at lines 32--33
 \T1/lmr/m/n/12 Vor-aus-set-zung sind ei-ne funk-tio-nie-ren-de Bash, so-wie der Pa-ket-ma-na-ger npm.
  []
 
-[75] [76] [77]
+[69] [70] [71]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 86.
- [78] [79] [80]
+ [72] [73] [74]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81] [82] [83]
+ [75] [76] [77]
 Underfull \vbox (badness 6825) has occurred while \output is active []
 
- [84])) (chapters/evaluierung.tex [85] [86
+ [78]) [79] [80
+
+]
+Kapitel 12.
+) (chapters/evaluierung.tex [81] [82
 
 ]
 Kapitel 13.
-<<<<<<< HEAD
-[87]) (main.bbl [88]
-=======
 
-Underfull \vbox (badness 1331) has occurred while \output is active []
+Overfull \hbox (0.27884pt too wide) in paragraph at lines 7--10
+[]\T1/lmr/m/n/12 Abseits der Ver-wen-dung als Kryp-towäh-rung kön-nen Dis-tri-bu-ted Led-ger Tech-
+ []
 
- [87]) (main.bbl [88]
->>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2
+[83]) [84] (main.bbl [85] [86
+
+]
 Underfull \hbox (badness 1533) in paragraph at lines 15--20
 []\T1/lmr/m/sc/12 Buchmann, Jo-han-nes\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Erik Dah-men\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Sa-r
 ah Ereth\T1/lmr/m/n/12 ,
@@ -741,9 +720,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--25
 \T1/lmr/m/n/12 http://www.secg.org/sec1-v2.pdf, 2009.  Ab-ge-ru-fen am
  []
 
-[89
-
-]
+[87]
 Underfull \hbox (badness 10000) in paragraph at lines 45--51
 []\T1/lmr/m/sc/12 Chang, Ming-Hsin \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Yi-Shiung Yeh\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Im-
  []
@@ -841,18 +818,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--94
 \T1/lmr/m/n/12 rc.de/Paperbibliothek/Veroeffentlicht/642/wi-642.pdf, 2016.
  []
 
-[90]) [91] (main.aux)
+[88]) [89] (main.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  6049 strings out of 492970
- 81381 string characters out of 3135855
- 356275 words of memory out of 3000000
+ 81837 string characters out of 3135852
+ 356298 words of memory out of 3000000
  9709 multiletter control sequences out of 15000+200000
  78684 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -866,13 +840,9 @@ m/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
 lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-<<<<<<< HEAD
-Output written on main.pdf (101 pages, 533405 bytes).
-=======
-Output written on main.pdf (101 pages, 534122 bytes).
->>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2
+Output written on main.pdf (99 pages, 534360 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
+ 387 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

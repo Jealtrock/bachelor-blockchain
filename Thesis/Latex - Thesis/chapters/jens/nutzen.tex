@@ -22,6 +22,9 @@ Abhängig davon in welchem Modus die Daten publiziert sind, benötigt der Hörer en
 \paragraph{Signatur}
 Ein böswilliger Hörer, der von einem Kanal den "`root"' und den "`sideKey"' erhält, darf nicht die Möglichkeit haben, dank dieser beiden Daten, den Kanal für sich zu beanspruchen um zukünftig Beiträge in diesem zu verfassen. Der Kanal benötigt eine Signatur. Diese wird nach dem "`Merkle tree based signature scheme"' erreicht. Eine Generation ist aufgebaut wie ein Merkle Tree. Die Blätter sind private Schlüssel. Diese Schlüssel werden verwendet um IOTA-Adressen zu generieren. Adressen werden jeweils paarweise miteinander gehasht. Das paarweise Hashen der Ergebnisse wird solange fortgeführt, bis der root Hash erreicht ist. Es können beliebig viele Generationen erstellt werden. Der Hörer nutzt die Adresse der MAM und hasht diesen mit dem ersten, in der MAM angegebenen Geschwister Hash. Das Ergebnis wird mit dem nächsten Geschwister Hash zusammengeführt. Dieser Vorgang wiederholt sich, bis das letzte Paar zu dem sogenannten "`temp\_root"' zusammengeführt wurde. Sollte der "`temp\_root"' identisch mit dem root der MAM sein, ist die Nachricht authentisch.\footnote{Daten bezogen von: https://medium.com/coinmonks/iota-mam-eloquently-explained-d7505863b413}(PICTURE)
 
+\subsection{Datentransfer}
+(TEXT) json
+
 \section{Zusammenfassung}
 Der Nutzen der Tangle zeigt sich anhand des SignatureMessageFragment - Feldes einer Transaktion. Eine Übertragung von Daten in Form eines JSON - Objektes ist damit realisierbar. Des Weiteren ergeben sich neue Möglichkeiten der permanenten Datenübertragung dank der Masked Authenticated Messages. Dies ist vor allem nützlich für Gerätschaften des Internet of Things. 
 
