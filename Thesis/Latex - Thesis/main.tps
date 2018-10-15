@@ -11,14 +11,22 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1161
-NormalPos.bottom=325
+NormalPos.right=1322
+NormalPos.bottom=487
 Class=LaTeXView
+<<<<<<< HEAD
 Document=chapters\jens\dokumentation.tex
 
 [Frame0_View0,0]
 TopLine=279
 Cursor=15157
+=======
+Document=main.tex
+
+[Frame0_View0,0]
+TopLine=1
+Cursor=480
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame1]
 Flags=0
@@ -29,14 +37,22 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1161
-NormalPos.bottom=325
+NormalPos.right=1322
+NormalPos.bottom=487
 Class=LaTeXView
+<<<<<<< HEAD
 Document=chapters\janusz\dokumentation.tex
 
 [Frame1_View0,0]
 TopLine=304
 Cursor=17514
+=======
+Document=chapters\theoretischerteil.tex
+
+[Frame1_View0,0]
+TopLine=0
+Cursor=0
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame2]
 Flags=0
@@ -47,6 +63,7 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
+<<<<<<< HEAD
 NormalPos.right=1161
 NormalPos.bottom=325
 Class=LaTeXView
@@ -55,6 +72,16 @@ Document=chapters\praktischerteil.tex
 [Frame2_View0,0]
 TopLine=5
 Cursor=25
+=======
+NormalPos.right=1322
+NormalPos.bottom=487
+Class=BibTeXView
+Document=quellen.bib
+
+[Frame2_View0,0]
+TopLine=18
+Cursor=1095
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame3]
 Flags=0
@@ -65,14 +92,22 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1161
-NormalPos.bottom=325
+NormalPos.right=1322
+NormalPos.bottom=487
 Class=LaTeXView
+<<<<<<< HEAD
 Document=chapters\janusz\programmierbarkeit.tex
 
 [Frame3_View0,0]
 TopLine=0
 Cursor=399
+=======
+Document=chapters\deckblatt.tex
+
+[Frame3_View0,0]
+TopLine=0
+Cursor=0
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame4]
 Flags=0
@@ -83,14 +118,22 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1161
-NormalPos.bottom=325
+NormalPos.right=1322
+NormalPos.bottom=487
 Class=LaTeXView
+<<<<<<< HEAD
 Document=chapters\theoretischerteil.tex
 
 [Frame4_View0,0]
 TopLine=5
 Cursor=996
+=======
+Document=chapters\jens\funktion.tex
+
+[Frame4_View0,0]
+TopLine=0
+Cursor=0
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame5]
 Flags=0
@@ -101,6 +144,7 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
+<<<<<<< HEAD
 NormalPos.right=1161
 NormalPos.bottom=325
 Class=LaTeXView
@@ -109,6 +153,16 @@ Document=chapters\jens\nutzen.tex
 [Frame5_View0,0]
 TopLine=0
 Cursor=204
+=======
+NormalPos.right=1322
+NormalPos.bottom=487
+Class=LaTeXView
+Document=chapters\janusz\sicherheit.tex
+
+[Frame5_View0,0]
+TopLine=204
+Cursor=18169
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame6]
 Flags=0
@@ -119,14 +173,22 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1161
-NormalPos.bottom=325
+NormalPos.right=1322
+NormalPos.bottom=487
 Class=LaTeXView
+<<<<<<< HEAD
 Document=main.tex
 
 [Frame6_View0,0]
 TopLine=0
 Cursor=184
+=======
+Document=chapters\grundlagen.tex
+
+[Frame6_View0,0]
+TopLine=195
+Cursor=13512
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 
 [Frame7]
 Flags=0
@@ -137,9 +199,10 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1161
-NormalPos.bottom=325
+NormalPos.right=1322
+NormalPos.bottom=487
 Class=LaTeXView
+<<<<<<< HEAD
 Document=chapters\jens\funktion.tex
 
 [Frame7_View0,0]
@@ -256,5 +319,15 @@ Cursor=16672
 
 [SessionInfo]
 FrameCount=14
+=======
+Document=chapters\janusz\dokumentation.tex
+
+[Frame7_View0,0]
+TopLine=95
+Cursor=6479
+
+[SessionInfo]
+FrameCount=8
+>>>>>>> c305b440c9b7f84de0b099184f039a0bc89bdd12
 ActiveFrame=5
 

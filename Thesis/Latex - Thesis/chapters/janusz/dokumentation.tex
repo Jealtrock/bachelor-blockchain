@@ -8,6 +8,8 @@ Da der Anspruch an starke Rechenleistung in einem Auto nicht zu hoch sein sollte
 
 (PICTURE)Hier noch beschreiben was die Anforderungen an das Smartauto sind, und graphische nutzerinteraktion anzeigen. Hier soll erklärt werden, was von der tankanwendung gefordert ist, und wie sich das auf die tatsächlich umsetzung auswirkt.
 
+Die Anforderungen an das Tanken des Autos
+
 \section{Aufbau}
 Unter diesem Aspekt wird der Aufbau und die Einrichtung der einzelnen Komponenten beschrieben die für die Umsetzung nötig sind.
 
@@ -38,9 +40,7 @@ Elektronische Komponenten um dem Benutzer der Anwendung Bedienelemente zur Verfü
 Die Widerstände sind für den kontrollierten Stromfluss unentbehrlich und sie verhindern, dass die Komponenten durch zu hohen Stromfluss beschädigt werden.
 
 \subsection{Einrichtung}
-Um den Raspberry Pi so einzurichten, dass es möglich ist, Anwendungen zu programmieren und zu testen, sollte dieser mittels eines HDMI-Kabels an einen Monitor angeschlossen werden. Darüber hinaus sollten Peripheriegeräte wie Tastatur und Maus über die USB-Ausgänge angeschlossen werden um sich durch die Bedienoberfläche navigieren zu können.
-
-Damit das Gerät jedoch vollständig bedienbar wird, muss es mit einem Betriebssystem ausgestattet sein. Aufgrund von offiziellem Support seitens der Raspberry Pi Foundation [26](Quelle) wurde das Raspbian Betriebssystem für die Umsetzung ausgewählt. Bei Raspbian handelt es sich um ein, auf Linux basierendes Betriebssystem, welches von der Raspberry Pi Foundation veröffentlicht wurde.
+Um den Raspberry Pi so einzurichten, dass es möglich ist, Anwendungen zu programmieren und zu testen, sollte dieser mittels eines HDMI-Kabels an einen Monitor angeschlossen werden. Weiterhin sollten Peripheriegeräte wie Tastatur und Maus über die USB-Ausgänge angeschlossen werden um sich durch die Bedienoberfläche navigieren zu können. Doch damit das Gerät vollständig bedienbar wird, muss es mit einem Betriebssystem ausgestattet sein. Aufgrund von offiziellem Support seitens der Raspberry Pi Foundation [26](Quelle) wurde das Raspbian Betriebssystem für die Umsetzung ausgewählt. Bei Raspbian handelt es sich um ein, auf Linux basierendes Betriebssystem, welches von der Raspberry Pi Foundation veröffentlicht wurde.
 
 Das Raspbian Betriebssystem muss auf die Micro SD Karte geladen werden, damit es für den Raspberry Pi zur Verfügung steht. In folgenden Schritten wurde die Speicherkarte mit Raspbian beschrieben:
 \begin{enumerate}
@@ -79,22 +79,6 @@ Die Komponenten müssen in das Steckbrett gesteckt werden, sodass sie erreichbar 
 Für die Umsetzung müssen diese Komponenten für den Nutzer interagierbar sein, dazu werden sie mit zufälligen, freien GPIO-Pins verbunden.
 
 [Tabelle hier einfügen, wie buttons 1 und 2 und LED mit gpios verbunden sind](PICTURE)
-
-Dies erfolgt indem die weibliche Seite des Kabels in den jeweiligen Pin geführt wird, die andere Seite des Weiblich-Männlich Kabels wird nun in die Reihe des Steckbretts gesteckt an der sich auch die Komponente befindet, die mit dem GPIO-Pin interagieren soll.
-
-Um auf dem Steckbrett einen Stromkreis erzeugen zu können, sollten an den Querreihen des Steckbretts Spannungen angelegt werden. Dafür gibt es auf dem Raspberry Pi Pins, die entweder eine Spannung von 5V, 3,3V oder 0V (GND) haben. Für diese Umsetzung werden die 3.3V Pins und GND-Pins genutzt um einen Stromkreis zu erzeugen, da 3,3V ausreichen um ein Signal auf den Pins zu erfassen. Diese werden jeweils auf die korrespondierende Querreihe mittels Weiblich-Männlich Kabeln verbunden.
-
-Zum Schutz vor Überspannung an der LED muss ein Widerstand in den Stromkreis eingebaut werden, der verhindert, dass die LED zu viel Energie erhält und sie dadurch zu heiß wird und durchbrennt.
-
-Für die Berechnung des passenden Widerstandes empfiehlt es sich, mit der Formel 
-
-[Formel für berechnung des widerstandes](PICTURE)
-
-zu arbeiten. Wobei Im = Eingangspannung also 3.3V und Ia = Spannungsverringerung der LED also 0.2A ist. Dies ergibt 
-
-[Formel mit eingesetzten parametern](PICTURE)
-
-Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus diesem Grund wird der nächsthöhere verfügbare Wert angenommen. In diesem Fall ist dies 330 Ohm. Dieser Widerstand muss nun in den Stromkreis mit der LED eingebunden werden. Nach Einfügen des Widerstandes ist der Stromkreis geschlossen. Dies wiederholt man auch für die Taster.
 
 \subsubsection{PyOTA}
 Bei PyOTA handelt es sich um eine Python-Bibliothek für IOTA. Sie implementiert die API und unterstützt Funktionalitäten um eine Transaktion eigenständig erstellen zu können\footnote{siehe dazu https://pyota.readthedocs.io/en/latest/}.

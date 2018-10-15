@@ -1,5 +1,5 @@
 \chapter{Nutzen}
-Das Kapitel Nutzen umfasst einen Überblick über implementierte Möglichkeiten in den Kryptowährungen IOTA und Bitcoin. Dabei werden Funktionen wie MAM (Masked Authenticated Messages) 
+Das Kapitel Nutzen umfasst einen Überblick über implementierte Möglichkeiten in den Kryptowährungen IOTA und Bitcoin. Dabei werden Funktionen wie MAM (Masked Authenticated Messages) als Funktion von IOTA näher erörtert. Auch das Potenzial der Blockchain hinsichtlich "`Smarts Contracts"' wird erläutert.
 
 \section{Bitcoin/Blockchain}
 Bitcoin wurde als eine kryptographische Währung implementiert, die erstmalig das anonyme, dezentrale Bezahlen ermöglicht. Der Nutzen wird dadurch deutlich, dass die Bezahlvorgänge unabhängig von Gesetzen oder Richtlinien durchgesetzt werden können. Einer Transaktion im Bitcoin Netzwerk ist nicht ersichtlich, welche Ware eingekauft wurde und welche Person für die Bezahlung zuständig ist. Das Netzwerk ist gänzlich unabhängig von der Kontrolle einer zentralen Partei. Jeder Bezahlvorgang ist in der Blockchain dokumentiert und für jedermann einsehbar.
@@ -21,3 +21,8 @@ Abhängig davon in welchem Modus die Daten publiziert sind, benötigt der Hörer en
 
 \paragraph{Signatur}
 Ein böswilliger Hörer, der von einem Kanal den "`root"' und den "`sideKey"' erhält, darf nicht die Möglichkeit haben, dank dieser beiden Daten, den Kanal für sich zu beanspruchen um zukünftig Beiträge in diesem zu verfassen. Der Kanal benötigt eine Signatur. Diese wird nach dem "`Merkle tree based signature scheme"' erreicht. Eine Generation ist aufgebaut wie ein Merkle Tree. Die Blätter sind private Schlüssel. Diese Schlüssel werden verwendet um IOTA-Adressen zu generieren. Adressen werden jeweils paarweise miteinander gehasht. Das paarweise Hashen der Ergebnisse wird solange fortgeführt, bis der root Hash erreicht ist. Es können beliebig viele Generationen erstellt werden. Der Hörer nutzt die Adresse der MAM und hasht diesen mit dem ersten, in der MAM angegebenen Geschwister Hash. Das Ergebnis wird mit dem nächsten Geschwister Hash zusammengeführt. Dieser Vorgang wiederholt sich, bis das letzte Paar zu dem sogenannten "`temp\_root"' zusammengeführt wurde. Sollte der "`temp\_root"' identisch mit dem root der MAM sein, ist die Nachricht authentisch.\footnote{Daten bezogen von: https://medium.com/coinmonks/iota-mam-eloquently-explained-d7505863b413}(PICTURE)
+
+\section{Zusammenfassung}
+Der Nutzen der Tangle zeigt sich anhand des SignatureMessageFragment - Feldes einer Transaktion. Eine Übertragung von Daten in Form eines JSON - Objektes ist damit realisierbar. Des Weiteren ergeben sich neue Möglichkeiten der permanenten Datenübertragung dank der Masked Authenticated Messages. Dies ist vor allem nützlich für Gerätschaften des Internet of Things. 
+
+Die Blockchain hinter Bitcoin setzt die Basis um sensible Daten dezentral abzuspeichern oder die Richtigkeit dessen zu gewährleisten, indem ein digitaler Fingerabdruck in der Blockchain abgespeichert wird. Auch ist die Verwendung von sogenannten "`Smart Contracts"' möglich.

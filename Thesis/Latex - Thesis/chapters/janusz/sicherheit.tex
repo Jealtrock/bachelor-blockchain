@@ -1,11 +1,11 @@
 \chapter{Sicherheit}
-Für die Beantwortung der zugrundeliegenden Fragestellung, ob die ausgewählten Distributed Ledger Technologien zukunftsfähig sind, müssen die Sicherheitsmechanismen untersucht werden, durch die diese Technologien vor Angriffen geschützt sind. Die gewählten Technologien werden darüber hinaus auch darauf geprüft, wie gut die Zahlungsmittel in der jeweiligen virtuellen Geldbörse (Wallet) vor Diebstahl geschützt sind. Dies beinhaltet auch zum einen, mit welchen Verschlüsselungsalgorithmen gearbeitet wird und zum anderen wie sicher sie sind. Weiterhin soll ergründet werden, welche Ausmaße fehlerhafte Nutzung der Technologie auf die Sicherheit hat.
+Für die Beantwortung der zugrundeliegenden Fragestellung, ob die ausgewählten Distributed Ledger Technologien zukunftsfähig sind, müssen die Sicherheitsmechanismen untersucht werden, durch die diese Technologien vor Angriffen geschützt sind. Die gewählten Technologien werden darüber hinaus auch darauf geprüft, wie gut die Zahlungsmittel in der jeweiligen virtuellen Geldbörse vor Diebstahl geschützt sind. Dies beinhaltet auch zum einen, mit welchen Verschlüsselungsalgorithmen gearbeitet wird und zum anderen wie sicher sie sind. Weiterhin soll ergründet werden, welche Ausmaße fehlerhafte Nutzung der Technologie auf die Sicherheit hat.
 
 \section{Bitcoin}
 Bitcoin setzt bei seiner Implementierung auf die Blockchain-Technologie, diese enthält intrinsische Sicherheitsrisiken, die bei der Umsetzung dieser Kryptowährung adressiert werden mussten. Im folgenden werden diese Risiken und das entsprechende Sicherheitsmerkmal auf Zukunftssicherheit geprüft.
 
 \subsection{Konto Sicherheit}
-Bitcoins gehören zu einer digitalen Geldbörse. Diese Geldbörse ist vereinfacht betrachtet ein digitaler Schlüssel zu dem nur der Eigentümer Zugang haben sollte. Es ist nur mit diesem Schlüssel möglich, zu beweisen welche und wie viele Bitcoins einer bestimmten Person zugeordnet sind. Die Generierung der Schlüssel basiert auf ein ECC (Elliptic Curve Cryptography) Verschlüsselungsverfahren (siehe zu ECC \ref{ECC} auf Seite \pageref{ECC}). 
+Bitcoins gehören zu einer digitalen Geldbörse. Diese Geldbörse ist vereinfacht betrachtet ein digitaler Schlüssel zu dem nur der Eigentümer Zugang haben sollte. Es ist nur mit diesem Schlüssel möglich, zu beweisen welche und wie viele Bitcoins einer bestimmten Person zugeordnet sind. Die Generierung der Schlüssel basiert auf ein ECC (Elliptic Curve Cryptography) Verschlüsselungsverfahren (siehe zu ECC \ref{ECC} auf Seite \pageref{ECC}).
 
 Aus diesem privatem Schlüssel kann der öffentliche Schlüssel nachvollzogen werden, die eine Adresse darstellt, an die Bitcoins gesendet oder, von ihr ausgehend, Bitcoins versendet werden. Der öffentliche Schlüssel wird nochmals mit SHA256 und dann mit RIPEMD-160 gehasht. Die resultierende Zeichenfolge nennt sich eine P2PKH-Adresse (Pay To Public Key Hash). Sie besteht aus 27-34 alphanumerischer Zeichen mit Ausnahme von einigen Buchstaben/Zahlen für eine bessere Lesbarkeit. Dies geschieht als Absicherung für den Fall, dass es durch einen neuentdeckten Algorithmus  möglich sein sollte, das ECDSA-Verschlüsselungsverfahren zu invertieren und den privaten Schlüssel aus dem öffentlichen Schlüssel zu generieren.
 
@@ -25,10 +25,7 @@ Es ist also für einen Angreifer nicht möglich ungültige Transaktionen in das Net
 
 Jedoch sollte angemerkt werden, dass durch die Wahrscheinlichkeit, dass ein Angreifer kurzfristig mehr Blöcke erzeugen könnte als die wahre Hauptkette, eine Transaktion erst nach ca. sechs weiteren Blöcken als bestätigt angesehen wird.(QUELLE)
 
-\subsection{Angriffsszenarien}\label{bitcoin:angriffsszenarios}
-Im Folgenden werden diverse Angriffsszenarien auf das Bitcoin-Netzwerk beschrieben. Es wird erläutert mit welchen Mechanismen sich die Blockchain-Technologie vor diesen Angriffen schützt.
-
-\subsubsection{51\%-Attacke}
+\subsubsection{51\%-Attacke}\label{bitcoin:angriffsszenarios}
 In Satoshi Nakamotos Bitcoin-Whitepaper wird erklärt, wie ein möglicher Angriff durchzuführen wäre. Er beschreibt ein Szenario, welches als 51\%-Attacke bekannt ist. Grundlegend hiermit gemeint, das ein Angreifer mehr als 50\% der Hash-Rate (Gesamteistung) des Netzwerkes besitzt und diese Leistung nutzt um schneller eigene Blöcke in das Netzwerk zu publizieren.
 
 Dies wird nützlich, um Transaktionen die man getätigt hat ungültig zu machen indem man eine weitere Transaktion von der Adresse an eine andere, eigene Adresse erstellt. Zum Beispiel kann damit ein Verkäufer getäuscht werden, sodass die Person denkt, man hätte die Bitcoins gezahlt. Im Hintergrund jedoch erstellt der Angreifer seine eigene Blockchain mit der, zu diesem Zweck, erstellten Transaktion an die eigene Adresse, womit zugleich die anfängliche Transaktion nicht mehr in einen Block aufgenommen werden kann, da die Bitcoins nicht mehr an der hinterlegten Adresse sind. Es müssen solange Blocks erzeugt werden, bis die falsche Blockchain länger ist als die ehrliche.
@@ -68,7 +65,7 @@ Diese Angriffsfläche eröffnet sich aufgrund der dezentralen Architektur von Bloc
 Durch die Entlohnung in Form von Bitcoins durch das Minen und durch die Transaktionsgebühren wird Anreiz geschaffen, das Bitcoin-Netzwerk nicht zu manipulieren. Eine Kette mit ungültigen Blöcken würde auch nicht von ehrlichen Minern angenommen werden. Daher wird erhofft ~\cite{onlinebeispiel}, dass die Belohnung und das Eigeninteresse an der Integrität von Bitcoin ausreicht um Angreifer abzuwehren.
 
 \subsection{Quantenprozessorresistenz}
-Mit der Einführung leistungsstarker Quantenprozessoren, die darauf ausgelegt sind, kryptographische Algorithmen zu entschlüsseln, könnten Algorithmen (unter anderem ECDSA) unsicher werden. Auch die starke Leistung von Quantencomputern eröffnet eine neue Angriffsfläche unter dem Aspekt, dass der Anteil von über der Hälfte der Gesamtleistung des Miner-Netzwerkes dem Nutzer langfristig eine längere Blockchain gewähren kann. Auf dieses Problem wird in Kapitel \ref{bitcoin:angriffsszenarios} eingegangen.
+Mit der Einführung leistungsstarker Quantenprozessoren, die darauf ausgelegt sind, kryptographische Algorithmen zu entschlüsseln, könnten Algorithmen (unter anderem ECDSA) unsicher werden. Auch die starke Leistung von Quantencomputern eröffnet eine neue Angriffsfläche unter dem Aspekt, dass der Anteil von über der Hälfte der Gesamtleistung des Miner-Netzwerkes dem Nutzer langfristig eine längere Blockchain gewähren kann. Auf dieses Problem wird in Abschnitt \ref{bitcoin:angriffsszenarios} eingegangen.
 
 Die genutzten kryptographischen Algorithmen sind nicht bewiesen, dass sie Quantenprozessoren standhalten könnten(QUELLE). Indes ist das Bitcoin-Netzwerk durch ihre Architektur und Nutzung nicht gegen Quantencomputern geschützt. Aber komplett ungeschützt bleibt die Technologie nicht.
 
@@ -84,24 +81,23 @@ Ein Seed besteht aus 81 Trytes (siehe zu Trytes Grundlagen \ref{grundlagen:trits
 
 Durch das One-Time-Winternitz hashing (siehe zu One-Time-Winternitz Funktion \ref{OneTimeSignature} auf Seite \pageref{OneTimeSignature}) ist eine Adresse für ausgehende Zahlungen nur einmal zu benutzen, da ein Teil des privaten Schlüssels bekannt wird. Sollte die Adresse mehr als einmal genutzt werden, so wird zu viel des privaten Schlüssels öffentlich gemacht und eine Entschlüsselung wird zunehmend einfacher. Ist der private Schlüssel vollständig enthüllt, kann der Angreifer auf die IOTAs zugreifen die auf der Adresse hinterlegt sind.
 
-Hierdurch eröffnet sich ein Risiko, welches der Nutzer von IOTA selbst entgegnen muss, wenn er nicht das offizielle IOTA-Wallet Programm nutzt um Transaktionen zu erstellen. Hierzu muss angemerkt werden, dass durch die Kompromittierung des privaten Schlüssels nicht der Seed oder alle anderen Adressen gefährdet sind.
+Hierdurch eröffnet sich ein Risiko, welches der Nutzer von IOTA selbst entgegnen muss, wenn er nicht das offizielle IOTA-Wallet Programm nutzt, dieses übernimmt die Adressverwaltung automatisch. Hierzu muss angemerkt werden, dass durch die Kompromittierung des privaten Schlüssels nicht der Seed oder alle anderen Adressen des Opfers gefährdet sind.
 
 \subsection{Anonymität}
-Es ist wichtig zu betrachten, wie Anonym die Identität im Tangle-Netzwerk ist. Zum einen was einige Nutzer über andere Nutzer wissen können und zum anderen was in einer Transaktion über die Identität preisgegeben wird.
+Es ist wichtig zu betrachten, wie Anonym die Identität im Tangle-Netzwerk ist. Zum einen was Nutzer über andere Teilnehmer wissen können und zum anderen was in einer Transaktion über die Identität preisgegeben wird.
 
-Vorerst muss notiert werden, dass Anonymität keine Priorität in der Entwicklung von IOTA gewesen ist und auch nicht primär für diesen Zweck entwickelt worden ist. (QUELLE)
+Um eine Transaktion zu veranlassen wird ein Paar aus privatem und öffentlichem Schlüssel benötigt, welche aus dem Seed und einem Adressindex generiert werden. Der öffentliche Schlüssel dient hierbei als Adresse die man an seinen Transaktionspartner weitergeben kann. Der private Schlüssel wird genutzt um die Inputs eines Bundles zu signieren. Damit wird bewiesen, dass der Ersteller der Transaktion den privaten Schlüssel zu der Adresse besitzt und folglich der Eigentümer ist.
 
-Um eine Transaktion zu veranlassen wird ein Paar aus privatem und öffentlichem Schlüssel benötigt, welche aus dem Seed und einem Adressindex generiert werden. Der öffentliche Schlüssel dient hierbei als Adresse die man an seinen Transaktionspartner senden kann. Der private Schlüssel sollte verborgen bleiben, denn jener Schlüssel wird genutzt um die Inputs eines Bundles zu signieren. Damit wird bewiesen, dass der Ersteller der Transaktion den privaten Schlüssel zu der Adresse besitzt und folglich der Eigentümer ist.
-
-- Erklären was das mit anonymität zu tun hat
+Das Problem welches hieraus resultiert ist, dass durch die transparente Architektur des Tangles jede Transaktion für alle Teilnehmer ersichtlich ist. Dies ist zwingend notwendig um für die Liquidität des Zahlenden bürgen zu können. Es eröffnet anderen Nutzern jedoch eine Möglichkeit, IOTAs einer anonymen Identität zuordnen zu können. Doch wie bei Bitcoin auch, ist die eigene Identität nicht mit dem IOTA Seed verknüpft und sollte verhüllt bleiben. Auch ein Preisgeben der eigenen personenbezogenen Daten im "`signatureMessageFragment"' stellt ein Sicherheitsrisiko dar, welches dem Nutzer bewusst sein muss.
 
 \subsection{Validität einer Transaktion}
 Eine Transaktion wird von anderen Nodes validiert. Typischerweise geschieht das wenn ein Nutzer eine Transaktion in das Tangle publizieren will. Dafür muss der Nutzer zwei Transaktionen validieren. Bei diesen Transaktionen handelt es sich um "`Tips"', die noch nicht referenziert sind. Das Transaktionsobjekt muss die Tips als "`branch"'- und "`trunkTransaction"' referenzieren und überprüfen.
 
-Das Objekt wird auf Syntax und Gültigkeit geprüft. Dafür wird der Transaction-Hash abgeglichen und die Signierung überprüft. 
+Das Objekt wird auf Syntax und Gültigkeit geprüft. Dafür wird die Transaction-Hash abgeglichen und die Signierung überprüft. Wenn die Transaktionen gültig sind, kann die eigene Transaktion diese referenzieren und publiziert werden.
 
-- wie wird eine einzelne transaktion verifiziert, wie wird bestimmt dass sie gültig ist\\
-- wann ist eine transaktion verifiziert\\
+Eine Transaktion gilt als verifiziert, wenn sie durch einen bestimmten Anteil neuer Tips referenziert und damit validiert wird. Der Wert kann selber bestimmt werden, zum Beispiel kann festgelegt werden, das die Transaktion als verifiziert gilt, wenn sie von mehr als 75\% aller Tips direkt oder indirekt referenziert wird.
+
+Eine falsche Transaktion (zum Beispiel nicht genügend IOTAs) kann so also von entsprechenden Tips in einer Sub-Tangle vorerst validiert werden, jedoch wird spätestens wenn andere Transaktionen die Sub-Tangle mit der anderen Sub-Tangle validieren, entsteht ein Konflikt. Der Konflikt wird aufgelöst indem neue Tips ausgewählt werden und so eine der beiden Sub-Tangles nicht weiter verifiziert wird. Dadurch verwaist eine Sub-Tangle und diejenige mit dem höheren "`Gewicht"' (mehr Proof-Of-Work) wird für neue Transaktionen genutzt. Das heißt auch, das die anderen, validen Transaktionen, die die Fehlerhafte Transaktion referenzierten, nun auch verwaisen und nicht mehr Bestätigt werden können. Diese müssen neu in die Tangle attached werden um eine weitere Chance auf Validierung zu bekommen.
 
 \subsection{Angriffsszenarien}
 Die Tangle ermöglicht durch ihre DAG spezifische Arten von Attacken die im weiteren Fortgang erläutert werden sollen. Durch die Darstellung der möglichen Angriffe, werden weitere Sicherheitsmechanismen veranschaulicht.
@@ -114,12 +110,17 @@ Dem entgegenwirken soll der, von der IOTA-Foundation bereitgestellte, Coordinato
 Diese Coordinators bieten jedoch eine neue Angriffsfläche. Dabei geht es um das derzeit nicht vollkommen dezentrale System der Tangle bei IOTA. IOTA löst also noch nicht das Problem, ohne dritte Instanz Transaktionen vermitteln zu können. Laut IOTA-Foundation sollen die Coordinators ihren Dienst einstellen, sobald das Tangle Netzwerk ausreichend groß ist, um 34\%-Attacken durch eine zu hohe Anforderung an Rechenleistung abwehren zu können.(QUELLE)
 
 \subsubsection{Parasiten-Kette}
+Die Möglichkeit eine Sub-Tangle aus der Haupt-Tangle zu erstellen, die im weiteren Verlauf wieder in die Haupt-Tangle führt, eröffnet eine weitere Angriffsfläche. Ohne Sicherheitsmechanismen wäre es möglich eine vorher bestätigte Transaktion durch eine vom Angreifer nachträglich publizierten Transaktion zu ersetzen. So könnte zum Beispiel einem Verkäufer, der aufgrund der bestätigt geglaubten Transaktion seine Ware verschickt, ein finanzieller Schaden entstehen.
 
-- wie schützt sich das Bitcoin netzwerk vor Angriffen\\
-- welche angriffsszenarios sind denkbar\\
-- was kann dagegen getan werden\\
+(PICTURE)
+
+Diese Attacke wird jedoch verhindert, solange die Parasiten-Kette nicht mehr Rechenleistung besitzt als die Hauptkette. Der Tip-Auswahlmechanismus (Markov Chain Monte Carlo, siehe \ref{mcmc} auf Seite \pageref{mcmc}) verhindert, dass Tips ausgewählt werden, die sich von der Gewichtung stark von der Norm unterscheiden.~\cite{je:theTangle}
 
 \subsection{Quantenprozessorresistenz}
 Bei der Frage nach Zukunftssicherheit bei IOTA geht es auch um die Resistenz vor Quantenprozessoren. Genauer soll betrachtet werden, ob sich die Fertigstellung von diesen leistungsstarken Prozessoren auf die Sicherheit und Beständigkeit von IOTAs auswirkt.
 
-Hierbei ist es nötig, auf den Winternitz onetime hashing algorithmus zurückzugreifen um zu verstehen wie sich der Algorithmus auf Quantenresistenz auswirkt.
+Die Aufgabe einen gültigen Hash durch ausprobieren zu erlangen stellt eine Anzahl von Versuchen $ O(N) $ dar. Ein Quantencomputer verringert die Operationen einer solchen Aufgabe auf $ O(\sqrt{N}) $ laut des IOTA Whitepapers. Bei der Suche einer passenden Nonce kann erheblich Zeit eingespart werden. Dieser Vorteil ist bei einer schweren Proof-Of-Work Aufgabe wie Beispielsweise die von Bitcoin stärker ausgeprägt, als bei einer ohnehin vergleichsweise leichten Aufgabe wie die von IOTA. Eine solch leichte Aufgabe ermöglicht dem Besitzer eines Quantencomputers keinen starken Vorteil gegenüber anderen Nutzern in der Tangle.
+
+Diese Eigenschaft bietet einen weiteren Vorteil. Da die Winternitz One-Time Signature den privaten Schlüssel hasht um den öffentlichen Schlüssel zu generieren, basiert der Algorithmus nicht auf das diskrete Logarithmus-Problem wie ECC ~\cite{ja:winternitz}. Es wäre also möglich, durch ausprobieren verschiedener Inputs einen gewünschten Hash zu erzielen. Hier könnte sich jedoch der Quantencomputer als Vorteilhaft erweisen. Es wird aber davon ausgegangen, dass es rechnerisch unmöglich ist eine Hashkollision bei der Winternitz One-Time Signature zu finden~\cite{ja:securelamport}.
+
+Diese beiden Gründe können angeführt werden um IOTA als quantenprozessorresistent zu bezeichnen.
