@@ -1,40 +1,63 @@
 \chapter{Grundlagen}
-\section{Raspberry Pi}
-Bei einem Raspberry Pi handelt es sich um einen Einplatinencomputer im Kreditkarten-Format. Das Gerät besitzt unter anderem USB-, Ethernet- und AUX-Eingänge, sowie einen Steckplatz für eine Micro-SD-Karte, die als Speicherort des Betriebssystems und der Daten genutzt wird. Bildinformationen werden an den HDMI-Ausgang gesendet. Als Stromquelle dient der Micro-B-Eingang der mit einer Eingangsspannung von 5 Volt betrieben werden kann. [11]
-Ursprünglich diente die Entwicklung des Raspberry Pi‘s dafür, heranwachsende Leute in Großbritannien dem Programmieren nahezubringen. [12] Inzwischen ist der Raspberry Pi in verschiedenen Modellen mehr als 17 Millionen mal (Stand: ende 2017) verkauft worden. [13] Damit geht der Raspberry Pi weit über den anfänglichen Zielen hinaus und wird auch von erfahrenen Programmierern für vielfältige Projekte genutzt.
-Der Einplatinencomputer wird mit einem auf Linux basierendem Betriebssystem genutzt. Aufgrund der Architektur des CPUs sind Betriebssysteme wie Windows nicht auf dem Raspberry Pi verfügbar. Das offizielle Betriebssystem ist das auf Debian (Linux) basierende Raspbian. [17] Es beinhaltet alle Programme die nötig sind um mit dem Programmieren des Raspberry Pis zu beginnen.
+In diesem Kapitel werden die Grundlagen der wissenschaftlichen Arbeit erklärt. Sie sind Voraussetzung für das Verständnis des analytischen Teils der Arbeit und helfen dabei das Ergebnis von dieser nachvollziehen zu können.
+
+\section{Hardware}
+Im folgenden wird grundlegendes Verständnis für die Nutzung des Raspberry Pis und seiner Komponenten wie die GPIO-Pins gegeben. Auch die Verkabelung und das Schließen von Schaltkreisen wird erläutert. Dieses Wissen ist fundamental für den praktischen Teil der Arbeit, der diese Komponenten utilisiert.
+
+\subsection{Raspberry Pi}
+Bei einem Raspberry Pi handelt es sich um einen Einplatinencomputer im Kreditkarten-Format. Das Gerät besitzt unter anderem USB-, Ethernet- und AUX-Eingänge, sowie einen Steckplatz für eine Micro-SD-Karte, die als Speicherort des Betriebssystems und der Daten genutzt wird. Bildinformationen werden an den HDMI-Ausgang gesendet. Als Stromquelle dient der Micro-B-Eingang der mit einer Eingangsspannung von 5 Volt betrieben werden kann. [11](QUELLE) Ursprünglich diente die Entwicklung des Raspberry Pi‘s dafür, Heranwachsenden in Großbritannien an das Programmieren heranzuführen. [12](QUELLE)
+
+Der Einplatinencomputer wird mit einem auf Linux basierendem Betriebssystem genutzt. Aufgrund der Architektur des CPUs sind Betriebssysteme wie Windows nicht auf dem Raspberry Pi verfügbar. Das offizielle Betriebssystem ist das, auf Debian (Linux) basierende, Raspbian. [17](QUELLE) Es beinhaltet alle Programme die nötig sind um mit dem Programmieren des Raspberry Pis zu beginnen.
+
 Durch die Faktoren von einer umfangreichen und integrierten Programmieroberfläche, der simplen Installation und die geringen Kosten machen den Raspberry Pi zu einer idealen Umgebung um prototypische Anwendungen umzusetzen.
 
-\section{GPIO}
+\subsection{GPIO}
 Zahlreiche GPIO-Pins befinden sich auf dem Raspberry Pi um eine direkte Kommunikation mit externen Schaltkreisen zu erlauben. GPIO ist eine Abkürzung für General Purpose Input Output, übersetzt bedeutet dies Ein- und Ausgabe für allgemeine Einsatzmöglichkeiten. Dafür stehen auf dem Raspberry Pi bis zu 40 Pins zur Verfügung. Die einzelnen Pins können mittels Software und Hardware an- oder ausgeschaltet werden. Darüber hinaus kann ein Wert auch eingelesen oder gesetzt werden. Doch nicht jeder Pin steht für GPIO-Zwecke zur Verfügung. Einige Pins sind für andere Funktionen vorbehalten (z.B. Datenübertragung, Strompotenzial von +5V, +3.3V und 0V). Aus diesem Grund empfiehlt es sich, das Datenblatt über die Verteilung der Pins anzugucken.
-Die GPIO-Pins ermöglichen es, angeschlossene Schaltkreise zu steuern oder einzulesen. Sie sind nach belieben programmierbar. Daher finden Raspberry Pis oft Verwendung in Projekten wie Heimautomatisierung, Drohnen und Sicherheitssystemen. [14][15][16]
 
-\section{Steckbrett (Breadboard)}
-Ein Steckbrett wird genutzt um lötfrei Komponenten mit den Pins des Raspberry Pis zu verbinden. Mittels Kabeln werden die Pins mit einer Reihe des Bretts verbunden, wodurch an der Reihe eine Spannung angelegt wird. Nun kann an dieser Reihe eine Komponente angesteckt werden. Damit der Schaltkreis geschlossen wird, muss das andere Ende mit einem Pin verbunden werden, der geerdet ist (ein GRND-Pin).
-Da es damit möglich ist, schnell neue Komponenten anzuschließen und den Schaltkreis nach belieben zu verändern ist es gut geeignet um prototypisch Schaltkreise zu erstellen.
+Die GPIO-Pins ermöglichen es, angeschlossene Schaltkreise zu steuern oder einzulesen. Sie sind nach belieben programmierbar. Daher finden Raspberry Pis oft Verwendung in Projekten wie Heimautomatisierung, Drohnen und Sicherheitssystemen. [14][15][16](FOOTNOTE)
+
+\subsection{Steckbrett (Breadboard)}
+Ein Steckbrett wird genutzt um lötfrei Komponenten mit den Pins des Raspberry Pis zu verbinden. Durch Kabel werden die Pins mit einer Reihe des Bretts verbunden, wodurch an der Reihe eine Spannung angelegt wird. Nun kann an dieser Reihe eine Komponente angesteckt werden. Damit der Schaltkreis geschlossen wird, muss das andere Ende mit einem Pin verbunden werden, der geerdet ist (ein GND-Pin).
+
+Da es damit möglich ist, schnell neue Komponenten anzuschließen und den Schaltkreis nach belieben zu verändern, ist es gut geeignet um prototypisch Schaltkreise zu erstellen.
+
+\subsection{Schaltkreis erstellen}
+Um einen Schaltkreis mit einem Steckbrett zu erstellen benötigt man Männlich-Männlich Kabel. Für die Stromzufuhr von dem Raspberry Pi sind zusätzlich noch Weiblich-Männlich Kabel notwendig, die an die entsprechenden Strom-Pins gesteckt werden.
+
+Dies erfolgt indem die weibliche Seite des Kabels in den jeweiligen Pin geführt wird. Die andere Seite des Weiblich-Männlich Kabels wird nun in die Reihe des Steckbretts gesteckt an der sich auch die Komponente befindet, die mit dem GPIO-Pin interagieren soll.
+
+Um auf dem Steckbrett einen Stromkreis erzeugen zu können, sollten an den Querreihen des Steckbretts Spannungen angelegt werden. Dafür gibt es auf dem Raspberry Pi Pins, die entweder eine Spannung von 5V, 3,3V oder 0V (GND) haben. Für diese Umsetzung werden die 3.3V Pins und GND-Pins genutzt um einen Stromkreis zu erzeugen, da 3,3V ausreichen um ein Signal auf den Pins zu erfassen. Diese werden jeweils auf die korrespondierende Querreihe mittels Weiblich-Männlich Kabeln verbunden.
+
+Zum Schutz vor Überspannung an der LED muss ein Widerstand in den Stromkreis eingebaut werden, der verhindert, dass die LED zu viel Energie erhält und sie dadurch zu heiß wird und durchbrennt.
+
+\subsection{Widerstände}
+Für die Berechnung des passenden Widerstandes empfiehlt es sich, mit der Formel 
+
+[Formel für berechnung des widerstandes](PICTURE)
+
+zu arbeiten. 
+
+Mit dem Beispiel einer LED wären folgende Werte einzufügen. Dabei Im = Eingangspannung also 3.3V und Ia = Spannungsverringerung der LED also 0.2A ist. Dies ergibt 
+
+[Formel mit eingesetzten parametern](PICTURE)
+
+Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus diesem Grund wird der nächsthöhere verfügbare Wert angenommen. In diesem Fall ist dies 330 Ohm. Dieser Widerstand kann in den Stromkreis mit der LED eingebunden werden. Nach Einfügen des Widerstandes ist der Stromkreis anständig geschlossen.
 
 \section{Hash Tree (Merkle Tree)}
-Im Jahr 1979 patentierte Ralph Merkle das Prinzip des Hash Trees. Dieses ist später auch bekannt als “Merkle Tree”.[5] Der Nutzen des Hash Trees wird bei der effizienten Verifizierung von Daten deutlich. Anfänglich werden Dateien, in der Regel Paare aus zwei Dateien, miteinander gehasht. Der daraus resultierende Kind-Hash wird mit dem Kind-Hash anderer Dateien zu einem gemeinsam Hash verrechnet. So entsteht nach und nach ein Baum aus diversen Hashes die schließlich einen Top-Hash ergeben. Mithilfe dieses Top-Hashes ist es möglich die Unversehrtheit jeder anfänglichen Datei zu gewährleisten. 
+Im Jahr 1979 patentierte Ralph Merkle das Prinzip des Hash Trees. Dieses ist später auch bekannt als “Merkle Tree”.[5](FOOTNOTE) Der Nutzen des Hash Trees wird bei der effizienten Verifizierung von Daten deutlich. Anfänglich werden Dateien, in der Regel Paare aus zwei Dateien, miteinander gehasht. Der daraus resultierende Kind-Hash wird mit dem Kind-Hash anderer Dateien zu einem gemeinsam Hash verrechnet. So entsteht nach und nach ein Baum aus diversen Hashes die schließlich einen Top-Hash ergeben. Mithilfe dieses Top-Hashes ist es möglich die Unversehrtheit jeder anfänglichen Datei zu gewährleisten.(PICTURE)
 
 \section{Proof-of-Work (Hashcash)}
-Das Proof-of-Work Konzept wurde anfänglich gegen denial-of-service Attacken oder für die Abwehr von Spam beim Email Verkehr gedacht. Der Erfinder Adam Back nannte dieses System auch “Hashcash”.[6] Damit eine Person, die dieses Konzept nutzt, beispielsweise eine Email versenden kann, muss sie vorher einen kleinen Aufwand betreiben. Dies könnte eine einfache mathematische Formel sein. Bei erfolgreicher Berechnung ist die Email freigegeben. Da eine Vielzahl dieser kleinen Aufwände sich zu einem großem Rechenaufwand aufstaut und da die Komplexität der Aufwände mit jeder erfolgreichen Abarbeitung steigt, wird in der Schlussfolgerung das schnelle Versenden vieler aufeinander folgender Emails verhindert.
+Das Proof-of-Work Konzept wurde anfänglich gegen denial-of-service Attacken oder für die Abwehr von Spam beim Email Verkehr entwickelt. Der Erfinder Adam Back nannte dieses System auch “Hashcash”.[6](QUELLE) Damit eine Person, die dieses Konzept nutzt, beispielsweise eine Email versenden kann muss sie vorher einen kleinen Aufwand betreiben. Dies könnte eine einfache mathematische Formel sein. Bei erfolgreicher Berechnung ist die Email freigegeben. Da eine Vielzahl dieser kleinen Aufwände sich zu einem großem Rechenaufwand aufstaut und da die Komplexität der Aufwände mit jeder erfolgreichen Abarbeitung steigt, wird in der Schlussfolgerung das schnelle Versenden vieler aufeinander folgender Emails verhindert.
 
 \section{Internet of Things (IoT)}
-Das Internet of Things (deutsch: Internet der Dinge) beschreibt die Verknüpfung von Geräten und Sensoren die vorher eigenständig und isoliert waren mit dem Internet. Damit ist es ihnen möglich Daten untereinander auszutauschen indem sie ihre eigenen Daten übertragen und externe Daten anfordern. So lassen sich die Geräte über das Internet gleichzeitig von Menschen und auch anderen Maschinen fernsteuern. Mit diesem Begriff wird die Idee eingeleitet, dass die Nutzer des Internets nicht ausschließlich Menschen sind, sondern zunehmend auch „Dinge“ (Things) über diesem Kommunizieren.
-Im privaten Gebrauch werden als Beispiele alltägliche Geräte aufgeführt, die durch die Vernetzung im Internet mit anderen Geräten das Leben des Nutzers komfortabler machen oder auf sonstige Weise positiv beeinflussen. Ein Beispiel wäre die Hausautomation mit Sicherheitskameras, die, wenn etwas verdächtiges ermittelt wird, sofort den Hauseigentümer über das Internet warnen und das Videomaterial live auf das Smartphone übertragen wird. [18]
-Das Internet der Dinge lässt sich auch im industriellen Bereich anwenden. So lassen sich Herstellungsprozesse durch die Vernetzung von Sensoren, Anlagen und Maschinen so automatisieren, dass der Prozess effizienter wird und menschliche Hilfe immer obsoleter wird. [18]
+Das Internet of Things (deutsch: Internet der Dinge) beschreibt die Verknüpfung von Geräten und Sensoren, die vorher eigenständig und isoliert waren, mit dem Internet. Damit ist es ihnen möglich Daten untereinander auszutauschen indem sie ihre eigenen Daten übertragen und externe Daten anfordern. So lassen sich die Geräte über das Internet gleichzeitig von Menschen oder anderen Maschinen fernsteuern. Mit diesem Begriff wird die Idee eingeleitet, dass die Nutzer des Internets nicht ausschließlich Menschen sind, sondern zunehmend auch „Dinge“ (Things).
+
+Im privaten Gebrauch werden als Beispiele alltägliche Geräte aufgeführt, die durch die Vernetzung im Internet mit anderen Geräten das Leben des Nutzers komfortabler machen oder auf sonstige Weise positiv beeinflussen. Ein Beispiel wäre die Hausautomation mit Sicherheitskameras, die, wenn etwas verdächtiges ermittelt wird, sofort den Hauseigentümer über das Internet warnen und das Videomaterial live auf dem Smartphone übertragen. [18](QUELLE)
+
+Das Internet der Dinge lässt sich auch im industriellen Bereich anwenden. So lassen sich Herstellungsprozesse durch die Vernetzung von Sensoren, Anlagen und Maschinen so automatisieren, dass der Prozess effizienter und menschliche Hilfe immer mehr obsolet wird. [18](QUELLE)
 
 \section{Industrie 4.0}
-In diesem Zusammenhang fällt oft der Begriff Industrie 4.0. [19] Damit ist eine vierte industrielle Revolution gemeint. Kurz beschrieben geht die erste industrielle Revolution mit der Mechanisierung einher, die zweite mit der Massenfertigung von Produkten mittels Fließbändern und Fabriken, und die dritte mit der Automatisierung von Arbeitsschritten mittels Maschinen. [20] Insofern handelt es sich bei Industrie 4.0 um die Vernetzung der automatisierten Arbeitsschritte, sodass sie autonom miteinander kommunizieren können und sich dem nächsten Arbeitsschritt anpassen können.
-
-\section{Tangle}\label{grundlagen:tangle}
-Bei Tangle handelt es sich um ein Distributed Ledger Software Protokoll, welches sich grundlegend von Blockchain unterscheidet. Die Tangle-Technologie wird von den Entwicklern als nächste evolutionäre Weiterentwicklung der Blockchain beschrieben. [21] Die Technologie nimmt sich den Schwächen der Blockchain an und integriert Lösungen für diese. Konzeptionell bedeutet dies, dass die heterogene Unterscheidung von Minern und Usern in Blockchains homogenisiert werden soll, indem Transaktionen von Nutzern verifiziert werden sollen, die selber eine Transaktion veranlassen möchten. So löst sich das Problem der Skalierung und zugleich fallen die Transaktionsgebühren weg. Letzteres ist möglich, da es zwingend notwendig ist, andere Transaktionen zu verifizieren, falls eine eigene Transaktion aufgegeben werden soll. So „zahlt“ der Nutzer die Gebühren mit Rechenpower.
-Tangle wurde von der IOTA-Foundation entwickelt und kommt in der gleichnamigen Kryptowährung IOTA zum Einsatz.
-
-\subsection{Funktionsweise}
-Anders als bei Blockchain ist es nicht möglich, neue Tokens zu „minen“ (bedeutet: herzustellen). Es besteht seit der Entwicklung ein fester Betrag an verfügbaren Tokens von genau 2.779.530.283 MIOTA (1 MIOTA = 1.000.000 IOTA). [22]
-Anstatt einer globalen Blockchain, existiert bei IOTA nur ein sogenannter Tangle. Dieser richtet sich nach einem Mathematischen Konzept, dem Directed Acylic Graph. Mit diesem Konzept speichert IOTA die Transaktionen.
-Eine Transaktion muss von einem Node aufgegeben werden. Dabei handelt es sich um ein Gerät, welches, um eine Transaktion auszuführen zwei Transaktionen verifiziert anhand des Directed-Acylic-Graph-Algorithmus‘. Sobald eine Transaktion nicht verifiziert werden kann kann die ursprüngliche Transaktion nicht ausgehen. [21]
+In diesem Zusammenhang fällt oft der Begriff Industrie 4.0. [19](QUELLE) Damit ist eine vierte industrielle Revolution gemeint. Kurz beschrieben geht die erste industrielle Revolution mit der Mechanisierung einher, die zweite mit der Massenfertigung von Produkten mittels Fließbändern und Fabriken, und die dritte mit der Automatisierung von Arbeitsschritten mittels Maschinen. [20](QUELLE) Insofern handelt es sich bei Industrie 4.0 um die Vernetzung der automatisierten Arbeitsschritte, sodass sie autonom miteinander kommunizieren können und sich dem nächsten Arbeitsschritt anpassen können.
 
 \section{Trits, Trytes \& Tryte-Alphabet}\label{grundlagen:tritsundtrytes}
 Das Ternäre System ist eine Alternative zu dem Binären System, mit dem Unterschied dass das Ternäre System die Basis 3 hat. Ein Trit kann drei verschiedene Werte annehmen. Es ist die kleinste Einheit in dem Ternären System. Die Werte belaufen sich auf -1, 0 oder 1. Drei Trits ergeben ein Tryte. Ein Tryte kann $3^3 = 27$ Zustände annehmen. Um die Lesbarkeit einer längeren ternären Zahl zu verbessern wurde von der IOTA-Foundation das sogenannte "`Tryte-Alphabet"' erstellt. Es besteht aus den 26 Zeichen des Alphabetes in Großbuchstaben (A-Z) und der Zahl $9$. Jedes Zeichen repräsentiert den Wert eines Tryte.
@@ -110,6 +133,17 @@ Das Ternäre System ist eine Alternative zu dem Binären System, mit dem Unterschi
 \end{table}
 
 \section{Distributed Ledger}
-Eine Distributed Ledger (wörtlich "`verteiltes Kontobuch"') Technologie (kurz DLT) kann sich wie ein öffentlich einsehbares Kontobuch vorgestellt werden. Bei handelsüblichen zentralen Transaktionen kann der Zahlende sich seines Handels zwar bewusst sein, jedoch nicht über den Status des Eingangs bei dem Zahlungsempfängers. Des weiteren hat der Zahlungsempfänger keine Einsicht in die Verfügbarkeit des Geldes oder des zu transferierenden Gegenstandes des Zahlenden. Der Handelsgegenstand kann in einer weiteren Transaktion bereits reserviert sein. Bei zentralisierten Handelsaufträgen garantiert eine dritte Partei die Richtigkeit des Handels. Dabei wird das Vertrauen jedoch in diese vorausgesetzt. Eine DLT löst dieses Problem, indem die Richtigkeit eines Handels nicht durch zentrale Parteien versichert wird, sondern durch systemimmanente Prozesse. Darüber hinaus sind die getätigten Handelsaufträge anonymisiert öffentlich einsehbar und nicht auf die Handelsparteien zurückzuführen. Die Richtigkeit basiert nicht weiter auf Vertrauen.
+Eine Distributed Ledger (wörtlich "`verteiltes Kontobuch"') Technologie (kurz DLT) kann sich wie ein öffentlich einsehbares Kontobuch vorgestellt werden. Bei handelsüblichen zentralen Transaktionen kann der Zahlende sich seines Handels zwar bewusst sein, jedoch nicht über den Status des Eingangs bei dem Zahlungsempfängers. Des weiteren hat der Zahlungsempfänger keine Einsicht in die Verfügbarkeit des Geldes oder des zu transferierenden Gegenstandes des Zahlenden. Der Handelsgegenstand kann in einer weiteren Transaktion bereits reserviert sein. Bei zentralisierten Handelsaufträgen garantiert eine dritte Partei die Richtigkeit des Handels. Dabei wird das Vertrauen jedoch in diese vorausgesetzt. Eine DLT löst dieses Problem, indem die Richtigkeit eines Handels nicht durch zentrale Parteien versichert wird, sondern durch systemimmanente Prozesse. Es besteht ein Konsens über die Richtigkeit der Daten, da sie dem System unabhängig und frei zur Verfügung stehen. Darüber hinaus sind die getätigten Handelsaufträge anonymisiert öffentlich einsehbar und nicht auf die Handelsparteien zurückzuführen. Die Richtigkeit basiert nicht länger auf dem Vertrauen in eine Zentrale Partei, sondern wird durch den Konsens des Systems gewährleistet.
 
-Eine DLT zeichnet den gesamten Handelsverlauf auf. Jeder Handel kann auf den Ursprung zurückverfolgt werden. Dem Handelspartner ist es ein leichtes, den Verlauf eines Guts oder Geldes nachzuweisen, indem er die Historie dessen zurückverfolgt.\footnote{Daten bezogen von: https://www.bafin.de/SharedDocs/Veroeffentlichungen/\\DE/Fachartikel/2016/fa\_bj\_1602\_blockchain.html}
+Eine DLT zeichnet den gesamten Handelsverlauf auf. Jeder Handel kann auf den Ursprung zurückverfolgt werden. Dem Handelspartner ist es ein Leichtes, den Verlauf eines Transaktionswertes nachzuweisen, indem er die Historie dessen zurückverfolgt.\footnote{Daten bezogen von: https://www.bafin.de/SharedDocs/Veroeffentlichungen/\\DE/Fachartikel/2016/fa\_bj\_1602\_blockchain.html}
+
+\section{Hash}
+Ein Hash stellt durch einen Wert einen anderen Wert dar. Er wird für verschiedene Zwecke genutzt. In der Computer Wissenschaft ist es ein Mittel um Beispielsweise Dateien zu komprimieren, Daten zu indizieren oder um eine Kryptographie zu realisieren. In der Kryptographie wird der Hash bevorzugt genutzt, da er Daten maskiert. Diese Eigenschaft resultiert aus der besonderen Beschaffenheit, dass der ursprüngliche Wert eine Hashes in der Regel nicht wiederherstellbar ist, diesen jedoch repräsentiert. \footnote{Daten bezogen von: https://techterms.com/definition/hash}
+
+\section{Wallet}
+Die Wallet ist der Verweis auf den eigenen Wertbestand und der Begriff wird oft in Zusammenhang mit Kryptowährungen genutzt. Technisch gesehen ist eine Wallet (Brieftasche) nicht der Ablageort der Währung wie es der Name fälschlicherweise suggeriert.
+
+\section{Restful API}\label{RestfulAPI}
+\section{Markov Chain Monte Carlo}\label{mcmc}
+\section{Blockchain Konzept}
+Gentle introduction to Blockchain Technology

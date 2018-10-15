@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=main.tex
 
 [Frame2_View0,0]
-TopLine=6
-Cursor=1753
+TopLine=0
+Cursor=0
 
 [Frame3]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=chapters\jens\funktion.tex
 
 [Frame3_View0,0]
-TopLine=243
+TopLine=279
 Cursor=10074
 
 [Frame4]
@@ -125,8 +125,8 @@ Class=LaTeXView
 Document=main-preamble.tex
 
 [Frame6_View0,0]
-TopLine=69
-Cursor=2093
+TopLine=0
+Cursor=0
 
 [Frame7]
 Flags=0
@@ -143,8 +143,8 @@ Class=LaTeXView
 Document=chapters\einleitung.tex
 
 [Frame7_View0,0]
-TopLine=36
-Cursor=673
+TopLine=0
+Cursor=0
 
 [Frame8]
 Flags=0
@@ -161,8 +161,8 @@ Class=LaTeXView
 Document=chapters\jens\dokumentation.tex
 
 [Frame8_View0,0]
-TopLine=164
-Cursor=10650
+TopLine=106
+Cursor=8713
 
 [SessionInfo]
 FrameCount=9
