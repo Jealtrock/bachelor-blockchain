@@ -54,7 +54,7 @@
 \contentsline {subsection}{\numberline {4.2.5}Proof-of-Work}{31}
 \contentsline {subsection}{\numberline {4.2.6}Bundle}{32}
 \contentsline {subsection}{\numberline {4.2.7}Signatur}{32}
-\contentsline {subsection}{\numberline {4.2.8}Zusammenfassung}{34}
+\contentsline {section}{\numberline {4.3}Zusammenfassung}{34}
 \contentsline {chapter}{\numberline {5}Sicherheit}{35}
 \contentsline {section}{\numberline {5.1}Bitcoin}{35}
 \contentsline {subsection}{\numberline {5.1.1}Konto Sicherheit}{35}
@@ -77,9 +77,10 @@
 \contentsline {chapter}{\numberline {7}Nutzen}{49}
 \contentsline {section}{\numberline {7.1}Bitcoin/Blockchain}{49}
 \contentsline {section}{\numberline {7.2}IOTA}{50}
-\contentsline {subsection}{\numberline {7.2.1}MAM}{50}
+\contentsline {subsection}{\numberline {7.2.1}Masked Authenticated Message (MAM)}{50}
 \contentsline {paragraph}{Verschl\"usselung}{51}
 \contentsline {paragraph}{Signatur}{51}
+\contentsline {section}{\numberline {7.3}Zusammenfassung}{52}
 \contentsline {chapter}{\numberline {8}Ergebnis}{53}
 \contentsline {chapter}{\numberline {9}Zusammenfassung}{55}
 \contentsline {part}{II\hspace {1em}Praktischer Teil}{57}
@@ -130,6 +131,6 @@
 \contentsline {paragraph}{getFueling}{81}
 \contentsline {subsection}{\numberline {12.2.2}Neue Adresse generieren}{82}
 \contentsline {section}{\numberline {12.3}Ergebnis}{85}
-\contentsline {part}{III\hspace {1em}Schlussteil}{87}
-\contentsline {chapter}{\numberline {13}Evaluierung}{89}
-\contentsline {chapter}{\numberline {14}Fazit}{91}
+\contentsline {chapter}{\numberline {13}Fazit}{87}
+\contentsline {section}{\numberline {13.1}Zusammenfassung}{87}
+\contentsline {section}{\numberline {13.2}Ausblick}{87}

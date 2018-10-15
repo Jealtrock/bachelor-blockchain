@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 02:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 02:55
 entering extended mode
 **./main.tex
 (main.tex
@@ -396,7 +396,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] [3])
+[2]
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+ [3])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -613,14 +616,14 @@ LaTeX Warning: Reference `' on page 47 undefined on input line 11.
 
 ]
 Kapitel 7.
-[49]
-Underfull \vbox (badness 1655) has occurred while \output is active []
+[49] [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50]) [51] [52
-
-]
+ [51]) [52]
 Kapitel 8.
-[53] [54
+[53
+
+] [54
 
 ]
 Kapitel 9.
@@ -696,16 +699,9 @@ Underfull \vbox (badness 6825) has occurred while \output is active []
 
  [84])) (chapters/evaluierung.tex [85] [86
 
-] [87]
-[88]
-Kapitel 13.
-[89
-
-] [90
-
 ]
-Kapitel 14.
-) (main.bbl [91] [92
+Kapitel 13.
+) (main.bbl [87] [88
 
 ]
 Underfull \hbox (badness 1533) in paragraph at lines 15--20
@@ -729,7 +725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--25
 \T1/lmr/m/n/12 http://www.secg.org/sec1-v2.pdf, 2009.  Ab-ge-ru-fen am
  []
 
-[93]
+[89]
 Underfull \hbox (badness 10000) in paragraph at lines 45--51
 []\T1/lmr/m/sc/12 Chang, Ming-Hsin \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Yi-Shiung Yeh\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Im-
  []
@@ -827,7 +823,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--94
 \T1/lmr/m/n/12 rc.de/Paperbibliothek/Veroeffentlicht/642/wi-642.pdf, 2016.
  []
 
-[94]) [95] (main.aux)
+[90]) [91] (main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -849,9 +845,9 @@ m/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
 lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (105 pages, 532295 bytes).
+Output written on main.pdf (101 pages, 532542 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
+ 393 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
