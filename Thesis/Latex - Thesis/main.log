@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 02:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  15 OCT 2018 02:54
 entering extended mode
 **./main.tex
 (main.tex
@@ -378,7 +378,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Janusz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>] [2
+{C:/Users/JayPi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>] [2
 
 ]) (main.toc
 Underfull \vbox (badness 3482) has occurred while \output is active []
@@ -613,14 +613,14 @@ LaTeX Warning: Reference `' on page 47 undefined on input line 11.
 
 ]
 Kapitel 7.
-[49]
-Underfull \vbox (badness 1655) has occurred while \output is active []
+[49] [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50]) [51] [52
-
-]
+ [51]) [52]
 Kapitel 8.
-[53] [54
+[53
+
+] [54
 
 ]
 Kapitel 9.
@@ -696,147 +696,168 @@ Underfull \vbox (badness 6825) has occurred while \output is active []
 
  [84])) (chapters/evaluierung.tex [85] [86
 
-] [87]
-[88]
+]
 Kapitel 13.
-[89
 
-] [90
+! LaTeX Error: Command \textcurrency unavailable in encoding T1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ... Quantencomputer nicht weitere Angriffsflä
+                                                  chen auf die Kryptowährun...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \textcurrency unavailable in encoding T1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ... weitere Angriffsflächen auf die Kryptowä
+                                                  hrungen offenbaren als in ...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \textcurrency unavailable in encoding T1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...rühren auch aus der derzeit nicht vollstä
+                                                  ndig dezentralisierten Arc...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) (main.bbl [87] [88
 
 ]
-Kapitel 14.
-) (main.bbl [91] [92
-
-]
-Underfull \hbox (badness 1533) in paragraph at lines 15--20
-[]\T1/lmr/m/sc/12 Buchmann, Jo-han-nes\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Erik Dah-men\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Sa-r
-ah Ereth\T1/lmr/m/n/12 ,
- []
-
-
-Underfull \hbox (badness 1137) in paragraph at lines 15--20
-\T1/lmr/m/it/12 ri-ty of the Win-ter-nitz One-Time Si-gna-ture Sche-me\T1/lmr/m/n/12 .  htt-
- []
-
-
-Underfull \hbox (badness 6675) in paragraph at lines 22--25
+Underfull \hbox (badness 6675) in paragraph at lines 15--18
 []\T1/lmr/m/sc/12 Brown, Da-niel R. L.\T1/lmr/m/n/12 : \T1/lmr/m/it/12 El-lip-tic Cur-ve Cryp-to-gra-phy\T1/lmr/m/n/12 .
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--25
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
 \T1/lmr/m/n/12 http://www.secg.org/sec1-v2.pdf, 2009.  Ab-ge-ru-fen am
  []
 
-[93]
-Underfull \hbox (badness 10000) in paragraph at lines 45--51
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--36
 []\T1/lmr/m/sc/12 Chang, Ming-Hsin \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Yi-Shiung Yeh\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Im-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--51
+Underfull \hbox (badness 10000) in paragraph at lines 30--36
 \T1/lmr/m/it/12 pro-ving Lam-port one-time si-gna-ture sche-me\T1/lmr/m/n/12 .
  []
 
 
-Overfull \hbox (21.52296pt too wide) in paragraph at lines 45--51
+Overfull \hbox (21.52296pt too wide) in paragraph at lines 30--36
 \T1/lmr/m/n/12 http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.924.4691 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--59
+Underfull \hbox (badness 10000) in paragraph at lines 38--44
 []\T1/lmr/m/sc/12 Eyal, It-tay\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Adem Efe Gencer\T1/lmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--59
+Underfull \hbox (badness 10000) in paragraph at lines 38--44
 \T1/lmr/m/sc/12 Emin G�n Si-rer \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Rob-bert van Ren-es-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--59
+Underfull \hbox (badness 10000) in paragraph at lines 38--44
 \T1/lmr/m/sc/12 se\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Bitcoin-NG: A Sca-la-ble Block-chain Pro-to-col\T1/lmr/m/n/12 .
  []
 
 
-Overfull \hbox (1.5472pt too wide) in paragraph at lines 53--59
+Overfull \hbox (1.5472pt too wide) in paragraph at lines 38--44
 \T1/lmr/m/n/12 https://www.usenix.org/system/files/conference/nsdi16/nsdi16-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--72
+[89]
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
 []\T1/lmr/m/sc/12 Nakamoto, Sa-to-s-hi\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Bit-coin Whi-te-pa-per\T1/lmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--77
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
 []\T1/lmr/m/sc/12 Popov, Ser-guei\T1/lmr/m/n/12 : \T1/lmr/m/it/12 The Tan-gle\T1/lmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 74--77
+Underfull \hbox (badness 2818) in paragraph at lines 59--62
 \T1/lmr/m/n/12 http://iotatoken.com/IOTA_Whitepaper.pdf, 2017.  Ab-ge-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 64--71
 []\T1/lmr/m/sc/12 Rogaway, Phil-lip \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Tho-mas Shrimp-ton\T1/lmr/m/n/12 : \T1/lmr/m/it/1
 2 Cryp-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 64--71
 \T1/lmr/m/it/12 to-gra-phic Hash-Function Ba-sics: De-fi-ni-ti-ons, Im-pli-ca-ti-
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 79--86
+Underfull \hbox (badness 7540) in paragraph at lines 64--71
 \T1/lmr/m/it/12 ons, and Se-pa-ra-ti-ons for Preima-ge Re-si-stan-ce, Second-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 64--71
 \T1/lmr/m/it/12 Preimage Re-si-stan-ce, and Col-li-si-on Re-si-stan-ce\T1/lmr/m/n/12 .  htt-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 64--71
 \T1/lmr/m/n/12 ps://link.springer.com/content/pdf/10.1007 Ab-ge-ru-fen am
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 73--79
 []\T1/lmr/m/sc/12 Schlatt, Vin-cent\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 An-dr� Schwei-zer\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Ni
 ls Ur-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 73--79
 \T1/lmr/m/sc/12 bach \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Gil-bert Fridgen\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Block-chain: Gr
 und-la-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 73--79
 \T1/lmr/m/it/12 gen, An-wen-dun-gen und Po-ten-zia-le\T1/lmr/m/n/12 .  https://www.fim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 73--79
 \T1/lmr/m/n/12 rc.de/Paperbibliothek/Veroeffentlicht/642/wi-642.pdf, 2016.
  []
 
-[94]) [95] (main.aux)
+) [90] (main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6049 strings out of 492970
- 81837 string characters out of 3135852
+ 6050 strings out of 492970
+ 81396 string characters out of 3135855
  356298 words of memory out of 3000000
- 9709 multiletter control sequences out of 15000+200000
+ 9710 multiletter control sequences out of 15000+200000
  78684 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,16n,48p,1848b,2027s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -849,9 +870,9 @@ m/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
 lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (105 pages, 532295 bytes).
+Output written on main.pdf (100 pages, 530919 bytes).
 PDF statistics:
- 406 PDF objects out of 1000 (max. 8388607)
+ 390 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
