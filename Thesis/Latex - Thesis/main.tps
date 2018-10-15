@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=chapters\jens\dokumentation.tex
 
 [Frame0_View0,0]
-TopLine=1
-Cursor=480
+TopLine=326
+Cursor=15795
 
 [Frame1]
 Flags=0
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=chapters\theoretischerteil.tex
 
 [Frame4_View0,0]
-TopLine=0
-Cursor=0
+TopLine=5
+Cursor=1332
 
 [Frame5]
 Flags=0
@@ -108,7 +108,7 @@ Document=chapters\jens\nutzen.tex
 
 [Frame5_View0,0]
 TopLine=56
-Cursor=5957
+Cursor=0
 
 [Frame6]
 Flags=0
@@ -143,7 +143,7 @@ Class=LaTeXView
 Document=chapters\jens\funktion.tex
 
 [Frame7_View0,0]
-TopLine=317
+TopLine=381
 Cursor=17895
 
 [Frame8]
@@ -161,10 +161,28 @@ Class=LaTeXView
 Document=chapters\evaluierung.tex
 
 [Frame8_View0,0]
+TopLine=12
+Cursor=1499
+
+[Frame9]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1161
+NormalPos.bottom=325
+Class=LaTeXView
+Document=chapters\einleitung.tex
+
+[Frame9_View0,0]
 TopLine=0
-Cursor=595
+Cursor=0
 
 [SessionInfo]
-FrameCount=9
-ActiveFrame=8
+FrameCount=10
+ActiveFrame=0
 

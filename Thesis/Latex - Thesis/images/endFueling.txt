@@ -1,0 +1,25 @@
+{
+    
+	"data": {
+        
+		"fuel_type": "Super",
+
+        	"cost": 638,
+
+        	"amount": 29,
+
+        	"initTimestamp": 1539567699812,
+
+        	"id": 1539567699,
+
+        	"start_fueling_at": 1539568031583,
+
+        	"end_fueling_at": 1539568172019,
+
+        	"unit": "liter",
+
+        	"address": "LOZMZOKJWWVASYYWT999JPLDBMUSFZKMLZW9IXHTOAUOQKZMRLRAZCWECAFONWKT9HSHKHLMKAWSQFFXX"
+
+    	}
+
+}
