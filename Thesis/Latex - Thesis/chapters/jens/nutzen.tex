@@ -1,4 +1,6 @@
 \chapter{Nutzen}
+Das Kapitel Nutzen umfasst einen Überblick über implementierte Möglichkeiten in den Kryptowährungen IOTA und Bitcoin. Dabei werden Funktionen wie MAM (Masked Authenticated Messages) 
+
 \section{Bitcoin/Blockchain}
 Bitcoin wurde als eine kryptographische Währung implementiert, die erstmalig das anonyme, dezentrale Bezahlen ermöglicht. Der Nutzen wird dadurch deutlich, dass die Bezahlvorgänge unabhängig von Gesetzen oder Richtlinien durchgesetzt werden können. Einer Transaktion im Bitcoin Netzwerk ist nicht ersichtlich, welche Ware eingekauft wurde und welche Person für die Bezahlung zuständig ist. Das Netzwerk ist gänzlich unabhängig von der Kontrolle einer zentralen Partei. Jeder Bezahlvorgang ist in der Blockchain dokumentiert und für jedermann einsehbar.
 
@@ -9,7 +11,7 @@ Die Blockchain hinter Bitcoin setzt den Grundstein für einen sicheren Umgang mit
 \section{IOTA}
 IOTA wurde in erster Linie für das "`Internet of Things"' entworfen und soll Transaktionen und Kommunikationen sowohl zwischen Menschen als auch zwischen Gerätschaften ermöglichen. Die Vision der IOTA-Foundation beschreibt die Tangle und das dazugehörige Distributed Ledger Protokoll, als eine einheitliche Übereinstimmung der Richtigkeit von Daten. Dieses Prinzip wird über kryptographische Hash Verfahren erreicht. Des Weiteren möchte IOTA eine Lösung für den wachsenden globalen Datentransfer liefern, indem das Server - Client Modell durch eine dezentrale Lösung ersetzt wird. Im Folgenden wird die Kommunikation in der Tangle durch die Verwendung von "`Masked Authenticated Message"' (kurz MAM) im Detail beleuchtet.
 
-\subsection{MAM}
+\subsection{Masked Authenticated Message (MAM)}
 MAM steht für "`Masked Authenticated Message"' und ist die Lösung für das Kommunizieren innerhalb der Tangle. Es ist möglich durch eine wertlose Transaktion eine Nachricht zu verschicken. Sollen jedoch mehrere Nachrichten versendet werden, bspw. soll die Temperatur eines Motors alle 15 Minuten aktualisiert werden, treten einige Probleme auf. Der Versender kann die Nachricht zwar immer an die gleiche Adresse versenden, aber jeder andere IOTA Benutzer auch. Bei einem möglichen böswilligen Angriff könnten die validen Nachrichten nicht von den böswilligen unterschieden werden.
 
 MAM basiert auf Kanälen die ein interessierter Hörer "`abonnieren"' kann. Es werden Transaktionen generiert die jeweils den Index des Branches, die Geschwister - Knoten des Merkle Trees, die Adresse der nächsten Generation und die Nachricht als Hash enthalten. MAM’s verweisen immer auf die nächste Generation, aber nie auf die vergangene Generation oder den Genesis.
