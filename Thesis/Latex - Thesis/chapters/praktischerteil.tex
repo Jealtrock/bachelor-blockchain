@@ -9,10 +9,109 @@ Aufgrund einer vorhandenen Dokumentation, schnellen Verifizierungen von Transakt
 \input{chapters/jens/dokumentation}
 
 \chapter{Ergebnis der Umsetzung}
-Was aus den vorherigen Abschnitten folgt, ist ein Programm, welches mit einem Server über eine Rest-Schnittstelle kommunizieren kann und eigenständig eine Transaktion ausführen kann. Mit dieser Applikation werden die Bezahlvorgänge mit IOTAs abgewickelt.
+Was aus den vorherigen Abschnitten folgt, ist ein Programm, welches mit einem Server über eine Rest-Schnittstelle kommuniziert und eigenständig eine Transaktion ausführen kann. Mit dieser Applikation werden die Bezahlvorgänge mit IOTAs abgewickelt. Um das Ergebnis zu veranschaulichen wird das Programm ausgeführt.
 
-Um das Ergebnis zu veranschaulichen wird das Programm vorgespielt.
+Die API wird im ersten Schritt gestartet. Sollte die Verbindung zu der Datenbank gelingen erscheint die Nachricht, dass die API gestartet sei und auf den Port 1717 hört.
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.90]{startAPI.JPG}%
+\caption{Zu sehen ist der Start des Servers}%
+\label{fig:startapi}%
+\end{figure}
 
-...... Einmal probedurchlaufen mit dem Programm und erklären wie das mit dem vorher erklärten zusammenhängt
+Nun ist die Tankstelle einsatzbereit und wartet auf ihren ersten Kunden. Der Client auf dem Raspberry Pi wird ausgeführt und stellt mit dem Start des Programms einen Kunden dar, der an eine Zapfsäule gefahren ist und nun tanken möchte. Das Programm führt vorerst einen Balance-Check durch. Die Anzahl der zugehörigen IOTAs wird ermittelt. Daraufhin fordert der Client Informationen zu der Tankstelle und des gewünschten Kraftstoffes an. Das simulierte Auto ist ein Elektrofahrzeug.
 
-Die API wird im ersten Schritt gestartet. Sollte die Verbindung zu der Datenbank gelingen erscheint die Nachricht, dass die API gestartet sei und auf den Port 1717 hört. (PICTURE start\_API)
+Der Server antwortet mit einem JSON-Objekt.
+\begin{lstlisting}
+{
+    "Super": {
+        "cost": "22",
+        "unit": "liter"
+    },
+    "SuperE10": {
+        "cost": "15",
+        "unit": "liter"
+    },
+    "Diesel": {
+        "cost": "10",
+        "unit": "liter"
+    },
+    "ENERGY-SB": {
+        "cost": "2",
+        "unit": "kwH"
+    }
+}
+\end{lstlisting}
+("`ENERGY-SB"' ist in diesem Falle ein fiktiver Markenname des Stroms.)
+
+Daraufhin, simuliert der Nutzer des Prototypen mit einem Knopfdruck, dass er den passenden Zapfhahn in das Auto eingeführt hat. Das Programm erkennt an welcher Zapfsäulennummer und an welchem Kraftstoff das Auto angesteckt ist und gibt diese an den Server weiter. Damit kann der Server wissen, welche Zapfsäule zu dem Auto gehört und weist dem Auto eine Identifikationsnummer zu. Dies ist erforderlich, damit die Tankstelle dem richtigen Auto die entsprechende Rechnung ausstellen kann. Die Antwort der Tankstelle sieht wie folgt aus:
+\begin{lstlisting}
+{
+	"id": 1539567699
+}
+\end{lstlisting}
+
+Mit dem Erhalt der ID kann das Fahrzeug nun getankt werden. Dies wird visuell durch eine aufblinkende LED zusätzlich verdeutlicht.
+
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=1.0]{tankbereit.png}%
+\caption{Ausgabe in der Konsole wenn das Auto tankbereit ist}
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.4]{reallife.jpg}%
+\caption{Zu sehen ist das Steckbrett der Anwendung, die LED-Leuchtet}
+\end{figure}
+
+Wenn nun der Button 1 gedrückt wird, wird das Auto solange getankt bis der Nutzer entweder losgelassen hat, oder nicht mehr genügend IOTAs zur Verfügung stehen. Das tanken wird mit einer Anfrage zum Server gestartet. Diese Art der Implementierung wurde ausgewählt, da die Prototyp-Tankstelle anders keine Informationen über den Tankvorgang erhalten würde ohne einen hohen Aufwand mit dem Abbilden einer Tanksäule zu erzielen. Es ist anzumerken, dass diese Implementierung nur für eine prototypische Umsetzung ist und der Fokus auf die Bezahlung mit IOTAs liegt.
+
+Mit der Anfrage den Tankvorgang zu starten, zählt die Tankstelle einen Zähler solange hoch bis eine pauseFueling-Anfrage gestellt wird. Der Zähler stellt die getankte Menge des Kraftstoffes dar. Mit einer getFueling-Anfrage kann diese Menge periodisch abgefragt werden.
+
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.8]{tankvorgang.png}%
+\caption{Dargestellt ist wie der Server periodisch die Tankfüllung wiedergibt}
+\end{figure}
+
+Mit einem Knopfdruck auf Button 2 wird der Tankvorgang mit einer endFueling-Anfrage beendet und der Nutzer bekommt unter anderem die Empfänger-Adresse gestellt. Die Bezahlung wird im Hintergrund abgewickelt und der Nutzer kann weiterfahren.
+\begin{lstlisting}
+{
+	"data": {
+		"fuel_type": "ENERGY-SB",
+        	"cost": 44.704,
+        	"amount": 22.352,
+        	"initTimestamp": 1539567699812,
+        	"id": 1539567699,
+        	"start_fueling_at": 1539568031583,
+        	"end_fueling_at": 1539568172019,
+        	"unit": "kwH",
+        	"address": "LOZMZOKJWWVASYYWT999JPLDBMUSFZKMLZW9IXHTOAUOQKZMRLRAZCWECAFONWKT9HSHKHLMKAWSQFFXX"
+    	}
+}
+\end{lstlisting}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.8]{bezahlen.png}%
+\caption{Das Ende der Transaktion wird gezeigt}
+\end{figure}
+
+Zur Überprüfung wird der Bundle-Hash ausgegeben. Dieser kann auf der Internetseite www.thetangle.org eingeben und nachvollziehen werden. Bei nicht Bestätigung kann das Bundle direkt auf der Webseite re-attached werden.
+
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.4]{bundle.PNG}%
+\caption{Das Bundle ist auf der Webseite einsehbar}
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.4]{trx.PNG}%
+\caption{Auch die Transaktion ist auf der Webseite nachzuvollziehen}
+\end{figure}
+
+Die prototypische Umsetzung ist damit erfolgreich beendet. Es wurde gezeigt wie eine Implementierung einer Distributed Ledger Technologie (DLT) aussehen könnte. Das Programm verwendet IOTA um Zahlungen zu erstellen, wegen dem Wegfall der Transaktionsgebühren. Damit ist ein Beispiel einer zukünftigen Nutzung einer DLT gegeben, welches die zugrundeliegende Fragestellung in der Hinsicht unterstützt, dass im Aspekt der Nützlichkeit und Programmierbarkeit eine Zukunftstauglichkeit vorliegt.
+
+

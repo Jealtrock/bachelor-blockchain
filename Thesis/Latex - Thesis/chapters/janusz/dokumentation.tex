@@ -75,15 +75,28 @@ Dafür ist es nützlich, mit dem Pin-Layout des Raspberry Pis vertraut zu sein. Mi
 
 ist es möglich einen Überblick über das Layout des Raspberry Pis zu erhalten. Auch die Benennung der einzelnen Pins ist aufgeführt.
 
-[Bild der "`pinout"'-Ausgabe einfügen](PICTURE)
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.6]{pinout.png}%
+\caption{Pinout-Ausgabe}
+\end{figure}
 
-Die Komponenten müssen in das Steckbrett gesteckt werden, sodass sie erreichbar bleiben, um sie zu verkabeln und zugleich nutzen zu können. Für eine optimale Übersicht wurden die Komponenten mittig plaziert.
-
-[Bild von der Plazierung der Komponenten Button 1 und 2 und LED](PICTURE)
+Die Komponenten müssen in das Steckbrett gesteckt werden, sodass sie erreichbar bleiben, um sie zu verkabeln und zugleich nutzen zu können. Für eine optimale Übersicht wurden die Komponenten mittig platziert.
 
 Für die Umsetzung müssen diese Komponenten für den Nutzer interagierbar sein, dazu werden sie mit zufälligen, freien GPIO-Pins verbunden.
 
-[Tabelle hier einfügen, wie buttons 1 und 2 und LED mit gpios verbunden sind](PICTURE)
+\begin{table}[H]%
+\centering
+\begin{tabular}{l|l}
+Komponente & GPIO-Pin\\
+\hline
+Button 1 & 11\\
+Button 2 & 22\\
+LED & 10
+\end{tabular}
+\caption{Korrespondenz der Buttons mit den GPIO-Pins}
+\label{buttonlayout}
+\end{table}
 
 \subsubsection{PyOTA}
 Bei PyOTA handelt es sich um eine Python-Bibliothek für IOTA. Sie implementiert die API und unterstützt Funktionalitäten um eine Transaktion eigenständig erstellen zu können\footnote{siehe dazu https://pyota.readthedocs.io/en/latest/}.

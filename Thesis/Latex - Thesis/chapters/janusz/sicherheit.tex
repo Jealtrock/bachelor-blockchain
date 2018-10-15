@@ -37,6 +37,7 @@ Der Angriff hat jedoch Grenzen. Es können keine ungültigen Blöcke vom Angreifer 
 Dieses Szenario ist auch denkbar bei einer Hash-Rate von unter 50\%, wird jedoch immer unwahrscheinlicher je mehr Blöcke der Angreifer zurückliegt.
 
 \begin{figure}[H]%
+\centering
 \includegraphics[scale=0.60]{26Prozent.PNG}%
 \caption{Je weiter der Angreifer zurückliegt desto unwahrscheinlicher ein erfolgreicher Angriff (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
 \label{fig:26prozent}%
@@ -44,6 +45,7 @@ Dieses Szenario ist auch denkbar bei einer Hash-Rate von unter 50\%, wird jedoch
 
 Langfristig kann die Hauptkette nur ersetzt werden, wenn über 50\% der Hash-Rate dem Angreifer zur Verfügung stehen.
 \begin{figure}[H]%
+\centering
 \includegraphics[scale=0.6]{51Prozent.PNG}%
 \caption{Wahrscheinlichkeit sechs Blöcke hintereinander zu generieren (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
 \label{fig:51prozent}%
@@ -70,7 +72,7 @@ Mit der Einführung leistungsstarker Quantenprozessoren, die darauf ausgelegt sin
 
 Die genutzten kryptographischen Algorithmen sind nicht bewiesen, dass sie Quantenprozessoren standhalten könnten~\cite{ja:quanten}. Indes ist das Bitcoin-Netzwerk durch ihre Architektur und Nutzung nicht gegen Quantencomputern geschützt. Aber komplett ungeschützt bleibt die Technologie nicht.
 
-Auch wenn der ECDSA mit einem entsprechenden Algorithmus gelöst werden sollte, oder durch Quantenprozessoren in anderer Hinsicht unsicher werden sollte, wird durch das hashen des öffentlichen Schlüssels genau dieser verschleiert. Er kommt nur zum Vorschein, wenn von dieser Adresse eine Zahlung ausgeht, aufgrund der Signatur. Wenn nun von da an ein neues Schlüsselpaar generiert und genutzt wird, sollten die Bitcoins an der neuen Adresse sicher sein.
+Auch wenn der ECDSA mit einem entsprechenden Algorithmus gelöst werden sollte, oder durch Quantenprozessoren in anderer Hinsicht unsicher werden sollte, wird durch das hashen des öffentlichen Schlüssels genau dieser verschleiert. Er kommt nur zum Vorschein, wenn von dieser Adresse eine Zahlung ausgeht, aufgrund der Signatur. Wenn nun von da an ein neues Schlüsselpaar generiert und genutzt wird, sollten die Bitcoins an der neuen Adresse sicher sein~cite{ja:bitcoinquantum}.
 
 \section{IOTA}
 IOTA nutzt im Gegensatz zu Bitcoin keine Blockchain-Technologie, sondern setzt auf ein sogenanntes Tangle, welches wiederum auf einem mathematischem Konzept basiert, welches sich Directed-Acyclic-Graph (DAG) nennt (siehe zu Tangle \ref{grundlagen:tangle} auf Seite \pageref{grundlagen:tangle}). Dieses Konzept unterscheidet sich grundsätzlich von Blockchain und weist unter diesem Aspekt andere Sicherheitsrisiken auf. Im folgenden sollen diese beschrieben werden.
@@ -111,11 +113,15 @@ Dem entgegenwirken soll der, von der IOTA-Foundation bereitgestellte, Coordinato
 Diese Coordinators bieten jedoch eine neue Angriffsfläche. Dabei geht es um das derzeit nicht vollkommen dezentrale System der Tangle bei IOTA. IOTA löst also noch nicht das Problem, ohne dritte Instanz Transaktionen vermitteln zu können. Laut IOTA-Foundation sollen die Coordinators ihren Dienst einstellen, sobald das Tangle Netzwerk ausreichend groß ist, um 34\%-Attacken durch eine zu hohe Anforderung an Rechenleistung abwehren zu können~\cite{ja:iotawhitepaper}.
 
 \subsubsection{Parasiten-Kette}
-Die Möglichkeit eine Sub-Tangle aus der Haupt-Tangle zu erstellen, die im weiteren Verlauf wieder in die Haupt-Tangle führt, eröffnet eine weitere Angriffsfläche. Ohne Sicherheitsmechanismen wäre es möglich eine vorher bestätigte Transaktion durch eine vom Angreifer nachträglich publizierten Transaktion zu ersetzen. So könnte zum Beispiel einem Verkäufer, der aufgrund der bestätigt geglaubten Transaktion seine Ware verschickt, ein finanzieller Schaden entstehen.
+Die Möglichkeit eine Sub-Tangle aus der Haupt-Tangle zu erstellen, die im weiteren Verlauf wieder in die Haupt-Tangle führt, eröffnet eine weitere Angriffsfläche. Ohne Sicherheitsmechanismen wäre es möglich eine vorher bestätigte Transaktion durch eine vom Angreifer nachträglich publizierten Transaktion zu ersetzen. Das könnte passieren, indem der Angreifer die Konflikt-Transaktion vorher in einer lokalen Sub-Tangle verifiziert und später in die Haupt-Tangle fließen lässt. So könnte zum Beispiel einem Verkäufer, der aufgrund der bestätigt geglaubten Transaktion seine Ware verschickt, ein finanzieller Schaden entstehen.
+\begin{figure}[H]%
+\centering
+\includegraphics[scale=0.85]{parasitechain.PNG}%
+\caption{Darstellung einer Parasiten-Kette, die roten Punkte stellen die zwei Transaktionen dar, die im Konflikt zueinander stehen. ~\cite{je:theTangle}}%
+\label{fig:parasite}%
+\end{figure}
 
-(PICTURE)
-
-Diese Attacke wird jedoch verhindert, solange die Parasiten-Kette nicht mehr Rechenleistung besitzt als die Hauptkette. Der Tip-Auswahlmechanismus (Markov Chain Monte Carlo, siehe \ref{mcmc} auf Seite \pageref{mcmc}) verhindert, dass Tips ausgewählt werden, die sich von der Gewichtung stark von der Norm unterscheiden.~\cite{je:theTangle}
+Diese Attacke wird jedoch verhindert, solange die Parasiten-Kette nicht mehr Rechenleistung besitzt als die Hauptkette. Der Tip-Auswahlmechanismus (Markov Chain Monte Carlo) verhindert, dass Tips ausgewählt werden, die sich von der Gewichtung stark von der Norm unterscheiden.~\cite{je:theTangle}
 
 \subsection{Quantenprozessorresistenz}
 Bei der Frage nach Zukunftssicherheit bei IOTA geht es auch um die Resistenz vor Quantenprozessoren. Genauer soll betrachtet werden, ob sich die Fertigstellung von diesen leistungsstarken Prozessoren auf die Sicherheit und Beständigkeit von IOTAs auswirkt.

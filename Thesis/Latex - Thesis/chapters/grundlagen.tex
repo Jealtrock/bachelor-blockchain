@@ -46,6 +46,7 @@ Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus d
 \section{Hash Tree (Merkle Tree)}
 Im Jahr 1979 patentierte Ralph Merkle das Prinzip des Hash Trees. Dieses ist später auch bekannt als "`Merkle Tree"'\footnote{Daten bezogen von: https://blockchainwelt.de/merkle-tree-basis-von-blockchain-und-hash-trees/}. Der Nutzen des Hash Trees wird bei der effizienten Verifizierung von Daten deutlich. Anfänglich werden Dateien, in der Regel Paare aus zwei Dateien, miteinander gehasht. Der daraus resultierende Kind-Hash wird mit dem Kind-Hash anderer Dateien zu einem gemeinsam Hash verrechnet. So entsteht nach und nach ein Baum aus diversen Hashes die schließlich einen Top-Hash ergeben. Mithilfe dieses Top-Hashes ist es möglich die Unversehrtheit jeder anfänglichen Datei zu gewährleisten.
 \begin{figure}[H]%
+\centering
 \includegraphics[scale=0.60]{MerkleTree.jpg}%
 \caption{Abbildung zeigt einen Merkle Tree (Quelle https://www.investopedia.com/terms/m/merkle-tree.asp)}%
 \label{fig:merkletree}%
@@ -150,12 +151,6 @@ Die Wallet ist der Verweis auf den eigenen Wertbestand und der Begriff wird oft 
 
 \section{Restful API}\label{RestfulAPI}
 REST steht für Representational State Transfer Architektur und beschreibt ein Protokoll welches den Standart für heutige Web-Anwendungen setzt. Auf Anfrage eines Clients sendet der auf REST basierende Server eine Repräsentation einer Ressource. Die Ressource selbst ist dabei nicht an einen Typ gebunden und kann jedes denkbares digitales Datum sein. Die Anfragen die dem Server gesendet werden können verschiedene Aufgaben erfüllen. So wäre im Beispiel eines Online-Shops das Speichern von Kundendaten auf dem Server realisierbar. Eine wichtige Eigenschaft der auf REST basierenden Server ist, dass sie den Status des anfragenden Clients nicht speichern oder dieser von Belangen sei. Alle gesendeten Anfragen müssen die notwendigen Daten enthalten um von dem Server entsprechend verarbeitet zu werden.~\cite{je:rest}
-
-\section{Markov Chain Monte Carlo}\label{mcmc}
-Lorem ipsum
-
-\section{Blockchain Konzept}
-Gentle introduction to Blockchain Technology
 
 \section{Zusammenfassung}
 Die benannten Grundlagen vermitteln ein Verständnis für die kommende Ausarbeitung. Die allgemeine Funktionsweise eines Respberry Pis umfasst sowohl die physischen Komponenten, wie beispielsweise die korrekte Einrichtung des Steckbrettes, als auch die technische Programmierung der einzelnen GPIO - Pins. Um eine Grundlage in der Kryptographie zu vermitteln, ist die Funktion eines Merkle - Trees, der Aufbau eines Hashes sowie das Proof-of-Work - Konzept von essentiellem Belangen. Das Kapitel Grundlagen umfasst neben diesen Informationen weiteres Basiswissen über die allgemeine Definition von Distributed Ledger Architekturen und des Internet of Things (IoT).
