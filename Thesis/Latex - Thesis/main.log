@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 03:26
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  15 OCT 2018 03:33
+>>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2
 entering extended mode
 **./main.tex
 (main.tex
@@ -378,7 +382,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Janusz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>] [2
+{C:/Users/JayPi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/hsblogo.png>] [2
 
 ]) (main.toc
 Underfull \vbox (badness 3482) has occurred while \output is active []
@@ -602,7 +606,14 @@ Overfull \hbox (0.15445pt too wide) in paragraph at lines 108--109
 []\T1/lmr/m/n/12 Dem ent-ge-gen-wir-ken soll der, von der IOTA-Foundation be-reit-ge-stell-te, Coor-
  []
 
-[44] [45]) (chapters/janusz/programmierbarkeit.tex [46]
+[44]
+
+LaTeX Warning: Citation `ja:winternitz' on page 45 undefined on input line 124.
+
+
+LaTeX Warning: Citation `ja:securelamport' on page 45 undefined on input line 124.
+
+[45]) (chapters/janusz/programmierbarkeit.tex [46]
 Kapitel 6.
 
 LaTeX Warning: Reference `' on page 47 undefined on input line 11.
@@ -701,7 +712,14 @@ Underfull \vbox (badness 6825) has occurred while \output is active []
 
 ]
 Kapitel 13.
+<<<<<<< HEAD
 [87]) (main.bbl [88]
+=======
+
+Underfull \vbox (badness 1331) has occurred while \output is active []
+
+ [87]) (main.bbl [88]
+>>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2
 Underfull \hbox (badness 1533) in paragraph at lines 15--20
 []\T1/lmr/m/sc/12 Buchmann, Jo-han-nes\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Erik Dah-men\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Sa-r
 ah Ereth\T1/lmr/m/n/12 ,
@@ -827,11 +845,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--94
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  6049 strings out of 492970
- 81837 string characters out of 3135852
- 356298 words of memory out of 3000000
+ 81381 string characters out of 3135855
+ 356275 words of memory out of 3000000
  9709 multiletter control sequences out of 15000+200000
  78684 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -845,7 +866,11 @@ m/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
 lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+<<<<<<< HEAD
 Output written on main.pdf (101 pages, 533405 bytes).
+=======
+Output written on main.pdf (101 pages, 534122 bytes).
+>>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2
 PDF statistics:
  393 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

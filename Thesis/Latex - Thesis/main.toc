@@ -133,4 +133,10 @@
 \contentsline {section}{\numberline {12.3}Ergebnis}{85}
 \contentsline {chapter}{\numberline {13}Fazit}{87}
 \contentsline {section}{\numberline {13.1}Zusammenfassung}{87}
+<<<<<<< HEAD
 \contentsline {section}{\numberline {13.2}Ausblick}{88}
+=======
+\contentsline {section}{\numberline {13.2}Ausblick}{87}
+\contentsline {subsection}{\numberline {13.2.1}Auswirkungen auf die Finanzwirtschaft}{88}
+\contentsline {subsection}{\numberline {13.2.2}Die Funktion IOTAs neben der Kryptow\"ahrung}{88}
+>>>>>>> aaf98e039d56625f32670f4f6e99e5ffca9baac2

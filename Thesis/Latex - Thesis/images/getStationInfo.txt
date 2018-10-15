@@ -1,0 +1,35 @@
+{
+    
+    "Super": {
+
+        "cost": "22",
+
+        "unit": "liter"
+
+    },
+
+    "SuperE10": {
+
+        "cost": "15",
+
+        "unit": "liter"
+
+    },
+
+    "Diesel": {
+
+        "cost": "10",
+
+        "unit": "liter"
+
+    },
+
+    "ENERGY-SB": {
+
+        "cost": "2",
+
+        "unit": "kwH"
+
+    }
+
+}
