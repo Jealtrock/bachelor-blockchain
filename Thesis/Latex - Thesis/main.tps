@@ -36,7 +36,7 @@ Document=chapters\theoretischerteil.tex
 
 [Frame1_View0,0]
 TopLine=0
-Cursor=0
+Cursor=1141
 
 [Frame2]
 Flags=0
@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=chapters\janusz\sicherheit.tex
 
 [Frame5_View0,0]
-TopLine=204
-Cursor=18169
+TopLine=217
+Cursor=19980
 
 [Frame6]
 Flags=0
@@ -125,8 +125,8 @@ Class=LaTeXView
 Document=chapters\grundlagen.tex
 
 [Frame6_View0,0]
-TopLine=195
-Cursor=13512
+TopLine=215
+Cursor=14673
 
 [Frame7]
 Flags=0
@@ -143,10 +143,28 @@ Class=LaTeXView
 Document=chapters\janusz\dokumentation.tex
 
 [Frame7_View0,0]
-TopLine=95
+TopLine=135
 Cursor=6479
 
+[Frame8]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1322
+NormalPos.bottom=487
+Class=LaTeXView
+Document=chapters\evaluierung.tex
+
+[Frame8_View0,0]
+TopLine=0
+Cursor=595
+
 [SessionInfo]
-FrameCount=8
-ActiveFrame=5
+FrameCount=9
+ActiveFrame=8
 
