@@ -39,7 +39,7 @@ Dieses Szenario ist auch denkbar bei einer Hash-Rate von unter 50\%, wird jedoch
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.60]{26Prozent.PNG}%
-\caption{Je weiter der Angreifer zurückliegt desto unwahrscheinlicher ein erfolgreicher Angriff (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
+\caption[Graph Angriffswahrscheinlichkeit]{Je weiter der Angreifer zurückliegt desto unwahrscheinlicher ein erfolgreicher Angriff (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
 \label{fig:26prozent}%
 \end{figure}
 
@@ -47,7 +47,7 @@ Langfristig kann die Hauptkette nur ersetzt werden, wenn über 50\% der Hash-Rate
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.6]{51Prozent.PNG}%
-\caption{Wahrscheinlichkeit sechs Blöcke hintereinander zu generieren (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
+\caption[Graph Blockgenerierung]{Wahrscheinlichkeit sechs Blöcke hintereinander zu generieren (Quelle https://www.btc-echo.de/tutorial/bitcoin-51-attacke/)}%
 \label{fig:51prozent}%
 \end{figure}
 
@@ -108,16 +108,16 @@ Die Tangle ermöglicht durch ihre DAG spezifische Arten von Attacken die im weite
 \subsubsection{34\%-Attacke}
 Ein böswilliger Nutzer könnte mit mehr als 34\% der Gesamtrechenleistung im Tangle-Netzwerk einen Angriff starten indem er falsche Transaktionen mit vielen anderen selbst initiierten Transaktionen verifiziert und damit im DAG einen Strang erzeugt der falsche Informationen über die verfügbaren IOTAs enthält.
 
-Dem entgegenwirken soll der, von der IOTA-Foundation bereitgestellte, Coordinator. Dieser ist ein Node, der eigenständig Transaktionen erstellt, die als Meilenstein (Milestone) gelten. Der Milestone dient als Beweis, dass die vorherigen Transaktionen korrekt sind. Jede Transaktion muss diese Coordinators indirekt oder direkt referenzieren~\cite{ja:iotawhitepaper}.
+Dem entgegenwirken soll der, von der IOTA-Foundation bereitgestellte, Coordinator. Dieser ist ein Node, der eigenständig Transaktionen erstellt, die als Meilenstein (Milestone) gelten. Der Milestone dient als Beweis, dass die vorherigen Transaktionen korrekt sind. Jede Transaktion muss diese Coordinators indirekt oder direkt referenzieren~\cite{je:theTangle}.
 
-Diese Coordinators bieten jedoch eine neue Angriffsfläche. Dabei geht es um das derzeit nicht vollkommen dezentrale System der Tangle bei IOTA. IOTA löst also noch nicht das Problem, ohne dritte Instanz Transaktionen vermitteln zu können. Laut IOTA-Foundation sollen die Coordinators ihren Dienst einstellen, sobald das Tangle Netzwerk ausreichend groß ist, um 34\%-Attacken durch eine zu hohe Anforderung an Rechenleistung abwehren zu können~\cite{ja:iotawhitepaper}.
+Diese Coordinators bieten jedoch eine neue Angriffsfläche. Dabei geht es um das derzeit nicht vollkommen dezentrale System der Tangle bei IOTA. IOTA löst also noch nicht das Problem, ohne dritte Instanz Transaktionen vermitteln zu können. Laut IOTA-Foundation sollen die Coordinators ihren Dienst einstellen, sobald das Tangle Netzwerk ausreichend groß ist, um 34\%-Attacken durch eine zu hohe Anforderung an Rechenleistung abwehren zu können~\cite{je:theTangle}.
 
 \subsubsection{Parasiten-Kette}
 Die Möglichkeit eine Sub-Tangle aus der Haupt-Tangle zu erstellen, die im weiteren Verlauf wieder in die Haupt-Tangle führt, eröffnet eine weitere Angriffsfläche. Ohne Sicherheitsmechanismen wäre es möglich eine vorher bestätigte Transaktion durch eine vom Angreifer nachträglich publizierten Transaktion zu ersetzen. Das könnte passieren, indem der Angreifer die Konflikt-Transaktion vorher in einer lokalen Sub-Tangle verifiziert und später in die Haupt-Tangle fließen lässt. So könnte zum Beispiel einem Verkäufer, der aufgrund der bestätigt geglaubten Transaktion seine Ware verschickt, ein finanzieller Schaden entstehen.
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.85]{parasitechain.PNG}%
-\caption{Darstellung einer Parasiten-Kette, die roten Punkte stellen die zwei Transaktionen dar, die im Konflikt zueinander stehen. ~\cite{je:theTangle}}%
+\caption[Parasite-Chain]{Darstellung einer Parasiten-Kette, die roten Punkte stellen die zwei Transaktionen dar, die im Konflikt zueinander stehen. ~\cite{je:theTangle}}%
 \label{fig:parasite}%
 \end{figure}
 

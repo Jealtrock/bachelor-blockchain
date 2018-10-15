@@ -14,7 +14,6 @@ Die Anforderungen an das Smartauto sind wie folgt:
 \end{itemize}
 An diese Anforderungen orientiert sich die folgende Umsetzung.
 
-
 \section{Aufbau}
 Unter diesem Aspekt wird der Aufbau und die Einrichtung der einzelnen Komponenten beschrieben die für die Umsetzung nötig sind.
 
@@ -171,13 +170,15 @@ from iota import Iota
 
 Damit nun das Iota Objekt initialisiert werden kann, braucht es zwei Argumente. Den Seed, und eine Adresse zu einer Full-Node.
 
-\paragraph{Seed} Der Seed "`DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"' wurde aus einer zufälligen Kombination der Großbuchstaben 'A-Z' und der Nummer 9 eigenhändig generiert und wird für den Prototypen genutzt. Im Programmcode ist der Seed hinterlegt, dies könnte bei einer realistischen Umgebung zu Sicherheitsrisiken führen, für die prototypische Umsetzung genügt es.
+\paragraph{Seed} Der Seed "`DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGS\\
+MFJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"' wurde aus einer zufälligen Kombination der Großbuchstaben 'A-Z' und der Nummer 9 eigenhändig generiert und wird für den Prototypen genutzt. Im Programmcode ist der Seed hinterlegt, dies könnte bei einer realistischen Umgebung zu Sicherheitsrisiken führen, für die prototypische Umsetzung genügt es.
 
 \paragraph{Full-Node} Aus einer Liste im Internet\footnote{siehe https://iotasalad.org/nodes}, in der einige Full-Nodes aufgelistet sind, wurde die folgende Adresse beliebig ausgesucht: https://potato.iotasalad.org:14265. Der Full-Node übernimmt die Arbeit die erstellte Transaktion in das Tangle zu veröffentlichen, da der Raspberry Pi zu leistungsschwach ist um den Proof-Of-Work zeiteffizient zu übernehmen.
 
 Aus den gegebenen Parametern kann das Iota-Objekt erstellt werden.
 \begin{lstlisting}[language=Python]
-seed = "DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"  
+seed = "DSPOAXMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSM" 
+					"FJGFXAWEB9GNTQWEDVRYHKIOQF9T9IZY9IVPKTSZK"  
 fullnode_url = "https://potato.iotasalad.org:14265"
 api = Iota(fullnode_url, seed)
 \end{lstlisting}

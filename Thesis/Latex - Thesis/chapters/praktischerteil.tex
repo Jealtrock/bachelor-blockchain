@@ -15,7 +15,7 @@ Die API wird im ersten Schritt gestartet. Sollte die Verbindung zu der Datenbank
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.90]{startAPI.JPG}%
-\caption{Zu sehen ist der Start des Servers}%
+\caption{Start des Servers}%
 \label{fig:startapi}%
 \end{figure}
 
@@ -56,13 +56,13 @@ Mit dem Erhalt der ID kann das Fahrzeug nun getankt werden. Dies wird visuell du
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=1.0]{tankbereit.png}%
-\caption{Ausgabe in der Konsole wenn das Auto tankbereit ist}
+\caption{Ausgabe bei tankbereitem Auto}
 \end{figure}
 
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.4]{reallife.jpg}%
-\caption{Zu sehen ist das Steckbrett der Anwendung, die LED-Leuchtet}
+\caption{Steckbrett der Anwendung; die LED-Leuchtet}
 \end{figure}
 
 Wenn nun der Button 1 gedrückt wird, wird das Auto solange getankt bis der Nutzer entweder losgelassen hat, oder nicht mehr genügend IOTAs zur Verfügung stehen. Das tanken wird mit einer Anfrage zum Server gestartet. Diese Art der Implementierung wurde ausgewählt, da die Prototyp-Tankstelle anders keine Informationen über den Tankvorgang erhalten würde ohne einen hohen Aufwand mit dem Abbilden einer Tanksäule zu erzielen. Es ist anzumerken, dass diese Implementierung nur für eine prototypische Umsetzung ist und der Fokus auf die Bezahlung mit IOTAs liegt.
@@ -72,7 +72,7 @@ Mit der Anfrage den Tankvorgang zu starten, zählt die Tankstelle einen Zähler so
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.8]{tankvorgang.png}%
-\caption{Dargestellt ist wie der Server periodisch die Tankfüllung wiedergibt}
+\caption{Server gibt periodisch die Tankfüllung wieder}
 \end{figure}
 
 Mit einem Knopfdruck auf Button 2 wird der Tankvorgang mit einer endFueling-Anfrage beendet und der Nutzer bekommt unter anderem die Empfänger-Adresse gestellt. Die Bezahlung wird im Hintergrund abgewickelt und der Nutzer kann weiterfahren.
@@ -87,7 +87,8 @@ Mit einem Knopfdruck auf Button 2 wird der Tankvorgang mit einer endFueling-Anfr
         	"start_fueling_at": 1539568031583,
         	"end_fueling_at": 1539568172019,
         	"unit": "kwH",
-        	"address": "LOZMZOKJWWVASYYWT999JPLDBMUSFZKMLZW9IXHTOAUOQKZMRLRAZCWECAFONWKT9HSHKHLMKAWSQFFXX"
+        	"address": "LOZMZOKJWWVASYYWT999JPLDBMUSFZKMLZW9IXHT
+							OAUOQKZMRLRAZCWECAFONWKT9HSHKHLMKAWSQFFXX"
     	}
 }
 \end{lstlisting}
@@ -95,7 +96,7 @@ Mit einem Knopfdruck auf Button 2 wird der Tankvorgang mit einer endFueling-Anfr
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.8]{bezahlen.png}%
-\caption{Das Ende der Transaktion wird gezeigt}
+\caption{Das Ende der Transaktion}
 \end{figure}
 
 Zur Überprüfung wird der Bundle-Hash ausgegeben. Dieser kann auf der Internetseite www.thetangle.org eingeben und nachvollziehen werden. Bei nicht Bestätigung kann das Bundle direkt auf der Webseite re-attached werden.
@@ -103,13 +104,13 @@ Zur Überprüfung wird der Bundle-Hash ausgegeben. Dieser kann auf der Internetsei
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.4]{bundle.PNG}%
-\caption{Das Bundle ist auf der Webseite einsehbar}
+\caption{Das Bundle auf Webseite einsehbar}
 \end{figure}
 
 \begin{figure}[H]%
 \centering
 \includegraphics[scale=0.4]{trx.PNG}%
-\caption{Auch die Transaktion ist auf der Webseite nachzuvollziehen}
+\caption{Transaktion auf Webseite einsehbar}
 \end{figure}
 
 Die prototypische Umsetzung ist damit erfolgreich beendet. Es wurde gezeigt wie eine Implementierung einer Distributed Ledger Technologie (DLT) aussehen könnte. Das Programm verwendet IOTA um Zahlungen zu erstellen, wegen dem Wegfall der Transaktionsgebühren. Damit ist ein Beispiel einer zukünftigen Nutzung einer DLT gegeben, welches die zugrundeliegende Fragestellung in der Hinsicht unterstützt, dass im Aspekt der Nützlichkeit und Programmierbarkeit eine Zukunftstauglichkeit vorliegt.
