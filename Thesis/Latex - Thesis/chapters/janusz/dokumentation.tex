@@ -1,14 +1,19 @@
 \chapter{Fahrzeug - Client}
-\section{Ziel und Anforderungen}
 Das Programm soll für einen realitätsnahen Anwendungsfall auf einem relativ leistungsschwachen System arbeiten können. Daher liegt es nahe für die Programmierung des Programmierteils, der für das Tanken und Bezahlen mit IOTAs zuständig ist, einen Raspberry Pi anzusteuern.
 
 Der Raspberry Pi soll in dieser prototypischen Umsetzung die Steuereinheit eines zukünftigen Autos ersetzen. Es soll mittels zwei Knöpfen bedienbar sein, die die Steuerelemente in der Armatur des Autos darstellen sollen.
 
 Da der Anspruch an starke Rechenleistung in einem Auto nicht zu hoch sein sollte (um zum Beispiel Kosten zu minimieren) ist es sinnvoll, keinen IOTA Full-Node zu betrieben, sondern nur einen Light-Node, der die Arbeit an einen Full-Node delegiert. Die Limitation der Hardware-Ressourcen ist ein Grund für die Umsetzung auf einem Raspberry Pi.
 
-(PICTURE)Hier noch beschreiben was die Anforderungen an das Smartauto sind, und graphische nutzerinteraktion anzeigen. Hier soll erklärt werden, was von der tankanwendung gefordert ist, und wie sich das auf die tatsächlich umsetzung auswirkt.
+Die Anforderungen an das Smartauto sind wie folgt:
+\begin{itemize}
+	\item Der Nutzer muss vor dem dem Tankvorgang über die Tankstelle informiert werden
+	\item Der Nutzer soll mit einem Knopfdruck tanken können
+	\item Der Nutzer soll mit einem Knopfdruck bezahlen können, ohne das weitere Eingaben notwendig sind
+	\item Die Transaktion muss schnell von der Tankstelle validiert werden
+\end{itemize}
+An diese Anforderungen orientiert sich die folgende Umsetzung.
 
-Die Anforderungen an das Tanken des Autos
 
 \section{Aufbau}
 Unter diesem Aspekt wird der Aufbau und die Einrichtung der einzelnen Komponenten beschrieben die für die Umsetzung nötig sind.
@@ -28,7 +33,7 @@ Das Steckbrett dient der Verbindung von Bedienelementen mit den GPIO-Pins des Ra
 Diese Speicherkarte wird für den Raspberry Pi gebraucht. Auf dieser befindet sich das Betriebssystem mit dem der Raspberry Pi erst genutzt werden kann. Auch das Programm und sonstige Benutzerdaten werden auf dieser Speicherkarte gespeichert.
 
 \subsubsection{Micro USB Netzteil 5,1 Volt 3,1 Ampere}
-Der Raspberry Pi muss mittels eines Micro USB Eingangs mit Strom versorgt werden. Das Netzteil sollte eine Ausgangsspannung von mindestens 5,1 Volt aufweisen und es werden mindestens 2,5 Ampere empfohlen.[25](QUELLE)
+Der Raspberry Pi muss mittels eines Micro USB Eingangs mit Strom versorgt werden. Das Netzteil sollte eine Ausgangsspannung von mindestens 5,1 Volt aufweisen und es werden mindestens 2,5 Ampere empfohlen\footnote{Nach https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md}.
 
 \subsubsection{5x Weiblich-Männlich Kabel, 2x Männlich-Männlich Kabel}
 Verbindungskabel für das Steckbrett um elektronische Komponenten miteinander zu Verbinden.

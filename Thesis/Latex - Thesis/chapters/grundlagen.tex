@@ -5,16 +5,16 @@ In diesem Kapitel werden die Grundlagen der wissenschaftlichen Arbeit erklärt. S
 Im folgenden wird grundlegendes Verständnis für die Nutzung des Raspberry Pis und seiner Komponenten wie die GPIO-Pins gegeben. Auch die Verkabelung und das Schließen von Schaltkreisen wird erläutert. Dieses Wissen ist fundamental für den praktischen Teil der Arbeit, der diese Komponenten utilisiert.
 
 \subsection{Raspberry Pi}
-Bei einem Raspberry Pi handelt es sich um einen Einplatinencomputer im Kreditkarten-Format. Das Gerät besitzt unter anderem USB-, Ethernet- und AUX-Eingänge, sowie einen Steckplatz für eine Micro-SD-Karte, die als Speicherort des Betriebssystems und der Daten genutzt wird. Bildinformationen werden an den HDMI-Ausgang gesendet. Als Stromquelle dient der Micro-B-Eingang der mit einer Eingangsspannung von 5 Volt betrieben werden kann. [11](QUELLE) Ursprünglich diente die Entwicklung des Raspberry Pi‘s dafür, Heranwachsenden in Großbritannien an das Programmieren heranzuführen. [12](QUELLE)
+Bei einem Raspberry Pi handelt es sich um einen Einplatinencomputer im Kreditkarten-Format. Das Gerät besitzt unter anderem USB-, Ethernet- und AUX-Eingänge, sowie einen Steckplatz für eine Micro-SD-Karte, die als Speicherort des Betriebssystems und der Daten genutzt wird. Bildinformationen werden an den HDMI-Ausgang gesendet. Als Stromquelle dient der Micro-B-Eingang der mit einer Eingangsspannung von 5 Volt betrieben werden kann.\footnote{Nach https://static.raspberrypi.org/files/product-briefs/Raspberry-Pi-Model-Bplus-Product-Brief.pdf}
 
-Der Einplatinencomputer wird mit einem auf Linux basierendem Betriebssystem genutzt. Aufgrund der Architektur des CPUs sind Betriebssysteme wie Windows nicht auf dem Raspberry Pi verfügbar. Das offizielle Betriebssystem ist das, auf Debian (Linux) basierende, Raspbian. [17](QUELLE) Es beinhaltet alle Programme die nötig sind um mit dem Programmieren des Raspberry Pis zu beginnen.
+Der Einplatinencomputer wird mit einem auf Linux basierendem Betriebssystem genutzt. Aufgrund der Architektur des CPUs sind Betriebssysteme wie Windows nicht auf dem Raspberry Pi verfügbar. Das offizielle Betriebssystem ist das, auf Debian (Linux) basierende, Raspbian\footnote{Nach https://www.raspberrypi.org/downloads/raspbian/}. Es beinhaltet alle Programme die nötig sind um mit dem Programmieren des Raspberry Pis zu beginnen.
 
 Durch die Faktoren von einer umfangreichen und integrierten Programmieroberfläche, der simplen Installation und die geringen Kosten machen den Raspberry Pi zu einer idealen Umgebung um prototypische Anwendungen umzusetzen.
 
 \subsection{GPIO}
 Zahlreiche GPIO-Pins befinden sich auf dem Raspberry Pi um eine direkte Kommunikation mit externen Schaltkreisen zu erlauben. GPIO ist eine Abkürzung für General Purpose Input Output, übersetzt bedeutet dies Ein- und Ausgabe für allgemeine Einsatzmöglichkeiten. Dafür stehen auf dem Raspberry Pi bis zu 40 Pins zur Verfügung. Die einzelnen Pins können mittels Software und Hardware an- oder ausgeschaltet werden. Darüber hinaus kann ein Wert auch eingelesen oder gesetzt werden. Doch nicht jeder Pin steht für GPIO-Zwecke zur Verfügung. Einige Pins sind für andere Funktionen vorbehalten (z.B. Datenübertragung, Strompotenzial von +5V, +3.3V und 0V). Aus diesem Grund empfiehlt es sich, das Datenblatt über die Verteilung der Pins anzugucken.
 
-Die GPIO-Pins ermöglichen es, angeschlossene Schaltkreise zu steuern oder einzulesen. Sie sind nach belieben programmierbar. Daher finden Raspberry Pis oft Verwendung in Projekten wie Heimautomatisierung, Drohnen und Sicherheitssystemen. [14][15][16](FOOTNOTE)
+Die GPIO-Pins ermöglichen es, angeschlossene Schaltkreise zu steuern oder einzulesen. Sie sind nach belieben programmierbar.
 
 \subsection{Steckbrett (Breadboard)}
 Ein Steckbrett wird genutzt um lötfrei Komponenten mit den Pins des Raspberry Pis zu verbinden. Durch Kabel werden die Pins mit einer Reihe des Bretts verbunden, wodurch an der Reihe eine Spannung angelegt wird. Nun kann an dieser Reihe eine Komponente angesteckt werden. Damit der Schaltkreis geschlossen wird, muss das andere Ende mit einem Pin verbunden werden, der geerdet ist (ein GND-Pin).
@@ -31,20 +31,25 @@ Um auf dem Steckbrett einen Stromkreis erzeugen zu können, sollten an den Querre
 Zum Schutz vor Überspannung an der LED muss ein Widerstand in den Stromkreis eingebaut werden, der verhindert, dass die LED zu viel Energie erhält und sie dadurch zu heiß wird und durchbrennt.
 
 \subsection{Widerstände}
-Für die Berechnung des passenden Widerstandes empfiehlt es sich, mit der Formel 
+Für die Berechnung des passenden Widerstandes R empfiehlt es sich, mit der Formel 
 
-[Formel für berechnung des widerstandes](PICTURE)
+\[ R_{V} = \frac{U_{ges} - U_{F}}{I_{F}} \]
 
 zu arbeiten. 
 
-Mit dem Beispiel einer LED wären folgende Werte einzufügen. Dabei Im = Eingangspannung also 3.3V und Ia = Spannungsverringerung der LED also 0.2A ist. Dies ergibt 
+Mit einem Beispiel einer LED wären folgende Werte einzufügen\footnote{Beispiel entnommen aus https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm}. Dabei ist $U_{ges}$ die Eingangspannung 3,3V und $U_{F}$ ist die Vorwärtsspannung der LED also 2,0V. Dies ergibt bei einem Vorwärtsstrom von 10 mA
 
-[Formel mit eingesetzten parametern](PICTURE)
+\[ R_{V} = \frac{3,3 - 2,0}{10} = 130 Ohm\]
 
 Hierbei handelt es sich um einen Wert der eine geringe Abweichung erlaubt. Aus diesem Grund wird der nächsthöhere verfügbare Wert angenommen. In diesem Fall ist dies 330 Ohm. Dieser Widerstand kann in den Stromkreis mit der LED eingebunden werden. Nach Einfügen des Widerstandes ist der Stromkreis anständig geschlossen.
 
 \section{Hash Tree (Merkle Tree)}
-Im Jahr 1979 patentierte Ralph Merkle das Prinzip des Hash Trees. Dieses ist später auch bekannt als "`Merkle Tree"'\footnote{Daten bezogen von: https://blockchainwelt.de/merkle-tree-basis-von-blockchain-und-hash-trees/}. Der Nutzen des Hash Trees wird bei der effizienten Verifizierung von Daten deutlich. Anfänglich werden Dateien, in der Regel Paare aus zwei Dateien, miteinander gehasht. Der daraus resultierende Kind-Hash wird mit dem Kind-Hash anderer Dateien zu einem gemeinsam Hash verrechnet. So entsteht nach und nach ein Baum aus diversen Hashes die schließlich einen Top-Hash ergeben. Mithilfe dieses Top-Hashes ist es möglich die Unversehrtheit jeder anfänglichen Datei zu gewährleisten.(PICTURE)
+Im Jahr 1979 patentierte Ralph Merkle das Prinzip des Hash Trees. Dieses ist später auch bekannt als "`Merkle Tree"'\footnote{Daten bezogen von: https://blockchainwelt.de/merkle-tree-basis-von-blockchain-und-hash-trees/}. Der Nutzen des Hash Trees wird bei der effizienten Verifizierung von Daten deutlich. Anfänglich werden Dateien, in der Regel Paare aus zwei Dateien, miteinander gehasht. Der daraus resultierende Kind-Hash wird mit dem Kind-Hash anderer Dateien zu einem gemeinsam Hash verrechnet. So entsteht nach und nach ein Baum aus diversen Hashes die schließlich einen Top-Hash ergeben. Mithilfe dieses Top-Hashes ist es möglich die Unversehrtheit jeder anfänglichen Datei zu gewährleisten.
+\begin{figure}[H]%
+\includegraphics[scale=0.60]{MerkleTree.jpg}%
+\caption{Abbildung zeigt einen Merkle Tree (Quelle https://www.investopedia.com/terms/m/merkle-tree.asp)}%
+\label{fig:merkletree}%
+\end{figure}
 
 \section{Proof-of-Work (Hashcash)}\label{basic_HashCash}
 Das Proof-of-Work Konzept wurde anfänglich gegen denial-of-service Attacken oder für die Abwehr von Spam beim Email Verkehr entwickelt. Der Erfinder Adam Back nannte dieses System auch “Hashcash”.~\cite{je:hashcash} Damit eine Person, die dieses Konzept nutzt, beispielsweise eine Email versenden kann muss sie vorher einen kleinen Aufwand betreiben. Dies könnte eine einfache mathematische Formel sein. Bei erfolgreicher Berechnung ist die Email freigegeben. Da eine Vielzahl dieser kleinen Aufwände sich zu einem großem Rechenaufwand aufstaut und da die Komplexität der Aufwände mit jeder erfolgreichen Abarbeitung steigt, wird in der Schlussfolgerung das schnelle Versenden vieler aufeinander folgender Emails verhindert.
@@ -52,17 +57,17 @@ Das Proof-of-Work Konzept wurde anfänglich gegen denial-of-service Attacken oder
 \section{Internet of Things (IoT)}
 Das Internet of Things (deutsch: Internet der Dinge) beschreibt die Verknüpfung von Geräten und Sensoren, die vorher eigenständig und isoliert waren, mit dem Internet. Damit ist es ihnen möglich Daten untereinander auszutauschen indem sie ihre eigenen Daten übertragen und externe Daten anfordern. So lassen sich die Geräte über das Internet gleichzeitig von Menschen oder anderen Maschinen fernsteuern. Mit diesem Begriff wird die Idee eingeleitet, dass die Nutzer des Internets nicht ausschließlich Menschen sind, sondern zunehmend auch „Dinge“ (Things).
 
-Im privaten Gebrauch werden als Beispiele alltägliche Geräte aufgeführt, die durch die Vernetzung im Internet mit anderen Geräten das Leben des Nutzers komfortabler machen oder auf sonstige Weise positiv beeinflussen. Ein Beispiel wäre die Hausautomation mit Sicherheitskameras, die, wenn etwas verdächtiges ermittelt wird, sofort den Hauseigentümer über das Internet warnen und das Videomaterial live auf dem Smartphone übertragen. [18](QUELLE)
+Im privaten Gebrauch werden als Beispiele alltägliche Geräte aufgeführt, die durch die Vernetzung im Internet mit anderen Geräten das Leben des Nutzers komfortabler machen oder auf sonstige Weise positiv beeinflussen. Ein Beispiel wäre die Hausautomation mit Sicherheitskameras, die, wenn etwas verdächtiges ermittelt wird, sofort den Hauseigentümer über das Internet warnen und das Videomaterial live auf dem Smartphone übertragen.
 
-Das Internet der Dinge lässt sich auch im industriellen Bereich anwenden. So lassen sich Herstellungsprozesse durch die Vernetzung von Sensoren, Anlagen und Maschinen so automatisieren, dass der Prozess effizienter und menschliche Hilfe immer mehr obsolet wird. [18](QUELLE)
+Das Internet der Dinge lässt sich auch im industriellen Bereich anwenden. So lassen sich Herstellungsprozesse durch die Vernetzung von Sensoren, Anlagen und Maschinen so automatisieren, dass der Prozess effizienter und menschliche Hilfe immer mehr obsolet wird. 
 
 \section{Industrie 4.0}
-In diesem Zusammenhang fällt oft der Begriff Industrie 4.0. [19](QUELLE) Damit ist eine vierte industrielle Revolution gemeint. Kurz beschrieben geht die erste industrielle Revolution mit der Mechanisierung einher, die zweite mit der Massenfertigung von Produkten mittels Fließbändern und Fabriken, und die dritte mit der Automatisierung von Arbeitsschritten mittels Maschinen. [20](QUELLE) Insofern handelt es sich bei Industrie 4.0 um die Vernetzung der automatisierten Arbeitsschritte, sodass sie autonom miteinander kommunizieren können und sich dem nächsten Arbeitsschritt anpassen können.
+In diesem Zusammenhang fällt oft der Begriff Industrie 4.0. Damit ist eine vierte industrielle Revolution gemeint. Kurz beschrieben geht die erste industrielle Revolution mit der Mechanisierung einher, die zweite mit der Massenfertigung von Produkten mittels Fließbändern und Fabriken, und die dritte mit der Automatisierung von Arbeitsschritten mittels Maschinen. Insofern handelt es sich bei Industrie 4.0 um die Vernetzung der automatisierten Arbeitsschritte, sodass sie autonom miteinander kommunizieren können und sich dem nächsten Arbeitsschritt anpassen können.\footnote{Bezogen von https://www.yokogawa.com/de/loesungen/industrie-4-0.htm} 
 
 \section{Trits, Trytes \& Tryte-Alphabet}\label{grundlagen:tritsundtrytes}
 Das Ternäre System ist eine Alternative zu dem Binären System, mit dem Unterschied dass das Ternäre System die Basis 3 hat. Ein Trit kann drei verschiedene Werte annehmen. Es ist die kleinste Einheit in dem Ternären System. Die Werte belaufen sich auf -1, 0 oder 1. Drei Trits ergeben ein Tryte. Ein Tryte kann $3^3 = 27$ Zustände annehmen. Um die Lesbarkeit einer längeren ternären Zahl zu verbessern wurde von der IOTA-Foundation das sogenannte "`Tryte-Alphabet"' erstellt. Es besteht aus den 26 Zeichen des Alphabetes in Großbuchstaben (A-Z) und der Zahl $9$. Jedes Zeichen repräsentiert den Wert eines Tryte.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 	\begin{tabular}{c|c}
 		\begin{tabular}{P{1.8cm}|P{1.8cm}|P{1.8cm}}

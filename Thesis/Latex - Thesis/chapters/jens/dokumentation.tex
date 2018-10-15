@@ -14,19 +14,18 @@ Es ist wichtig anzumerken, dass diese Art der Kommunikation eine von vielen Mögl
 
 \section{Projektaufbau}
 In dem folgenden Unterkapitel wird der grobe Projektaufbau skizziert sowie die Installation der notwendigen Software aufgeführt. Diese Schritte sind notwendig um den Prototypen den Anforderungen entsprechend ausführen zu lassen.
-\subsection{Vorbedingungen}
-\subsubsection{NodeJS}
-NodeJS ist eine asynchrone, auf “Events” basierende, JavaScript Laufzeitumgebung, die es ermöglicht mehrere Anfragen zu derselben Zeit abzuarbeiten. Dadurch entstehen niedrige Latenzen zwischen dem Client und dem Server. Des Weiteren verfügt NodeJS über eine “EventLoop” die der in Web - Browsern bekannten “EventLoops” sehr ähnelt. Anders als aus Frameworks bekannt, startet die “EventLoop” mit Beginn des ausführenden Scripts und endet sobald keine "`Callbacks"' mehr vorhanden sind. Dank dieses Verhaltens ist NodeJS für das Entwickeln einer Restful API prädestiniert. [27](QUELLE)
+\subsection{NodeJS}
+NodeJS ist eine asynchrone, auf “Events” basierende, JavaScript Laufzeitumgebung, die es ermöglicht mehrere Anfragen zu derselben Zeit abzuarbeiten. Dadurch entstehen niedrige Latenzen zwischen dem Client und dem Server. Des Weiteren verfügt NodeJS über eine “EventLoop” die der in Web - Browsern bekannten “EventLoops” sehr ähnelt. Anders als aus Frameworks bekannt, startet die “EventLoop” mit Beginn des ausführenden Scripts und endet sobald keine "`Callbacks"' mehr vorhanden sind. Dank dieses Verhaltens ist NodeJS für das Entwickeln einer Restful API prädestiniert\footnote{Nach https://nodejs.org/en/about/}.
 
 Die Installation von NodeJS gestaltet sich für das Betriebssystem Windows nicht besonders herausfordernd. Auf der Homepage von NodeJS wird eine ausführbare Datei angeboten, welche alle nötigen Programme beinhaltet.
 
-\subsubsection{NPM}
+\subsection{NPM}
 Durch die Installation von NodeJS wird der hauseigene sogenannte “node package manager” (kurz npm) zusätzlich installiert. Dieses Werkzeug befähigt Nutzer vorhandene und publizierte Module für die Entwicklung in NodeJS herunterzuladen oder eigene Module der Öffentlichkeit zur Verfügung zu stellen. Um npm nutzen zu können wird eine funktionierende “Bash” vorausgesetzt.
 
-\subsubsection{PowerShell}
-Um mit NodeJS effektiv arbeiten zu können benötigen alle Programmierer eine geeignete Bash (Shell). Viele Unix und Linux Distributionen besitzen eine geeignete vorinstallierte Bash die für die meisten Befehle ausreicht. Um mit Windows entsprechend zu arbeiten, empfiehlt sich die Installation von der PowerShell [28](QUELLE).
+\subsection{PowerShell}
+Um mit NodeJS effektiv arbeiten zu können benötigen alle Programmierer eine geeignete Bash (Shell). Viele Unix und Linux Distributionen besitzen eine geeignete vorinstallierte Bash die für die meisten Befehle ausreicht. Um mit Windows entsprechend zu arbeiten, empfiehlt sich die Installation von der PowerShell\footnote{https://docs.microsoft.com/de-de/powershell/scripting/powershell-scripting?view=powershell-6}.
 
-\subsubsection{Express.js}
+\subsection{Express.js}
 Eine Restful API basiert auf Anfragen (requests) die an einen Server übermittelt werden. Grundsätzlich folgt auf einen request stets eine Antwort (response). Ein handelsüblicher Webserver verkörpert dieses Prinzip. Sobald in einem Webbrowser die Anfrage zu einer IP - Adresse verschickt wird, antwortet dieser mit den hinterlegten Ressourcen (Meistens vorhandene .html Dateien) (siehe Grundlagen \ref{RestfulAPI} auf Seite \pageref{RestfulAPI}). Um angefragte Routen wie bspw. “/getAddress” zu verarbeiten, welche keine HTML - Daten als Antwort verlangen, werden sogenannte “Middlewares” geschrieben. Diese nehmen den angefragten Request entgegen, verarbeiten ihn und senden entweder einen abschließenden Response oder geben den Request weiter an die nächste Middleware - Instanz. Dieser Vorgang wird so lange durchgeführt bis eine beendende Antwort an den Client zurückgesendet wird.
 
 Express.js ist ein Modul für NodeJS, dass dem Programmierer ermöglicht vollwertige Middlewares zu erstellen. Die Installation gestaltet sich sehr leicht. Voraussetzung sind eine funktionierende Bash, sowie der Paketmanager ”npm”. In der Shell wird folgendes Kommando ausgeführt:
@@ -41,14 +40,14 @@ Falls das Paket in einem Projekt abgespeichert werden soll, empfiehlt sich das f
 npm install --save express
 \end{lstlisting}
 
-\subsubsection{MySQL}
-Eine MySQL - Datenbank wird für das permanente Speichern der IOTA - Adresse genutzt. Um die Datenbank aufzusetzen empfiehlt sich das Hilfsprogramm XAMPP [29](FOOTNOTE). Durch dieses Programm kann eine MySQL Datenbank gestartet und über eine lokale Webpage konfiguriert werden. Nach dem Download der ausführbaren Installationsdatei wird diese mit einem Doppelklick gestartet. Im Anschluss genügt es den Installationsanweisungen zu folgen. Nicht alle Komponenten sind notwendig, es genügen der Apache Webserver und die MySQL Unterstützung. XAMPP bietet eine GUI (graphical user interface) mit der neben einer Datenbank auch ein Apache Server gestartet werden kann. Dieser Apache Server ist notwendig um die lokale Konfigurations - Webseite für die MySQL Datenbank zu hosten.
+\subsection{MySQL}
+Eine MySQL - Datenbank wird für das permanente Speichern der IOTA - Adresse genutzt. Um die Datenbank aufzusetzen empfiehlt sich das Hilfsprogramm XAMPP\footnote{Nach https://www.apachefriends.org/de/index.html}. Durch dieses Programm kann eine MySQL Datenbank gestartet und über eine lokale Webpage konfiguriert werden. Nach dem Download der ausführbaren Installationsdatei wird diese mit einem Doppelklick gestartet. Im Anschluss genügt es den Installationsanweisungen zu folgen. Nicht alle Komponenten sind notwendig, es genügen der Apache Webserver und die MySQL Unterstützung. XAMPP bietet eine GUI (graphical user interface) mit der neben einer Datenbank auch ein Apache Server gestartet werden kann. Dieser Apache Server ist notwendig um die lokale Konfigurations - Webseite für die MySQL Datenbank zu hosten.
 
-\subsubsection{Port Weiterleitung}
+\subsection{Port Weiterleitung}
 Damit die API auf zukünftige Anfragen außerhalb des lokalen Systems reagieren kann, muss das Netzwerk entsprechend eingerichtet werden. Der Firewall des zentralen Routers (standard Gateway) werden entsprechende Regeln hinzugefügt, die Anfragen auf den Port 1717 (Dieser Port ist frei wählbar und wurde für dieses Projekt festgelegt) zulassen. Anfragen, die den genannten Port adressieren, werden zu dem Endgerät weitergeleitet, auf welchem die API instanziiert ist.
 
-\subsection{Projektabgrenzung}
-Eine geeignete Kommunikation innerhalb eines Netzwerkes kann auf verschiedene Weisen geschehen. Das Verwenden einer Restful API bietet den Vorteil Informationen und Ressourcen auf vielfältige Art und Weise auszutauschen. Die Kommunikation kann dementsprechend mithilfe eines JSON - Objektes oder über andere Protokolle wie XML oder URL-Encoding gelöst werden. Anders als andere Netzwerk Kommunikationstechniken wie bspw. SOAP sind Serverressourcen direkt adressierbar, ohne das im Vorhinein der Inhalt der Anfrage ausgewertet werden muss [30](QUELLE).
+\section{Projektabgrenzung}
+Eine geeignete Kommunikation innerhalb eines Netzwerkes kann auf verschiedene Weisen geschehen. Das Verwenden einer Restful API bietet den Vorteil Informationen und Ressourcen auf vielfältige Art und Weise auszutauschen. Die Kommunikation kann dementsprechend mithilfe eines JSON - Objektes oder über andere Protokolle wie XML oder URL-Encoding gelöst werden. Anders als andere Netzwerk Kommunikationstechniken wie bspw. SOAP sind Serverressourcen direkt adressierbar, ohne das im Vorhinein der Inhalt der Anfrage ausgewertet werden muss\footnote{https://www.oio.de/public/xml/rest-webservices.htm}.
 
 \section{Umsetzung}
 Mit dem Start der API überprüft das System ob eine JSON-Datei hinterlegt ist, in der die notwendigen Datenbank-Anmeldeinformationen gespeichert sind. Falls diese Datei nicht vorhanden ist, wird eine neue erstellt, indem die Informationen abgefragt werden. Sobald der Zugang zur Datenbank gesichert ist, startet der HTTP-Server und wartet anschließend auf dem eingerichteten Port auf kommende Anfragen. An diesem Punkt sind verschiedene Routen eingerichtet, die sowohl Daten verfügbar machen, mit Daten interagieren oder Daten abspeichern. Diese verschiedenen Routen und ihre Funktionen werden im Folgenden erläutert.(PICTURE)

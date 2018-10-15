@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 04:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.5)  15 OCT 2018 10:47
 entering extended mode
 **./main.tex
 (main.tex
@@ -275,7 +275,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count112
+\float@exts=\toks24
+\float@box=\box32
+\@float@everytoks=\toks25
+\@floatcapt=\box33
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )) (main.aux)
 \openout1 = `main.aux'.
@@ -293,22 +300,22 @@ LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 2.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+)
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
+\scratchcounter=\count113
 \scratchdimen=\dimen121
-\scratchbox=\box32
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count115
+\scratchbox=\box34
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count116
 \MPscratchDim=\dimen122
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks25
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks27
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -337,7 +344,7 @@ Package grfext Info: Graphics extension search list:
 
 bibgerm.sty: babel.sty detected
 
-\c@lstlisting=\count118
+\c@lstlisting=\count119
 (chapters/deckblatt.tex
 <images/hsblogo.png, id=1, 339.76938pt x 157.92334pt>
 File: images/hsblogo.png Graphic file (type png)
@@ -393,21 +400,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
-Underfull \vbox (badness 1242) has occurred while \output is active []
-
- [3])
+[2] [3])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
  [4] (main.lof
-Overfull \hbox (42.39847pt too wide) in paragraph at lines 8--8
- \T1/lmr/m/n/12 ter man zu-rück-liegt (Quel-le https://www.btc-echo.de/tutorial/bitcoin- 
- []
-
-
-Overfull \hbox (57.41193pt too wide) in paragraph at lines 9--9
- \T1/lmr/m/n/12 ein-an-der zu ge-ne-rie-ren (Quel-le https://www.btc-echo.de/tutorial/bitcoin- 
+Overfull \hbox (63.28215pt too wide) in paragraph at lines 8--8
+ \T1/lmr/m/n/12 ein er-folg-rei-cher An-griff (Quel-le https://www.btc-echo.de/tutorial/bitcoin- 
  []
 
 )
@@ -435,50 +434,71 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 11.
-) (chapters/grundlagen.tex [2] [3] [4
+ [2]) (chapters/grundlagen.tex [3] [4
 
 ]
 Kapitel 2.
+
+Underfull \hbox (badness 1721) in paragraph at lines 8--8
+[][]\T1/lmr/m/n/10 Nach https://static.raspberrypi.org/files/product-briefs/Raspberry-Pi-Model-Bplus-
+ []
+
 [5]
 Overfull \hbox (9.52286pt too wide) in paragraph at lines 20--21
 \T1/lmr/m/n/12 Ein Steck-brett wird ge-nutzt um löt-frei Kom-po-nen-ten mit den Pins des Raspber-
  []
 
-[6]
+
+Underfull \vbox (badness 3291) has occurred while \output is active []
+
+ [6]
 Overfull \hbox (8.31702pt too wide) in paragraph at lines 25--26
 \T1/lmr/m/n/12 Um einen Schalt-kreis mit ei-nem Steck-brett zu er-stel-len be-nö-tigt man Männlich-
  []
 
 [7]
-Underfull \vbox (badness 1199) has occurred while \output is active []
+Underfull \hbox (badness 1789) in paragraph at lines 40--40
+[][]\T1/lmr/m/n/10 Beispiel ent-nom-men aus https://www.elektronik-kompendium.de/sites/raspberry-
+ []
 
- [8] [9]
-Overfull \hbox (2.21286pt too wide) in paragraph at lines 69--70
+<images/MerkleTree.jpg, id=63, 602.25pt x 339.2675pt>
+File: images/MerkleTree.jpg Graphic file (type jpg)
+<use images/MerkleTree.jpg>
+Package pdftex.def Info: images/MerkleTree.jpg  used on input line 49.
+(pdftex.def)             Requested size: 361.35278pt x 203.56206pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]\T1/lmr/m/n/12 Abbildung 2.1: Ab-bil-dung zeigt einen Mer-kle Tree (Quel-le
+ []
+
+
+Overfull \hbox (3.96289pt too wide) in paragraph at lines 47--52
+\T1/lmr/m/n/12 ten.(PICTURE Mer-kle-Tree https://www.investopedia.com/terms/m/merkle-
+ []
+
+[8]
+Underfull \vbox (badness 2689) has occurred while \output is active []
+
+ [9 <./images/MerkleTree.jpg>] [10]
+Overfull \hbox (2.21286pt too wide) in paragraph at lines 74--75
  []|\T1/lmr/m/n/12 Buchstabe| 
  []
 
 
-Overfull \hbox (2.21286pt too wide) in paragraph at lines 100--101
+Overfull \hbox (2.21286pt too wide) in paragraph at lines 105--106
  []|\T1/lmr/m/n/12 Buchstabe| 
  []
 
 
-Overfull \hbox (15.29022pt too wide) in paragraph at lines 67--131
+Overfull \hbox (15.29022pt too wide) in paragraph at lines 72--136
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11] [12]) (chapters/theoretischerteil.tex [13]
-[14
-
-]
+[11] [12] [13]) (chapters/theoretischerteil.tex [14]
 Kapitel 3.
-(chapters/jens/funktion.tex [15] [16
+(chapters/jens/funktion.tex [15
+
+] [16
 
 ]
 Kapitel 4.
@@ -560,137 +580,144 @@ Overfull \hbox (0.60585pt too wide) in paragraph at lines 24--25
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35]
-<images/26Prozent.PNG, id=158, 241.65282pt x 277.035pt>
+<images/26Prozent.PNG, id=160, 241.65282pt x 277.035pt>
 File: images/26Prozent.PNG Graphic file (type png)
 <use images/26Prozent.PNG>
-Package pdftex.def Info: images/26Prozent.PNG  used on input line 39.
-(pdftex.def)             Requested size: 181.23917pt x 207.77573pt.
+Package pdftex.def Info: images/26Prozent.PNG  used on input line 40.
+(pdftex.def)             Requested size: 144.9928pt x 166.22227pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/51Prozent.PNG, id=159, 255.95625pt x 279.29344pt>
+ [36]
+<images/51Prozent.PNG, id=164, 255.95625pt x 279.29344pt>
 File: images/51Prozent.PNG Graphic file (type png)
 <use images/51Prozent.PNG>
-Package pdftex.def Info: images/51Prozent.PNG  used on input line 46.
-(pdftex.def)             Requested size: 191.9667pt x 209.46956pt.
+Package pdftex.def Info: images/51Prozent.PNG  used on input line 47.
+(pdftex.def)             Requested size: 153.57492pt x 167.57735pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--56
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
 
  []
 
-[36] [37 <./images/26Prozent.PNG>] [38 <./images/51Prozent.PNG>] [39]
-Overfull \hbox (9.03116pt too wide) in paragraph at lines 82--83
+[37 <./images/26Prozent.PNG> <./images/51Prozent.PNG>]
+Overfull \hbox (14.4561pt too wide) in paragraph at lines 71--72
+\T1/lmr/m/n/12 Quan-ten-pro-zes-so-ren stand-hal-ten könn-ten [[]]. In-des ist das Bitcoin-Netzwerk
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 81--81
+[][]\T1/lmr/m/n/10 Nach Rech-nung auf https://elearning.physik.uni-frankfurt.de/data/FB13-
+ []
+
+[39]
+Overfull \hbox (9.03116pt too wide) in paragraph at lines 83--84
 []\T1/lmr/m/n/12 Durch das One-Time-Winternitz ha-shing (sie-he zu One-Time-Winternitz Funk-
  []
 
-[40]
-Overfull \hbox (11.3481pt too wide) in paragraph at lines 96--97
-[]\T1/lmr/m/n/12 Das Ob-jekt wird auf Syn-tax und Gül-tig-keit ge-prüft. Da-für wird die Transaction-
- []
-
-[41]
-Overfull \hbox (0.15445pt too wide) in paragraph at lines 108--109
+[40] [41]
+Overfull \hbox (0.15445pt too wide) in paragraph at lines 109--110
 []\T1/lmr/m/n/12 Dem ent-ge-gen-wir-ken soll der, von der IOTA-Foundation be-reit-ge-stell-te, Coor-
  []
 
-[42] [43]) (chapters/janusz/programmierbarkeit.tex [44]
+[42] [43]) (chapters/janusz/programmierbarkeit.tex) (chapters/jens/nutzen.tex [44]
 Kapitel 6.
+[45
 
-LaTeX Warning: Reference `' on page 45 undefined on input line 11.
+] [46] [47]
+Overfull \hbox (31.71971pt too wide) in paragraph at lines 28--28
+[][]\T1/lmr/m/n/10 Entnommen von htt-ps://www.mobilefish.com/download/iota/message_and_tag_part14.pdf| 
+ []
 
-
-LaTeX Warning: Reference `' on page 45 undefined on input line 11.
-
-) (chapters/jens/nutzen.tex [45
-
-] [46
-
-]
+) [48]
 Kapitel 7.
-[47] [48] [49]) [50]
-Kapitel 8.
-) (chapters/praktischerteil.tex [51
+[49
 
-] [52
+] [50]) (chapters/praktischerteil.tex [51] [52
 
 ]
-Kapitel 9.
+Kapitel 8.
 (chapters/janusz/dokumentation.tex [53] [54
 
 ]
-Kapitel 10.
-[55] [56] [57] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+Kapitel 9.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 10.
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 10.
+ [55] [56]
+Overfull \hbox (47.33208pt too wide) in paragraph at lines 36--36
+[][]\T1/lmr/m/n/10 Nach htt-ps://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md| 
+ []
+
+[57] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 57.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 62.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 [58]
-Overfull \hbox (18.77307pt too wide) in paragraph at lines 77--78
+Overfull \hbox (18.77307pt too wide) in paragraph at lines 82--83
 []\T1/lmr/m/n/12 [Bild von der Pla-zie-rung der Kom-po-nen-ten But-ton 1 und 2 und LED](PICTURE) 
  []
 
 [59] [60] [61]
-Overfull \hbox (346.11293pt too wide) in paragraph at lines 156--157
+Overfull \hbox (346.11293pt too wide) in paragraph at lines 161--162
  \T1/lmr/bx/n/12 Seed[] \T1/lmr/m/n/12 Der Seed DSPOA-XMVSC99IUIVJXTIBZFATVFKTCLLJYOLAGSMFJGFXAWEB9GNTQWEDVRYHKIOQF9T9I
 ZY9IVPKTSZK
  []
 
-
-Overfull \hbox (57.61098pt too wide) in paragraph at lines 158--159
+[62]
+Overfull \hbox (57.61098pt too wide) in paragraph at lines 163--164
 \T1/lmr/m/n/12 sind, wur-de die fol-gen-de Adres-se be-lie-big aus-ge-sucht: htt-ps://potato.iotasalad.org:14265.
  []
 
-[62]
-Overfull \hbox (107.14488pt too wide) in paragraph at lines 162--163
+
+Overfull \hbox (107.14488pt too wide) in paragraph at lines 167--168
 [][][][][][][][][][]  
  []
 
 [63] [64]) (chapters/jens/dokumentation.tex [65] [66
 
 ]
-Kapitel 11.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 8.
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 8.
- [67] [68]
-Overfull \hbox (0.91191pt too wide) in paragraph at lines 32--33
+Kapitel 10.
+[67]
+Underfull \vbox (badness 1454) has occurred while \output is active []
+
+ [68]
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[][]\T1/lmr/m/n/10 https://docs.microsoft.com/de-de/powershell/scripting/powershell-
+ []
+
+
+Overfull \hbox (0.91191pt too wide) in paragraph at lines 31--32
 \T1/lmr/m/n/12 voll-wer-ti-ge Midd-le-wa-res zu er-stel-len. Die In-stal-la-ti-on ge-stal-tet sich sehr leicht.
  []
 
 
-Overfull \hbox (6.21031pt too wide) in paragraph at lines 32--33
+Overfull \hbox (6.21031pt too wide) in paragraph at lines 31--32
 \T1/lmr/m/n/12 Vor-aus-set-zung sind ei-ne funk-tio-nie-ren-de Bash, so-wie der Pa-ket-ma-na-ger npm.
  []
 
-[69] [70] [71]
+[69] [70] [71] [72]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 86.
- [72] [73] [74]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [75] [76] [77]
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 85.
+ [73] [74] [75] [76] [77]
 Underfull \vbox (badness 6825) has occurred while \output is active []
 
  [78]) [79] [80
 
 ]
-Kapitel 12.
+Kapitel 11.
 ) (chapters/evaluierung.tex [81] [82
 
 ]
-Kapitel 13.
+Kapitel 12.
 
 Overfull \hbox (0.27884pt too wide) in paragraph at lines 7--10
 []\T1/lmr/m/n/12 Abseits der Ver-wen-dung als Kryp-towäh-rung kön-nen Dis-tri-bu-ted Led-ger Tech-
@@ -771,68 +798,94 @@ Underfull \hbox (badness 2818) in paragraph at lines 74--77
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+[]\T1/lmr/m/sc/12 Popov, Ser-guei\T1/lmr/m/n/12 : \T1/lmr/m/it/12 The Tan-gle\T1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 79--82
+\T1/lmr/m/n/12 http://iotatoken.com/IOTA_Whitepaper.pdf, 2017.  Ab-ge-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--88
+[]\T1/lmr/m/sc/12 Proos, John \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Chri-stof Zal-ka\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Shor's
+ dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--88
+\T1/lmr/m/it/12 crete lo-ga-rithm quan-tum al-go-rithm for el-lip-tic cur-ves\T1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 84--88
+\T1/lmr/m/n/12 https://arxiv.org/pdf/quant-ph/0301141.pdf, 2008.  Ab-ge-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--97
 []\T1/lmr/m/sc/12 Rogaway, Phil-lip \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Tho-mas Shrimp-ton\T1/lmr/m/n/12 : \T1/lmr/m/it/1
 2 Cryp-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 90--97
 \T1/lmr/m/it/12 to-gra-phic Hash-Function Ba-sics: De-fi-ni-ti-ons, Im-pli-ca-ti-
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 79--86
+Underfull \hbox (badness 7540) in paragraph at lines 90--97
 \T1/lmr/m/it/12 ons, and Se-pa-ra-ti-ons for Preima-ge Re-si-stan-ce, Second-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 90--97
 \T1/lmr/m/it/12 Preimage Re-si-stan-ce, and Col-li-si-on Re-si-stan-ce\T1/lmr/m/n/12 .  htt-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 90--97
 \T1/lmr/m/n/12 ps://link.springer.com/content/pdf/10.1007 Ab-ge-ru-fen am
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+[88]
+Underfull \hbox (badness 10000) in paragraph at lines 99--105
 []\T1/lmr/m/sc/12 Schlatt, Vin-cent\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 An-dré Schwei-zer\T1/lmr/m/n/12 , \T1/lmr/m/sc/12 Ni
 ls Ur-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 99--105
 \T1/lmr/m/sc/12 bach \T1/lmr/m/n/12 und \T1/lmr/m/sc/12 Gil-bert Fridgen\T1/lmr/m/n/12 : \T1/lmr/m/it/12 Block-chain: Gr
 und-la-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 99--105
 \T1/lmr/m/it/12 gen, An-wen-dun-gen und Po-ten-zia-le\T1/lmr/m/n/12 .  https://www.fim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--94
+Underfull \hbox (badness 10000) in paragraph at lines 99--105
 \T1/lmr/m/n/12 rc.de/Paperbibliothek/Veroeffentlicht/642/wi-642.pdf, 2016.
  []
 
-[88]) [89] (main.aux)
+) [89] (main.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6049 strings out of 492970
- 81837 string characters out of 3135852
- 356298 words of memory out of 3000000
- 9709 multiletter control sequences out of 15000+200000
+ 6115 strings out of 492970
+ 82749 string characters out of 3135852
+ 357041 words of memory out of 3000000
+ 9769 multiletter control sequences out of 15000+200000
  78684 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,48p,1848b,2027s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.en
-c}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
+ 39i,16n,47p,1848b,2027s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C
+:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.en
 c}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
@@ -840,9 +893,9 @@ m/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
 lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (99 pages, 534360 bytes).
+Output written on main.pdf (99 pages, 574153 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
+ 388 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

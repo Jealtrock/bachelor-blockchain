@@ -7,4 +7,26 @@ In der folgenden Analyse werden zwei Distributed Ledger Architekturen auf ihre F
 \input{chapters/jens/nutzen}
 
 \chapter{Ergebnis}
-Lorem ipsum
+Im Folgenden werden die Ergebnisse der Analyse gegenübergestellt und auf die Fragestellung der Zukunftstauglichkeit projiziert. Da jedes System, sowohl Bitcoin als auch IOTA, verschiedene Ziele anstrebt, werden beide Ergebnisse vereinzelt für die Beantwortung herangezogen.
+
+\section{Kryptographie}
+Die beiden Kryptowährungen Bitcoin und IOTA realisieren ihr jeweiliges Distributed Ledger System durch verschiedene Arten der Kryptographie. Bitcoin verwendet die elliptische Kurven Kryptographie um einen validen privaten Schlüssel zu generieren. Dieser dient als Bitcoin Wallet und verweist auf die hinterlegten BTC.
+
+IOTA verwendet als Wallet einen 81 Trytes langen Seed. Der Seed wird genutzt um private Schlüssel zu generieren, um aus dessen Hash eine Adresse für den Empfang oder Versand von IOTAs zu veranlassen. Um einen Geldausgang zu verifizieren wird durch die Winternitz One-Time Signature eine Signatur erstellt. Sobald eine Transaktion erstmals signiert wurde, ist ein Teil des privaten Schlüssels der verwendeten Adresse veröffentlicht. Die erneute Verwendung der Adresse hätte einen eventuellen Verlust der hinterlegten IOTAs zur Folge.
+
+\section{Architektur}
+Bitcoin verwendet eine Blockchain. Diese fungiert wie ein öffentliches Kassenbuch in der alle Transaktionen gespeichert sind, die momentan getätigt aber nicht verifiziert sind. Sollte ein Miner das Hash-Rätsel lösen, werden alle gespeicherten nicht verifizierten Transaktion in einen Block geschrieben und der Blockchain angehangen. Die umliegenden Nachbarn werden über den neuen Block informiert und nehmen ihn in die eigene Blockchain auf. Der Miner erhält für das "`Finden"' des neuen Blockes eine kleine Menge an BTCs. Der Schweregrad des Rätsels lässt eine durchschnittliche Generierung von einem Block alle 10 Minuten zu~\cite{onlinebeispiel}. Bevor eine Transaktion als sicher eingestuft wird, werden typischerweise auf 6 Blöcke gewartet, die angehangen werden müssen. Die Trennung von Nutzern und Minern resultiert darin, dass Nutzer Transaktionsgebühren zahlen müssen, da die Miner Rechenaufwand betreiben. Diese beiden Gründe machen die Blockchain für kleine Zahlungen wie Micro-Payments untauglich.
+
+IOTA verwendet die Tangle. Damit eine Transaktion in der Tangle aufgenommen werden darf, muss die Transaktion zuvor zwei ebenfalls nicht verifizierte Tips verifizieren. Da dies Voraussetzung für die Aufnahme in der Tangle ist, fallen keine Transaktionsgebühren an und die Rolle des Miners fällt weg. Sobald die Transaktion durch ausreichend andere Tips verifiziert wurde, gilt sie als verifiziert. Dieser Vorgang ist vergleichsweise schnell mit Bestätigungszeiten von ca. 5 Minuten\footnote{Aufgerufen am 15.10.2018 https://tanglemonitor.com/}.
+
+\section{Sicherheit}
+Die Sicherheit der beiden Technologien unterscheidet sich grundlegend aufgrund der Architektur. Während bei Bitcoin die Gefahr einzig von einer 51\%-Attacke ausgeht. Sind bei IOTA eine Vielzahl von Angriffsszenarien denkbar, darunter eine 34\%-Attacke. Geschützt wird das Netzwerk derzeit von eigenen Coordinators, die von der IOTA-Foundation bereitgestellt werden. Dadurch ist IOTA noch nicht vollkommen dezentral. Es ist jedoch geplant, bei genügend Teilnehmern die Coordinators abschalten zu können~\cite{onlinebeispiel}.
+
+\section{Zukunftstauglichkeit Bitcoin}
+Bitcoin ist das erste Distributed Ledger Protokoll dass die Blockchain verwendet. Insofern war es bereits Vorreiter um ein Umdenken des klassischen Server - Client Protokoll zu verursachen. Daten müssen nicht zwangsläufig durch solch zentrale Systeme ihre Richtigkeit garantieren. Die Blockchain löst dies durch den Konsens der Miner, die in der Richtigkeit übereinstimmen. Aber auch durch die Kombination der Kryptographie mit der Blockchain lassen sich zukünftig die Richtigkeit sensibler Daten garantieren, indem die digitale Signatur eines Dokumentes in der Blockchain gespeichert wird. 
+
+Problematisch ist die Zeit die vergeht, bis eine Transaktion als verifiziert gilt. Das Finden eines Blockes dauert circa 10 Minuten. Bei einem denkbar hohen Datenaufkommen wäre das System nur für langfristige Datenspeicherung und als Wertanlage sinnvoll.
+
+\section{Zukunftstauglichkeit IOTA}
+IOTA wurde für das Internet of Things entwickelt. Es implementiert Funktionen um einen Datenstrom in der Tangle zu sichern. Dabei ist es unwichtig ob die Daten durch einen Menschen in die Tangle gelangen oder ob eine Maschine dafür verantwortlich ist. Zukünftig könnte eine unbegrenzt große Datenmenge dem Netzwerk beigefügt werden. Maschinen könnten Temperaturen in einem zeitlichen Intervall publizieren. Die Sichtbarkeit könnte eingeschränkt werden und die Sicherheit wäre durch die Signatur und des „Merkle tree based signature scheme“ gewährleistet.
+Ein weiterer Zukunftsaspekt wäre das Versenden von Informationen über eine Transaktion. Eine Transaktion enthält das Feld “signatureMessageFragment” in dem ein JSON Objekt abgespeichert werden kann. Dementsprechend könnten auch größere Dateien versendet werden.
