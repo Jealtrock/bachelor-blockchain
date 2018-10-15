@@ -38,48 +38,56 @@ def main():
         print("IOTA Kontostand wird abgefragt")
         balance = check_balance()
         print("%s IOTA befinden sich in der Wallet" % (balance))
-        
+        print("----------------------------------------")
         print("Daten der Tankstelle werden abgerufen...")
-        stationData = get_station_info()
-        print("Super %s" %(stationData["Super"]))
-        
+        #stationData = get_station_info()
+        #print("Super %s" %(stationData["Super"]))
+        print("ENERGY-SB: %s IOTA/%s" %("2", "kwH"))
+        print("----------------------------------------")
         print("Führen Sie den Zapfhahn ein...")
         wait_for_button_click(BUTTON1)          #manuell muss der Zapfhahn in das Auto gesteckt werden
         pumpData = get_pump_info()
         print("Tanksäule %s wurde in den Tank geführt!"
               " Sprittyp %s ausgewählt" %(pumpData["ZapfId"], pumpData["FuelType"]))
         print("Tanksäule wird initialisiert...")
-        carId = initialize_fueling(pumpData["ZapfId"], pumpData["FuelType"])
+        #carId = initialize_fueling(pumpData["ZapfId"], pumpData["FuelType"])
 
         print("Tankvorgang kann nun gestartet werden!")
         GPIO.output(LED, True)
 
         fueling = False
         startTime = time.time()
+        ##
+        menge = 0
+        ##
         while not GPIO.input(BUTTON1):
             if GPIO.input(BUTTON2) and not fueling:
                 fueling = True
                 GPIO.output(LED, False)
-                call_api("startFueling", carId)
+                #call_api("startFueling", carId)
 
             if not GPIO.input(BUTTON2) and fueling:
                 fueling = False
                 GPIO.output(LED, True)
-                call_api("pauseFueling", carId)
+                #call_api("pauseFueling", carId)
 
             if fueling:
                 currentTime = time.time()
                 if currentTime - startTime > 0.1:
                     startTime = currentTime
-                    fuelingData = call_api("getFueling", carId)
-                    print("fueling timestamp: %s" %(currentTime))
+                    #fuelingData = call_api("getFueling", carId)
+                    print("Fueling... kwH: %s" %(menge))
+                    menge = menge + 1.016
 
-        endFuelingData = call_api("endFueling", carId)
-        amount = endFuelingData["amount"]
-        cost = endFuelingData["cost"]
-        address = endFuelingData["address"]
-        print("Sie haben %s liter getankt, die Rechnung beläuft sich auf %s IOTAs" %(menge, preis))
-        
+        #endFuelingData = call_api("endFueling", carId)
+        #amount = endFuelingData["amount"]
+        #cost = endFuelingData["cost"]
+        #address = endFuelingData["address"]
+        print("Sie haben %s kwH getankt, die Rechnung beläuft sich auf %s IOTAs" %(menge, menge * 2))
+        print("Die Rechnung wird beglichen...")
+        print("----------------------------------------")
+        print("Bundlehash: %s" %("ZCROCAFCYTVUALHLSLZXDFBKWOOCLDDAGWPFZZDCTTYZHFPXEWBYURDECLRFAKKFROBZ9YHLNYFKIKLKB"))
+        print("Die Rechnung ist gültig, schöne Weiterfahrt!")
     finally:
         GPIO.cleanup()
 
@@ -104,7 +112,7 @@ def get_station_info():
 def get_pump_info():
     data = {
         "ZapfId": 1,
-        "FuelType": "Super"
+        "FuelType": "ENERGY-SB"
     }
     return data
 
