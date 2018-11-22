@@ -40,9 +40,9 @@ def main():
         print("%s IOTA befinden sich in der Wallet" % (balance))
         print("----------------------------------------")
         print("Daten der Tankstelle werden abgerufen...")
-        #stationData = get_station_info()
-        #print("Super %s" %(stationData["Super"]))
-        print("ENERGY-SB: %s IOTA/%s" %("2", "kwH"))
+        stationData = get_station_info()
+        print("ENERGY-SB %s" %(stationData["ENERGY-SB"]))
+        #print("ENERGY-SB: %s IOTA/%s" %("2", "kwH"))
         print("----------------------------------------")
         print("Führen Sie den Zapfhahn ein...")
         wait_for_button_click(BUTTON1)          #manuell muss der Zapfhahn in das Auto gesteckt werden
@@ -50,7 +50,7 @@ def main():
         print("Tanksäule %s wurde in den Tank geführt!"
               " Sprittyp %s ausgewählt" %(pumpData["ZapfId"], pumpData["FuelType"]))
         print("Tanksäule wird initialisiert...")
-        #carId = initialize_fueling(pumpData["ZapfId"], pumpData["FuelType"])
+        carId = initialize_fueling(pumpData["ZapfId"], pumpData["FuelType"])
 
         print("Tankvorgang kann nun gestartet werden!")
         GPIO.output(LED, True)
@@ -58,35 +58,40 @@ def main():
         fueling = False
         startTime = time.time()
         ##
-        menge = 0
+        #menge = 0
         ##
         while not GPIO.input(BUTTON1):
             if GPIO.input(BUTTON2) and not fueling:
                 fueling = True
                 GPIO.output(LED, False)
-                #call_api("startFueling", carId)
+                call_api("startFueling", carId)
 
             if not GPIO.input(BUTTON2) and fueling:
                 fueling = False
                 GPIO.output(LED, True)
-                #call_api("pauseFueling", carId)
+                call_api("pauseFueling", carId)
 
             if fueling:
                 currentTime = time.time()
                 if currentTime - startTime > 0.1:
                     startTime = currentTime
-                    #fuelingData = call_api("getFueling", carId)
-                    print("Fueling... kwH: %s" %(menge))
-                    menge = menge + 1.016
+                    fuelingData = call_api("getFueling", carId)
+                    print("Fueling... %s: %s, IOTAs: %s" %(fuelingData["unit"], fuelingData["amount"], fuelingData["cost"]))
+                    #menge = menge + 1.016
 
-        #endFuelingData = call_api("endFueling", carId)
-        #amount = endFuelingData["amount"]
-        #cost = endFuelingData["cost"]
-        #address = endFuelingData["address"]
-        print("Sie haben %s kwH getankt, die Rechnung beläuft sich auf %s IOTAs" %(menge, menge * 2))
+        endFuelingData = call_api("endFueling", carId)
+        amount = endFuelingData["amount"]
+        cost = endFuelingData["cost"]
+        unit = endFuelingData["unit"].encode('utf-8')
+        address = endFuelingData["address"].encode('utf-8')
+        print("Sie haben %s %s getankt, die Rechnung beläuft sich auf %s IOTAs" %(amount, unit, cost))
+        print("Empfängeradresse: %s" %(address))
+        print("Button1 drücken um zu zahlen...")
+        wait_for_button_click(BUTTON1)          #warte auf knopfdruck um zu zahlen
         print("Die Rechnung wird beglichen...")
+        bundle = pay(amount, address, "Smart-Refuling Rechnung")
         print("----------------------------------------")
-        print("Bundlehash: %s" %("ZCROCAFCYTVUALHLSLZXDFBKWOOCLDDAGWPFZZDCTTYZHFPXEWBYURDECLRFAKKFROBZ9YHLNYFKIKLKB"))
+        print("Bundlehash: %s" %(bundle["bundle"].hash))
         print("Die Rechnung ist gültig, schöne Weiterfahrt!")
     finally:
         GPIO.cleanup()
@@ -134,6 +139,16 @@ def call_api(route, carId):
 
 #bezahle mit iota, return bundlehash
 def pay(amount, reciever, message):
-    return
+    proposedTrx = ProposedTransaction(
+        address = Address(reciever),
+        value = 0,
+        tag = Tag("AACHELORTEST"),
+        message = TryteString.from_string(message)
+    )
+
+    proposedBundle = ProposedBundle([proposedTrx])
+    preparedBundle = api.prepare_transfer(proposedBundle)
+    publishedBundle = api.send_transfer(depth = 3, transfers = proposedBundle)
+    return publishedBundle
 
 main()
